@@ -1,9 +1,7 @@
 package Basics;
 import java.util.Scanner;
 
-// fibonacci no's of n times. 
-
-import java.util.Scanner;
+//a series of numbers in which, each number is the sum of the two preceding numbers
 /*
 class Fibanocci  //fibonacci series upto n terms
 {  	
@@ -22,23 +20,21 @@ class Fibanocci  //fibonacci series upto n terms
 		}
 		 S.close();
 	}
-}  
-
+}
 */
 
 //nth fibonacci no. using recurssion
- public class Fibanocci  //a series of numbers in which, each number is the sum of the two preceding numbers
+public class Fibanocci
 {
-	 public static int fib(int n)
-	    {
+	 public static int fib(int n) {
 	        if(n==1)  
 	            return 0;
 	        if(n==2)
 	            return 1;
 	        
 	        return fib(n-1)+fib(n-2);
-	         
-	    }
+
+	 }
     public static void main(String[] args) 
     {
         System.out.println("Enter the value of n : ");

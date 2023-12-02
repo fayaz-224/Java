@@ -47,8 +47,8 @@ public class Anagram
  
 // Bitwise XOR returns 1 if the digits are different and 0 if the digits are same.
 // After all the XOR�ing process, if the result is 0 then the strings are anagrams.
- 
-  static boolean checkAnagram(String s1, String s2)
+
+    public static boolean checkAnagram(String s1, String s2)
     {        
         s1 = s1.replaceAll("\\s", "");// Remove all the white space
         s2 = s2.replaceAll("\\s", "");
@@ -63,10 +63,7 @@ public class Anagram
         	{        		
         		xor ^= arr1[i] ^ arr2[i];
         	}
-        	if (xor == 0)
-        		return true; 
-        	
-        	return false;
+            return xor == 0;
         }
     }
 }

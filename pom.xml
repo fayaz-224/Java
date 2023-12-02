@@ -20,5 +20,20 @@
             <artifactId>jasypt</artifactId>
             <version>1.9.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>    <!-- for all junit jars -->
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId> <!-- for @Before,@After tags -->
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 </project>

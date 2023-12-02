@@ -3,17 +3,21 @@
 package Strings;
 import java.util.Scanner;
 
-public class Palindrome 
-{  
-	public static void main(String args[])
-	{  
-		Scanner s=new Scanner(System.in);
-		String str=s.nextLine();    //strings are immutable. so convert it into string buffer or builder
+public class Palindrome {
+	public boolean isPalindrome(String str) {
+		//strings are immutable. so convert it into string buffer or builder
 		StringBuffer sb=new StringBuffer(str);
 		sb.reverse();
-		
-		String rev=sb.toString();  //Again convert it into string
-		if(str.equals(rev)){  
+		String rev = sb.toString();  //Again convert it into string
+        return str.equals(rev);
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String str = s.nextLine();    //strings are immutable. so convert it into string buffer or builder
+
+		Palindrome p = new Palindrome();
+		if (p.isPalindrome(str)) {
 			System.out.println("Palindrome");
 		}
 		else{  
