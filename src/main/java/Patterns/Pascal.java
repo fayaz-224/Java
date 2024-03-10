@@ -1,5 +1,6 @@
 package Patterns;
-//Pascal’s triangle is a pattern in which each element is equal to the sum of the two numbers immediately above it.
+//Pascal’s triangle is a pattern in which each element is equal to
+// the sum of the two numbers immediately above it.
 
 //    1 
 //   1 1 

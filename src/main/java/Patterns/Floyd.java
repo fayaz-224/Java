@@ -6,13 +6,12 @@ package Patterns;
 
 public class Floyd {
 	public static void main(String[] args) {
-		int n=4,k=1;	//place k outside of for loop
+        int n = 4, num = 1;    //put num outside for-loop
 		for(int i=1;i<=n;i++) 	
 		{
-			for(int j=1;j<=i;j++) 
-			{
-				System.out.print(k++ +" ");
-			}
+            for (int j = 1; j <= i; j++)
+                System.out.print(num++ + " ");
+
 			System.out.println();
 		}
 	}

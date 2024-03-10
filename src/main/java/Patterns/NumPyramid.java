@@ -6,7 +6,7 @@ package Patterns;
 //123456789
 
 class NumPyramid { 	 
-public static void main(String args[]){ 
+public static void main(String[] args){
 	int n=5;
 	for(int i=1;i<=n;i++) 
 	{
@@ -14,7 +14,7 @@ public static void main(String args[]){
 			{
 				System.out.print(" ");
 			}
-			for(int j=1;j<=2*i-1;j++) 
+        for (int j = 1; j <= 2 * i - 1; j++) //imp
 			{
 				System.out.print(j);
 			}

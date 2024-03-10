@@ -45,25 +45,18 @@ public class TransposeMtx
 		int n = arr.length;
 		
  		for (int i = 0; i < n; i++){	//without using another mtx
-             for (int j = i+1; j < n; j++) {
+            for (int j = i; j < n; j++) {  //int j = i; imp
                   int temp = arr[i][j]; 
                   arr[i][j] = arr[j][i]; 
                   arr[j][i] = temp;
              }
  	    }
+
  		System.out.print("Transpose matrix is \n");
         for (int i = 0; i < n; i++) { 
             for (int j = 0; j < n; j++) 
                 System.out.print(arr[i][j] + " "); 
-            System.out.print("\n"); 
-        } 
-        
-//	    	for (int i = 0; i < n; i++){	//if u just wish to print
-//	    	    for (int j = 0; j < n; j++)
-//	    	        System.out.print(arr[j][i]+" ");
-//
-//	        System.out.println();
-//	    	}
-
+            System.out.print("\n");
+        }
 	}
 }

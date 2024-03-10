@@ -34,17 +34,15 @@ FFFFF
 */
 
 public class StringPattern {
-	public static void main(String args[]){ 
+	public static void main(String[] args){
 		String s= "FAYAZ";
 		int n=s.length();
 		
-		for(int i=1,k=n-1;i<=n;i++,k--) 
-			{
-			for(int j=1;j<=i;j++) 
-			{
+		for(int i=1,k=n-1;i<=n;i++,k--) {
+            for (int j = 1; j <= i; j++)
 				System.out.print(s.charAt(k));
-			}
-			System.out.println();
+
+            System.out.println();
 		}
 	}
 }

@@ -4,7 +4,7 @@ package Patterns;
 //  12321
 // 1234321
 //123454321
-
+/*
 public class NumPyramid2
 {
 	public static void main(String[] args) {
@@ -28,4 +28,31 @@ public class NumPyramid2
 			System.out.println();
 	}
 }
+}
+*/
+
+//    1
+//   212
+//  32123
+// 4321234
+//543212345
+public class NumPyramid2 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j < n; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            for (int j = 2; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
 }

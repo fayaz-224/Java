@@ -1,0 +1,159 @@
+package DSA;
+//Apna college
+//A linear data structure used to store the elements in contiguous locations is called a Linked List in Java.
+// It has addresses and pointers that are used to link the elements, and each element in the linked list consists of two parts, namely the data part and the address part.
+// The data part is the value of the element, and the address part consists of the pointers and addresses that are used to link the elements.
+// Each element in the list is called a node.
+
+public class LinkedListImpl {   //singly linked-list
+    Node head;
+    private int size;
+
+    LinkedListImpl() {
+        size = 0;
+    }
+
+    public class Node {
+        String data;
+        Node next;
+
+        Node(String data) {
+            this.data = data;
+            this.next = null;
+            size++;
+        }
+    }
+
+    public void addFirst(String data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(String data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node lastNode = head;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+        }
+        lastNode.next = newNode;
+    }
+
+    public void removeFirst() {
+        if (head == null) {
+            System.out.println("Empty List, nothing to delete");
+            return;
+        }
+
+        head = this.head.next;
+        size--;
+    }
+
+    public void removeLast() {
+        if (head == null) {
+            System.out.println("Empty List, nothing to delete");
+            return;
+        }
+
+        size--;
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node currNode = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null) {
+            currNode = currNode.next;
+            lastNode = lastNode.next;
+        }
+        currNode.next = null;
+    }
+
+    public void addInMiddle(int index, String data) {
+        if (index > size || index < 0) {
+            System.out.println("Invalid Index value");
+            return;
+        }
+
+        Node newNode = new Node(data);
+        if (head == null || index == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node currNode = head;
+        for (int i = 1; i <= size; i++) {
+            if (i == index) {
+                Node tempNode = currNode.next;
+                currNode.next = newNode;
+                newNode.next = tempNode;
+                break;
+            }
+            currNode = currNode.next;
+        }
+    }
+
+    public void reverseList() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prevNode = head;
+        Node currNode = head.next;
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void printList() {
+        Node currNode = head;
+
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        LinkedListImpl list = new LinkedListImpl();
+        list.addLast("is");
+        list.addLast("a");
+        list.addLast("list");
+        list.printList();
+        list.addFirst("this");
+        list.printList();
+        System.out.println(list.getSize());
+
+        list.removeFirst();
+        list.printList();
+        list.removeLast();
+        list.printList();
+        System.out.println(list.getSize());
+
+        list.addInMiddle(2, "only");
+        list.printList();
+        System.out.println(list.getSize());
+
+        list.reverseList();
+        list.printList();
+    }
+}
+

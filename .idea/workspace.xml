@@ -4,19 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95737011-04b4-47e6-89d4-8842108fae3c" name="Changes" comment="add jasypt">
-      <change afterPath="$PROJECT_DIR$/src/test/java/UnitTests/AnagramTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UnitTests/FactorialTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UnitTests/FibanocciTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b33c7f0eb99dbab631c9093553d99cb92aa5eeb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b33c7f0eb99dbab631c9093553d99cb92aa5eeb" afterDir="false" />
+    <list default="true" id="95737011-04b4-47e6-89d4-8842108fae3c" name="Changes" comment="add junit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/RomanToNum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapCol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/HashSetCol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/OverrideHashCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/BSTImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/BinaryTreeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/CircularQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/LinkedListImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/QueueImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/QueueWithLL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/StackImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/Butterfly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/HollowButterfly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/HollowSquare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/Rhombus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resurssion/Permutations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resurssion/TowerOfHonai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0bf6e550e2f86f4c4877c641f429d868cc90977b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0bf6e550e2f86f4c4877c641f429d868cc90977b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d680e0dd0647860113fb4d4a6e1fe1f98fd9df5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d680e0dd0647860113fb4d4a6e1fe1f98fd9df5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/312c9a78c04aefb276e48cf99c3f817548723ea1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/31435072513f297cc366d6c1346d2e718091d191" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/31435072513f297cc366d6c1346d2e718091d191" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3460030d75a47b1a9cf9ad846f0add08db4c3f77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c337cb80dd39dcd9baa0a52180532cd5e2f6cb9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c337cb80dd39dcd9baa0a52180532cd5e2f6cb9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fd8dde1c0a940486391c30c1023f95687efc2be" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fd8dde1c0a940486391c30c1023f95687efc2be" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71d2f6af64e702c0d029c32c79a1f6970e7403c0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71d2f6af64e702c0d029c32c79a1f6970e7403c0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d2f0ccc51ab26bf3b40ff51ec73e70a736acaf3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86ba8d67797592f32ba77e39f8d6c9ecc1c84bb1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86ba8d67797592f32ba77e39f8d6c9ecc1c84bb1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9ccc6afb115105061a88a3807dd89a0b567a5203" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9ccc6afb115105061a88a3807dd89a0b567a5203" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9af27b996cfb8e9ec0b73405ea6299b19aababb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9af27b996cfb8e9ec0b73405ea6299b19aababb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba6e2b4b8e2ad601c95d91a822b1ea93ab97ccb8" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba6e2b4b8e2ad601c95d91a822b1ea93ab97ccb8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be566cabed57a4e55a5737b8259cd8e6e45d4803" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be566cabed57a4e55a5737b8259cd8e6e45d4803" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da83e7d02ed2d6564bd144fc5040c6bf1bc73023" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da83e7d02ed2d6564bd144fc5040c6bf1bc73023" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9339e840758926bb7d7ee94b7dd9e71f87dae98" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9339e840758926bb7d7ee94b7dd9e71f87dae98" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/1/312c9a78c04aefb276e48cf99c3f817548723ea1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/3460030d75a47b1a9cf9ad846f0add08db4c3f77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7d2f0ccc51ab26bf3b40ff51ec73e70a736acaf3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/ListLinked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/LinkedListCol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/DecreasingPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/DecreasingPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Floyd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Floyd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/IncreasingPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/IncreasingPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Pyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Pyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/StringPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/StringPattern.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +90,38 @@
 }</component>
   <component name="ProjectId" id="2YzHgrWSFJhx0uQ2dtXyzEBZLFi" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.FibanocciTest">
+}</component>
+  <component name="RunManager" selected="Application.TowerOfHonai">
+    <configuration name="BSTImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DSA.BSTImpl" />
+      <module name="Java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DSA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Fibanocci" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Basics.Fibanocci" />
       <module name="Java" />
@@ -76,75 +135,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Fibonacci" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basics.Fibonacci" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Basics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.FactorialTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactorialTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Permutations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Resurssion.Permutations" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Resurssion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.FactorialTest" />
-      <option name="METHOD_NAME" value="test1(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FibanocciTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TowerOfHonai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Resurssion.TowerOfHonai" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Resurssion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.FibanocciTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FibanocciTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.FibanocciTest" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FibanocciTest" />
+        <item itemvalue="Application.TowerOfHonai" />
         <item itemvalue="Application.Fibanocci" />
-        <item itemvalue="JUnit.FibanocciTest.test2" />
-        <item itemvalue="JUnit.FactorialTest.test1" />
-        <item itemvalue="JUnit.FactorialTest" />
+        <item itemvalue="Application.Fibonacci" />
+        <item itemvalue="Application.Permutations" />
+        <item itemvalue="Application.BSTImpl" />
       </list>
     </recent_temporary>
   </component>

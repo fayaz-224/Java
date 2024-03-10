@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 //a series of numbers in which, each number is the sum of the two preceding numbers
 /*
-class Fibanocci  //fibonacci series upto n terms
+class Fibanocci  //total n fibonacci numbers
 {  	
 	public static void main(String args[])  
 	{    
@@ -24,31 +24,29 @@ class Fibanocci  //fibonacci series upto n terms
 */
 
 //nth fibonacci no. using recurssion
-public class Fibanocci
-{
-	 public static int fib(int n) {
-	        if(n==1)  
-	            return 0;
-	        if(n==2)
-	            return 1;
-	        
-	        return fib(n-1)+fib(n-2);
+public class Fibanocci {
+    static int n1 = 0, n2 = 1, n3;
 
-	 }
+    public static int nthFibNumber(int n) {
+        if (n <= 1)
+            return n;
+        return nthFibNumber(n - 1) + nthFibNumber(n - 2);
+    }
+
     public static void main(String[] args) 
     {
         System.out.println("Enter the value of n : ");
-        
         Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
-        System.out.println("\n"+n+"th value in fibonacci series is : "+ fib(n));
-         
+
+        System.out.println(n + "th fibonacci no. is : " + nthFibNumber(n));
+        System.out.println("Fib series upto n:");
+        for (int i = 0; i <= n; i++)    //i<=n becoz we need upto n as zero is also needed
+            System.out.println(nthFibNumber(i));
     }
  }
- 
- 
+
  /*
-  
  class Fibonacci {	//Fibonacci series up to a given number
  public static void main(String[] args) {
 
