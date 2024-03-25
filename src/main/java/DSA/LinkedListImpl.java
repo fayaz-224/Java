@@ -7,11 +7,7 @@ package DSA;
 
 public class LinkedListImpl {   //singly linked-list
     Node head;
-    private int size;
-
-    LinkedListImpl() {
-        size = 0;
-    }
+    private int size=0;
 
     public class Node {
         String data;
@@ -25,14 +21,13 @@ public class LinkedListImpl {   //singly linked-list
     }
 
     public void addFirst(String data) {
-        Node newNode = new Node(data);
+        Node newNode = new Node(data); //size will increment here only
         newNode.next = head;
         head = newNode;
     }
 
     public void addLast(String data) {
         Node newNode = new Node(data);
-
         if (head == null) {
             head = newNode;
             return;
@@ -69,7 +64,7 @@ public class LinkedListImpl {   //singly linked-list
 
         Node currNode = head;
         Node lastNode = head.next;
-        while (lastNode.next != null) {
+        while (lastNode.next != null) { //we need to go to last before node
             currNode = currNode.next;
             lastNode = lastNode.next;
         }
@@ -101,7 +96,7 @@ public class LinkedListImpl {   //singly linked-list
         }
     }
 
-    public void reverseList() {
+    public void reverseList() {  //without extraMemory
         if (head == null || head.next == null) {
             return;
         }
@@ -111,6 +106,7 @@ public class LinkedListImpl {   //singly linked-list
         while (currNode != null) {
             Node nextNode = currNode.next;
             currNode.next = prevNode;
+
             prevNode = currNode;
             currNode = nextNode;
         }

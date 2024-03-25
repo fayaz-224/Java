@@ -2,10 +2,10 @@ package DSA;
 //A stack is a linear data structure in which the insertion of a new element and removal of an existing element
 // takes place at the same end represented as the top of the stack - LIFO
 
-public class StackImpl {
-    static final int MAX = 100;
+public class StackImpl { //Impl stack using arrays
+    static final int MAX = 10;
     int top;
-    int[] a = new int[MAX]; // Maximum size of StackImpl
+    int[] a = new int[MAX];
 
     StackImpl() {
         top = -1;
@@ -21,7 +21,7 @@ public class StackImpl {
     int pop() {
         if (top < 0) {
             System.out.println("StackImpl Underflow");
-            return 0;
+            return -1;
         } else {
             return a[top--];
         }
@@ -30,7 +30,7 @@ public class StackImpl {
     int peek() {
         if (top < 0) {
             System.out.println("StackImpl Underflow");
-            return 0;
+            return -1;
         } else {
             return a[top];
         }
@@ -56,7 +56,7 @@ public class StackImpl {
         s.push(10);
         s.push(20);
         s.push(30);
-        s.push(30);
+        s.push(40);
         System.out.println("Popped from stack : " + s.pop());
         System.out.println("Top element is : " + s.peek());
         System.out.println("Is stack empty : " + s.isEmpty());

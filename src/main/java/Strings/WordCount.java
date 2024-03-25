@@ -15,9 +15,7 @@ public class WordCount
 		for (int i = 0; i < s.length(); i++)
 		{
 			if ((s.charAt(i) == ' ') && (s.charAt(i + 1) != ' '))
-			{
-				count++; 
-			}
+				count++;
 		}
  		System.out.println("Number of words in a string = " + count);
 	}

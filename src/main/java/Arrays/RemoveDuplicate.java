@@ -1,31 +1,25 @@
 package Arrays;
 
-public class RemoveDuplicate
-{  
-public static int removeDuplicateElements(int arr[], int n){
-        if (n==0 || n==1){  
-            return n;  
-        }  
-        int[] temp = new int[n];  
-        int j = 0;  
-        for (int i=0; i<n-1; i++){    //used if array is sorted. if not, sort array first
-            if (arr[i] != arr[i+1]){  
-                temp[j++] = arr[i];  
-            }  
-         }  
-        temp[j++] = arr[n-1];     
-        // Changing original array size 
-        for (int i=0; i<j; i++){  
-        	System.out.print(temp[i]+" ");
-            }  
-        return j;  
-    }  
+public class RemoveDuplicate { // array is sorted, if not sort it
+
+    static int removeDuplicates(int[] arr) {
+        int i = 0;
+        for (int j = 1; j < arr.length; j++) {
+            if (arr[i] != arr[j]) {
+                i++;
+                arr[i] = arr[j];
+            }
+        }
+        return i + 1;
+    }
        
-    public static void main (String[] args) {  
-        int arr[] = {10,20,20,30,30,40,50,50};  
-        int length = arr.length;  
-        removeDuplicateElements(arr, length);  
-        
+    public static void main (String[] args) {
+        int arr[] = {1,1,2,2,2,3,3};
+        int k = removeDuplicates(arr);
+        System.out.println("The array after removing duplicate elements is ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }  
 }  
 
@@ -44,22 +38,19 @@ import java.util.ArrayList;
 
 public class RemoveDuplicate {
  
-    static void findDuplicates(int arr[], int len)
-    {
+    static void findDuplicates(int arr[], int len){
         ArrayList<Integer> al = new ArrayList<Integer>();
  
         for (int i = 0; i < len - 1; i++) {
-                if (al.contains(arr[i])) {
-                     continue;
-                } else {
-                     al.add(arr[i]);
-                }
+            if (al.contains(arr[i]))
+                 continue;
+            else
+                 al.add(arr[i]);
         }
         System.out.print(al + " ");
     }
  
-    public static void main(String[] args){
- 
+    public static void main(String[] args) {
         int arr[] = { 12, 11, 40, 12, 5, 6, 5, 12, 11 };
         int n = arr.length;
  

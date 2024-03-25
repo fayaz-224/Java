@@ -16,7 +16,7 @@ public class Frequency {
                     fr[j] = -1;  //To avoid counting/visiting same element again
                 }  
             }  
-            if(fr[i] != -1)  //to ignored visied ones
+            if(fr[i] != -1)  //to ignore visited ones
                 fr[i] = count;  
         }  
   
@@ -33,4 +33,4 @@ public class Frequency {
   }  
 
 
-//Another mothod, we can follow DuplicateElemnts code aswell by using Map.
+//Another method, we can follow DuplicateElements code as well by using Map.

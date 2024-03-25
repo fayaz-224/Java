@@ -1,10 +1,8 @@
-//two strings are anagrams if they contain the same characters but in a different order.
 package Strings;
-import java.util.Arrays;
 import java.util.Scanner;
+//two strings are anagrams if they contain the same characters but in a different order.
 
-public class Anagram
-{
+public class Anagram {
 //    public static boolean checkAnagram(String s1, String s2)
 //    {        
 //        s1 = s1.replaceAll("\\s", ""); // Remove all the white space
@@ -63,7 +61,7 @@ public class Anagram
         	{        		
         		xor ^= arr1[i] ^ arr2[i];
         	}
-            return xor == 0;
+            return xor == 0; //return type is boolean
         }
     }
 }

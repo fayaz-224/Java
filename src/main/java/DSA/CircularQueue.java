@@ -25,12 +25,12 @@ public class CircularQueue {
             System.out.println("Overflow");
             return;
         }
-        //if it's the 1st element
+        //if it's the 1st element we need to make front as '0'
         if (front == -1) {
             front = 0;
         }
 
-        rear = (rear + 1) % size; //as its circular queue, we need to fill empty places in array beginning
+        rear = (rear + 1) % size; //as its circular queue, we need to fill empty places in array from beginning
         arr[rear] = data;
     }
 

@@ -18,7 +18,7 @@ public class QueueWithLL {
         return head == null && tail == null;
     }
 
-    public static void add(int data) {
+    public static void add(int data) { //enQueue
         Node newNode = new Node(data);
         if (isEmpty()) {
             tail = head = newNode;
@@ -28,7 +28,7 @@ public class QueueWithLL {
         }
     }
 
-    public static int remove() {
+    public static int remove() { //deQueue
         if (isEmpty()) {
             System.out.println("empty queue");
             return -1;
@@ -61,7 +61,7 @@ public class QueueWithLL {
     }
 
     public static void main(String[] args) {
-        QueueWithLL q = new QueueWithLL();
+        QueueWithLL q = new QueueWithLL();  //no need for size
         add(1);
         add(2);
         add(3);
@@ -70,6 +70,7 @@ public class QueueWithLL {
         q.printList();
 
         remove();
+        peek();
         q.printList();
     }
 }

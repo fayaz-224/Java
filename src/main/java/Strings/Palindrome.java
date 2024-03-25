@@ -1,7 +1,7 @@
-// check given string is a palindrome or not
-//String should be same in any direction
 package Strings;
 import java.util.Scanner;
+// check given string is a palindrome or not
+//String should be same in any direction
 
 public class Palindrome {
 	public boolean isPalindrome(String str) {
