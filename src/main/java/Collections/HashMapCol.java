@@ -25,7 +25,7 @@ public class HashMapCol {
             System.out.println("key is not present in the map");
         }
 
-        System.out.println(map.get("China")); //key exists
+        System.out.println(map.get("China")); //key exists, returns its value
         System.out.println(map.get("Indonesia")); //key doesn't exist, returns null
 
         for (Map.Entry<String, Integer> e : map.entrySet()) { //map iteration - converting map to set

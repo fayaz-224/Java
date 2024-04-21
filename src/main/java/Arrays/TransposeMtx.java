@@ -1,16 +1,15 @@
 package Arrays;
 
+// where rows become columns, columns become rows
 /* 
-public class TransposeMtx	// where rows become columns, columns become rows
+public class TransposeMtx
 {
-   public static void main(String args[])
-   {
+   public static void main(String args[]) {
       int m, n, i, j;
       Scanner in = new Scanner(System.in);
       System.out.println("Enter the number of rows and columns of matrix");
       m = in.nextInt();
       n = in.nextInt();
- 
       int matrix[][] = new int[m][n];//original matrix
      
       System.out.println("Enter the elements of matrix");
@@ -19,8 +18,7 @@ public class TransposeMtx	// where rows become columns, columns become rows
             matrix[i][j] = in.nextInt();
       }
       
-      int transpose[][] = new int[n][m];//transpose matrix
-     
+      int transpose[][] = new int[n][m]; //transpose matrix
       for (i = 0; i < m; i++){
          for (j = 0; j < n; j++)     
             transpose[j][i] = matrix[i][j];        

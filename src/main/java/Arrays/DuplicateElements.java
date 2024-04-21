@@ -24,8 +24,7 @@ public static void main(String[] args) {
  
 public class DuplicateElements
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int arr[] = {12, 11, 40, 12, 5, 6, 5, 12, 11};
         int n = arr.length;
         printDuplicates(arr, n);
@@ -40,21 +39,19 @@ public class DuplicateElements
             if(map.containsKey(arr[i])){
                 count = map.get(arr[i]);  //gives value of that key
                 map.put(arr[i], count + 1);
-            }
-            else{
+            } else{
                 map.put(arr[i], 1);
             }
         }
          
-        for(Map.Entry<Integer,Integer> entry : map.entrySet())
-        {
+        for(Map.Entry<Integer,Integer> entry : map.entrySet()) {
             if(entry.getValue() > 1){		// if this check is removed, we will get frequecy of all elements
                 System.out.println(entry.getKey()+ " "+entry.getValue());
                 dup = true;
             }
         }
 
-        if(dup == false){
+        if(!dup){  //or dup == false
             System.out.println("No duplicates present in arrays");
         }
     }

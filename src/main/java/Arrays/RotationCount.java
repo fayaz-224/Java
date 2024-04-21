@@ -1,18 +1,30 @@
 package Arrays;
 
+//how many rotations we need to do to make the array sorted
 public class RotationCount {
     public static void main(String[] args) {
         int[] arr = {4,5,6,7,0,1,2};
         System.out.println(countRotations(arr));
     }
 
-    private static int countRotations(int[] arr) {
-        int pivot = findPivot(arr);
-        return pivot + 1;
+    //we can notice that the number of rotations is equal to the index of the minimum element
+    static int countRotations(int arr[]) { //Approach 1
+        int min = arr[0], min_index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+                min_index = i;
+            }
+        }
+        return min_index;
     }
 
-    // use this for non duplicates
-    static int findPivot(int[] arr) {
+//    static int countRotations(int[] arr) { //Approach 2
+//        int pivot = findPivot(arr); //pivot is the max element
+//        return pivot + 1;
+//    }
+
+    static int findPivot(int[] arr) { // use this for non duplicates
         int start = 0;
         int end = arr.length - 1;
         while (start <= end) {
@@ -33,8 +45,7 @@ public class RotationCount {
         return -1;
     }
 
-    // use this when arr contains duplicates
-    static int findPivotWithDuplicates(int[] arr) {
+    static int findPivotWithDuplicates(int[] arr) { // use this when arr contains duplicates
         int start = 0;
         int end = arr.length - 1;
         while (start <= end) {

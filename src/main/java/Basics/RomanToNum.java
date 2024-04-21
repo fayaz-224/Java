@@ -15,7 +15,7 @@ public class RomanToNum {
         romanMap.put('M', 1000);
 
         int returnNumber = romanMap.get(s.charAt(s.length() - 1));
-        for (int i = 0; i < s.length() - 1; i++) {  //imp: < len - 1
+        for (int i = 0; i < s.length() - 1; i++) {  //imp: i < len - 1
             if (romanMap.get(s.charAt(i)) < romanMap.get(s.charAt(i + 1))) {
                 returnNumber -= romanMap.get(s.charAt(i));
             } else {
@@ -26,10 +26,8 @@ public class RomanToNum {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+        String str = "XII";
         System.out.println(romanToInt(str));
-        sc.close();
     }
 }
 

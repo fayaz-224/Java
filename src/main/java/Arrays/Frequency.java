@@ -27,8 +27,7 @@ public class Frequency {
         for(int i = 0; i < fr.length; i++){  
             if(fr[i] != -1)  
                 System.out.println("    " + arr[i] + "    |    " + fr[i]);  
-        }  
-        System.out.println("----------------------");  
+        }
     }
   }  
 

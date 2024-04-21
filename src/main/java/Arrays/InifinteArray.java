@@ -1,10 +1,12 @@
 package Arrays;
 
+//find an element in Infinite array(assume we don't know the size of array - ie; we cant use size())
+//binarySearch
 public class InifinteArray {
     public static void main(String[] args) {
         int[] arr = {3, 5, 7, 9, 10, 17, 39, 63, 85, 90, 100, 130, 140, 160, 170};
-        int target = 39;
-        System.out.println(ans(arr, target));
+        int target = 130;
+        System.out.println("Element found at : " + ans(arr, target));
     }
 
     static int ans(int[] arr, int target) {
@@ -16,7 +18,7 @@ public class InifinteArray {
         while (target > arr[end]) {
             int temp = end + 1; // this is my new start
             // double the box value
-            // end = previous end + sizeofbox*2
+            // end = previous end + sizeofbox * 2
             end = end + (end - start + 1) * 2; //end - start + 1 gives size of an array
             start = temp;
         }
@@ -25,7 +27,7 @@ public class InifinteArray {
 
     static int binarySearch(int[] arr, int target, int start, int end) {
         while(start <= end) {
-            int mid = start + (end - start) / 2;
+            int mid = start + (end - start)/2;
 
             if (target < arr[mid]) {
                 end = mid - 1;

@@ -1,15 +1,13 @@
 package Basics;
 
-class PalindromeNumber	//a number that is same after reverse.
+/*
+class PalindromeNumber	//a number that is same even after reversing it.
 {  
-	public static void main(String args[])
-	{  
+	public static void main(String args[]) {
 		int k,sum=0,temp;    
 		int n=151;
-  
 		temp=n;    
-		while(n>0)
-		{    
+		while(n>0) {
 			k=n%10;    
 			sum=(sum*10)+k;    
 			n=n/10;    
@@ -20,34 +18,28 @@ class PalindromeNumber	//a number that is same after reverse.
 			System.out.println("not palindrome");    
 	}  
 }  
+*/
 
-/*
 class PalindromeNumber { 
 
-// Recursive function to reverse the digits of number 
-static int recursive_func(int n, int sum) 
-{ 
-    if (n < 10) { 
-        return sum * 10 + n; 
-    } 
-    else { 
-        int k = n % 10; 
-        rev = (sum * 10) + k; 
-        return recursive_func(n/10, sum); 
-    } 
-} 
+	static int recursive_func(int n, int sum) {
+		if (n < 10) {
+			return sum * 10 + n;
+		} else {
+			int k = n % 10;
+			sum = (sum * 10) + k;
+			return recursive_func(n/10, sum);
+		}
+	}
 
-public static void main(String[] args) 
-{ 
-    int n = 123464321; 
-    int rev = recursive_func(n, 0); 
+	public static void main(String[] args) {
+		int n = 123464321;
+		int rev = recursive_func(n, 0);
+		System.out.println("Reverse of n = " + rev);
 
-    System.out.println("Reverse of n = " + rev); 
-
-    if (n == rev) 
-        System.out.println("Palindrome = Yes"); 
-    else
-        System.out.println("Palindrome = No"); 
-} 
+		if (n == rev)
+			System.out.println("Palindrome = Yes");
+		else
+			System.out.println("Palindrome = No");
+	}
 }
-*/

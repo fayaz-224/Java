@@ -5,47 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95737011-04b4-47e6-89d4-8842108fae3c" name="Changes" comment="update codes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/LargestElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/PeakInMountainArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/SearchInMountainArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/StreamApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DSA/StackWithLL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Patterns/IllusionPattern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Recursion/Recursion1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sort/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/LargestPossibleNum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/BuySellStock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/KadaneAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/RemoveSpecialChars.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/StringRotaion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/PrototypeDP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/SingletonDP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PsudoCode/Code1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ArrrayRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/ArrrayRotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/DuplicateElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/DuplicateElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/Frequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/Frequency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/IdentityMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/IdentityMtx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/LargestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/LargestSmallestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MoAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MoAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxMultiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RemoveDuplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/RemoveDuplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SumOfRowColoum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/SumOfRowColoum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ZerosToEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/ZerosToEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/CallByValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/CallByValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/DateDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/DateDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Deadlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Deadlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Factorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/GCD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/GCD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/NumberToWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/NumberToWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/PalindromeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/PalindromeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Prime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Prime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/RomanToNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/RomanToNum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/HashMapCol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapCol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/HashMapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/OverrideHashCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/OverrideHashCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/StreamApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/StreamApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/BSTImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/BSTImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/BinaryTreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/BinaryTreeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DSA/CircularQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/CircularQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/LinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/LinkedListImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/QueueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/QueueImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DSA/QueueWithLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/QueueWithLL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/StackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/StackImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/DecreasingPattern.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Diamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/IncreasingPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/BasicPatterns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Pyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Pyramid2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Resurssion/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Recursion/Permutations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Resurssion/TowerOfHonai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Recursion/TowerOfHonai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/LinearSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/LinearSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/SelectionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Pangram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Pangram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Abstraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Abstraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Encapsulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Encapsulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/HybridInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/HybridInheritance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Recursion/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Recursion/Permutations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Strings/ReverseEachWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/ReverseEachWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/StringCountInGivenText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/StringCountInGivenText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/UpperCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/UpperCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/WordCount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +68,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -81,21 +95,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "last_opened_file_path": "C:/Users/fayazs/Downloads/job",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fayazs/Downloads/job&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.LinkedListImpl">
-    <configuration name="LinkedListImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.LinkedListImpl" />
+}</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="BSTImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DSA.BSTImpl" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +121,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueueImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.QueueImpl" />
+    <configuration name="BinaryTreeImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DSA.BinaryTreeImpl" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -120,12 +134,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.StackImpl" />
+    <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Oops.Deadlock" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DSA.*" />
+          <option name="PATTERN" value="Oops.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,12 +147,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackWithLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.StackWithLL" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DesignPatterns.Main" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DSA.*" />
+          <option name="PATTERN" value="DesignPatterns.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,12 +160,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpperCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Strings.UpperCase" />
+    <configuration name="StreamApi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Collections.StreamApi" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Strings.*" />
+          <option name="PATTERN" value="Collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LinkedListImpl" />
-        <item itemvalue="Application.StackWithLL" />
-        <item itemvalue="Application.QueueImpl" />
-        <item itemvalue="Application.StackImpl" />
-        <item itemvalue="Application.UpperCase" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BSTImpl" />
+        <item itemvalue="Application.BinaryTreeImpl" />
+        <item itemvalue="Application.StreamApi" />
+        <item itemvalue="Application.Deadlock" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710046538951</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update codes">
+      <option name="closed" value="true" />
+      <created>1711351034005</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711351034005</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,12 +240,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add java project" />
     <MESSAGE value="add jasypt" />
     <MESSAGE value="update codes" />
     <option name="LAST_COMMIT_MESSAGE" value="update codes" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

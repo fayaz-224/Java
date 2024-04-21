@@ -3,11 +3,11 @@ package Arrays;
 public class RemoveDuplicate { // array is sorted, if not sort it
 
     static int removeDuplicates(int[] arr) {
-        int i = 0;
+        int i = 0;  //imaginary index
         for (int j = 1; j < arr.length; j++) {
             if (arr[i] != arr[j]) {
                 i++;
-                arr[i] = arr[j];
+                arr[i] = arr[j]; //without using extra space
             }
         }
         return i + 1;
@@ -29,7 +29,7 @@ public class RemoveDuplicate { // array is sorted, if not sort it
 
 //Take a Set 
 //Insert all array elements in the Set. 
-//Set does not allow duplicates and sets like LinkedHashSet maintains the order of insertion so it will remove duplicates 
+//Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion so it will remove duplicates
 //and elements will be printed in the same order in which it is inserted.
 
 

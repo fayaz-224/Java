@@ -57,7 +57,7 @@ public class StreamApi {
         System.out.println(squareSet);
 
         // forEach method
-        numbers.stream().map(x -> x * x).forEach(y -> System.out.println(y));
+        numbers.stream().map(x -> x + x).forEach(y -> System.out.println(y));
 
         // reduce method
         int even = numbers.stream()
@@ -66,8 +66,8 @@ public class StreamApi {
         System.out.println("Even : " + even);
 
         //Max & min methods
-        Optional<Integer> max = numbers.stream().max((x,y) -> x.compareTo(y));
-        Optional<Integer> min = numbers.stream().min((x,y) -> x.compareTo(y));
+        int max = numbers.stream().max(Integer::compareTo).get();
+        int min = numbers.stream().min((x,y) -> x.compareTo(y)).get();
         System.out.println(max + " "+ min);
     }
 }

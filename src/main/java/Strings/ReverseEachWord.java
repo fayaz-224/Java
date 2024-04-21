@@ -23,13 +23,18 @@ public static void main(String[] args) {
 
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ReverseEachWord
 {
     static void reverseEachWordOfString(String inputString)
     {
         String[] words = inputString.split("\\s+"); // + means continous spaces
-         
+         //using Streams
+        List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).collect(Collectors.toList());
+        System.out.println("Stream op: "+res);
+
         String reverseString = "";
         for (int i = 0; i < words.length; i++) {
             String word = words[i];  //take words one by one.

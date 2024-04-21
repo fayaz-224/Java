@@ -57,7 +57,7 @@ public class LinkedListImpl {   //singly linked-list
         }
 
         size--;
-        if (head.next == null) {
+        if (head.next == null) { //if we have only one node
             head = null;
             return;
         }
@@ -96,6 +96,7 @@ public class LinkedListImpl {   //singly linked-list
         }
     }
 
+    //https://www.youtube.com/watch?v=t7YaoQOFXzk&list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&index=28
     public void reverseList() {  //without extraMemory
         if (head == null || head.next == null) {
             return;
@@ -104,11 +105,11 @@ public class LinkedListImpl {   //singly linked-list
         Node prevNode = head;
         Node currNode = head.next;
         while (currNode != null) {
-            Node nextNode = currNode.next;
+            Node nextNodes = currNode.next;
             currNode.next = prevNode;
 
             prevNode = currNode;
-            currNode = nextNode;
+            currNode = nextNodes;
         }
         head.next = null;
         head = prevNode;

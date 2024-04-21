@@ -65,7 +65,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         System.out.print(root.data + " ");
     }
 
-    //LevelOrder - >gives order of elements based on their levels
+    //LevelOrder -> gives order of elements based on their levels
     public static void levelOrder(Node root) { //Approach 1
         if (root == null) {
             return;
@@ -77,12 +77,10 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
             Node curr = q.poll(); // Printing the top element and removing it
             if (curr == null) {
                 System.out.println();
-                //queue empty
-                if (q.isEmpty()) {
+                if (q.isEmpty())
                     break;
-                } else {
+                else
                     q.add(null);
-                }
             } else {
                 System.out.print(curr.data + " ");
                 if (curr.left != null) {
@@ -169,7 +167,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     //isSymmetrical -> both sides of a tree should be equal
     public static boolean isSymmetric(Node root) {
         Queue<Node> queue = new LinkedList<>();
-        queue.add(root.left);
+        queue.add(root.left); //don't need root as it is common for both sides
         queue.add(root.right);
 
         while(!queue.isEmpty()) {
@@ -286,7 +284,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         Node node1 = findNode(root, 6);
         System.out.println("findNode: " + node1.data);
 
-        System.out.println("Level of node %s" + node1.data +" is :"+ level(root, node1, 0));
+        System.out.println("Level of node " + node1.data +" is :"+ level(root, node1, 0));
 
         System.out.println("isSymmetric:"+isSymmetric(root));
 

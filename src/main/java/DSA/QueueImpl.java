@@ -18,7 +18,7 @@ public class QueueImpl {    //Impl queue using array
     }
 
     public boolean isFull() {
-        return rear == size - 1;
+        return rear >= size - 1;
     }
 
     public void add(int data) {  //enqueue

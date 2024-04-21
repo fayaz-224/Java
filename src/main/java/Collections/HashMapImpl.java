@@ -1,8 +1,7 @@
 package Collections;
-//Apna college
 
 import java.util.*;
-
+//Apna college
 public class HashMapImpl<K, V> {
     private class Node {
         K key;
@@ -14,9 +13,9 @@ public class HashMapImpl<K, V> {
         }
     }
 
-    private int n; //n - nodes
-    private final int N; //N - buckets
-    private LinkedList<Node>[] buckets; //N = buckets.length
+    private int n; //nodes
+    private final int N; //buckets
+    private LinkedList<Node>[] buckets;
 
     @SuppressWarnings("unchecked")
     public HashMapImpl() {
@@ -60,7 +59,7 @@ public class HashMapImpl<K, V> {
     }
 
     public void put(K key, V value) {
-        int bi = hashFunction(key);//bi = bucketIndex
+        int bi = hashFunction(key);  //bi = bucketIndex
         int di = searchInLL(key, bi); //di = dataIndex, means index inside LL
         if (di == -1) { //key doesn't exist
             buckets[bi].add(new Node(key, value));
@@ -78,15 +77,13 @@ public class HashMapImpl<K, V> {
 
     public boolean containsKey(K key) {
         int bi = hashFunction(key);
-        int di = searchInLL(key, bi); //di = -1
-        //key doesn't exist
-        //key exists
+        int di = searchInLL(key, bi); //di = -1, if key doesn't exist. otherwise di != -1
         return di != -1;
     }
 
     public V remove(K key) {
         int bi = hashFunction(key);
-        int di = searchInLL(key, bi); //di = -1
+        int di = searchInLL(key, bi);
         if (di == -1) { //key doesn't exist
             return null;
         } else { //key exists

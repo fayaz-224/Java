@@ -1,12 +1,12 @@
 package Arrays;
 //90 - clockwise direction
-//this can be achieved by doing transpose and reverse elements in the row, if u don't want to use another mtx.
+//this can also be achieved by doing transpose and reverse elements in the row, if u don't want to use another mtx.
 public class MtxRotation {
 	public static void main(String[] args) {
 	  int[][] mat= {{1,2,3},{4,5,6},{7,8,9}};
 
-        int n = mat.length;
-      int[][] m1 = new int[n][n];
+      int n = mat.length;
+      int[][] m1 = new int[n][n]; //new mtx
       
       //rotated 90 degreee clockwise
       for(int i =0;i<n;i++){
@@ -23,8 +23,6 @@ public class MtxRotation {
 
 
 /*
-
-import java.util.*;
 class MtxRotation { 	//without using another matrix
     static void rotate(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {   //transpose

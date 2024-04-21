@@ -1,16 +1,14 @@
 package Oops;
 
 // contains abstract & non-abstract methods
- abstract class Bike{  
-	 
-   abstract void run();  
-   
+ abstract class Bike{
+   abstract void run();
    void changeGear(){
 	   System.out.println("gear changed");
    }  
  }  
  
- class Honda extends Bike{  //implimenting abstract method, othrewise we need to make this class abstarct
+ class Honda extends Bike{  //implement abstract method, otherwise we need to make this class abstract
 	 void run(){System.out.println("running safely..");}  
  }  
   

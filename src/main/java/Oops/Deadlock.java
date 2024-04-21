@@ -1,4 +1,4 @@
-package Basics;
+package Oops;
 
 public class Deadlock
 {  
@@ -10,19 +10,17 @@ public class Deadlock
     Thread t1 = new Thread() 
     {  
       public void run() {  
-          synchronized (resource1) //synchronized keyword locks the resourse with current thread
+          synchronized (resource1) //synchronized keyword locks the resource with current thread
           {  
-        	  System.out.println("Thread 1: locked resource 1");  //thread 1 locks resourse 1
+        	  System.out.println("Thread 1: locked resource 1");
   
-        	  try 
-        	  { 
+        	  try {
         		  Thread.sleep(100);  //thread 1 goes to sleep state.so, another thread starts i.e thread 2
-        	  } catch (Exception e) {}  
+        	  } catch (Exception e) {}
   
-           synchronized (resource2) 
-           {  
-            System.out.println("Thread 1: locked resource 2");  //since resource 2 is already locked by thread 2 it waits for it.
-           }  
+              synchronized (resource2) {
+               System.out.println("Thread 1: locked resource 2");  //since resource 2 is already locked by thread 2 it waits for it.
+              }
          }  
       }  
     };  
@@ -33,17 +31,15 @@ public class Deadlock
       public void run() {  
         synchronized (resource2) //thread 2 locks resourse 2
         {  
-          System.out.println("Thread 2: locked resource 2");  
+            System.out.println("Thread 2: locked resource 2");
   
-          	try 
-          	{ 
+          	try {
           		Thread.sleep(100);  //thread 2 goes to sleep state.So, above thread 1 continues after 100 ms
-          	} catch (Exception e) {}  
+          	} catch (Exception e) {}
   
-        synchronized (resource1) 
-        {  
-            System.out.println("Thread 2: locked resource 1");  
-          }  
+            synchronized (resource1) {
+                System.out.println("Thread 2: locked resource 1");
+            }
         }  
       }  
     };    

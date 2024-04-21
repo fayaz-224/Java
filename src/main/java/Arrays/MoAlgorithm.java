@@ -16,33 +16,31 @@ class Query{
 class MoAlgorithm
 {
     // Prints sum of all query ranges. m is number of queries, n is the size of the array.
-    static void printQuerySums(int a[], int n, ArrayList<Query> q, int m)
+    static void printQuerySums(int arr[], ArrayList<Query> q, int m)
     {
         for (int i=0; i<m; i++)   // One by one compute sum of all queries
         {
             // Left and right boundaries of current range
-            int L = q.get(i).start, R = q.get(i).end;
+            int left = q.get(i).start, right = q.get(i).end;
      
             // Compute sum of current query range
             int sum = 0;
-            for (int j=L; j<=R; j++)
-                sum += a[j];
+            for (int j=left; j<=right; j++)
+                sum += arr[j];
             
-            System.out.println("Sum of [" + L + ", " + R + "] is "  + sum);
+            System.out.println("Sum of [" + left + ", " + right + "] is "  + sum);
         }
     }
      
-    public static void main(String argv[])
-    {
-        int a[] = {1, 1, 2, 1, 3, 4, 5, 2, 8};
-        int n = a.length;
+    public static void main(String argv[]){
+        int arr[] = {1, 1, 2, 1, 3, 4, 5, 2, 8};
          
-        ArrayList<Query> q = new ArrayList<Query>();
+        ArrayList<Query> q = new ArrayList<>();
         q.add(new Query(0,4));	//query ranges for which we need sum
         q.add(new Query(1,3));
         q.add(new Query(2,7));
          
         int m = q.size();
-        printQuerySums(a, n, q, m);
+        printQuerySums(arr, q, m);
     }
 }

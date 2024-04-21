@@ -17,7 +17,6 @@ public class SearchInRotatedArray {
         // if pivot is found, you have found 2 asc sorted arrays
         if (nums[pivot] == target)
             return pivot;
-
         if (target >= nums[0]) {
             return binarySearch(nums, target, 0, pivot - 1);
         } else {
@@ -40,8 +39,7 @@ public class SearchInRotatedArray {
         return -1;
     }
 
-    // use this when arr doesn't contain duplicates
-    static int findPivot(int[] arr) {
+    static int findPivot(int[] arr) { // use this when arr doesn't contain duplicates
         int start = 0;
         int end = arr.length - 1;
         while (start <= end) {
@@ -62,8 +60,7 @@ public class SearchInRotatedArray {
         return -1;
     }
 
-    // use this when arr contains duplicates
-    static int findPivotWithDuplicates(int[] arr) {
+    static int findPivotWithDuplicates(int[] arr) { // use this when arr contains duplicates
         int start = 0;
         int end = arr.length - 1;
         while (start <= end) {

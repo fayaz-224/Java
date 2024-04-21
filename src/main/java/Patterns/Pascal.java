@@ -17,11 +17,10 @@ public class Pascal
 	        for(int j=i;j<n;j++)
 	        	System.out.print(" ");
 	        
-	        int k=1;	//imp
-            for(int j=1;j<=i;j++)
-            {
+	        int k=1;
+            for(int j=1;j<=i;j++) {
                 System.out.print(k+" ");
-                k=k*(i-j)/j; 	//main logic
+                k = k*(i-j)/j; 	//main logic
             }
             System.out.println();
         }

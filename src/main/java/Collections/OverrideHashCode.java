@@ -42,9 +42,9 @@ class Employee {
     }
 
     @Override
-    public int hashCode() {
-        //  int result=17;
-        //   result=31*result+age;
+    public int hashCode() { //custom hashing
+        // int result=17;
+        // result=31*result+age;
         // result=31*result+(name!=null ? name.hashCode():0);
         // return result;
         return Objects.hash(name, age);

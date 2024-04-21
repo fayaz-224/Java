@@ -14,7 +14,6 @@ class ValidParanthesis {
                     st.pop();
                 else
                     return false;
-              
             else if(s.charAt(i) ==']')
                 if (!st.empty() && st.peek() == '[')
                     st.pop();

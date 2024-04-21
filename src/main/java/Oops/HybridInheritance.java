@@ -1,11 +1,11 @@
 package Oops;
 
-//the hybrid inheritance is the composition of two or more types of inheritance. It is also acheived through Interfaces only.
+//the hybrid inheritance is the composition of two or more types of inheritance. It is also achieved through Interfaces only.
 class ClassA 
 {
-    public void dispA()
+    public void displayA()
     {
-        System.out.println("disp() method of ClassA");
+        System.out.println("display() method of ClassA");
     }
 }
 
@@ -25,15 +25,15 @@ class HybridInheritance extends ClassA implements InterfaceB, InterfaceC //Singl
     {
         System.out.println("show() method implementation");
     }
-    public void dispD()
+    public void displayD()
     {
-        System.out.println("disp() method of ClassD");
+        System.out.println("display() method of HybridInheritance");
     }
     public static void main(String args[])
     {
     	HybridInheritance  d = new HybridInheritance ();
-        d.dispD();
+        d.displayD();
         d.show();
-        d.dispA();
+        d.displayA();
     }
 }

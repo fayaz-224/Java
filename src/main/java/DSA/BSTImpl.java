@@ -15,7 +15,7 @@ public class BSTImpl {
         }
     }
 
-    static Node insert(Node root, int val) {
+    static Node insert(Node root, int val) { //O(H)
         if (root == null) {
             root = new Node(val);
             return root;
@@ -98,7 +98,7 @@ public class BSTImpl {
         return result;
     }
 
-    private static boolean searchNode(Node root, int key) {
+    private static boolean searchNode(Node root, int key) { //O(H)
         if (root == null)
             return false;
 
@@ -117,20 +117,30 @@ public class BSTImpl {
             root.left = deleteNode(root.left, val);
         else if (root.data < val)
             root.right = deleteNode(root.right, val);
-        else {
+        else { //means root.data == val
             //No child - delete node & return null to parent
             if (root.left == null && root.right == null)
                 return null;
+
             //one child - delete node & replace with child node
             if (root.left == null)
                 return root.right;
             else if (root.right == null)
                 return root.left;
-            //two childs - replace with inorder successor(left most from right subtree) & delete node
+
+            //two children - replace with inorder successor(left most in right subtree) & delete node
             Node IS = InOrderSuccesor(root.right);
             root.data = IS.data;
-            deleteNode(root.right, IS.data);
+            root.right = deleteNode(root.right, IS.data);
         }
+        return root;
+    }
+
+    //left most in right subtree
+    private static Node InOrderSuccesor(Node root) {
+        while (root.left != null)
+            root = root.left; //go to left most child
+
         return root;
     }
 
@@ -142,13 +152,6 @@ public class BSTImpl {
 
         root.left = right;
         root.right = left;
-        return root;
-    }
-
-    private static Node InOrderSuccesor(Node root) {
-        while (root.left != null)
-            root = root.left;
-
         return root;
     }
 
@@ -170,7 +173,7 @@ public class BSTImpl {
     static void printInRange(Node root, int X, int Y) {
         if (root == null) return;
 
-        if (root.data >= X && root.data <= Y) { //nodes present in  both sides
+        if (root.data >= X && root.data <= Y) { //nodes present in  both sides, use inorder
             printInRange(root.left, X, Y);
             System.out.print(root.data + " ");
             printInRange(root.right, X, Y);
@@ -180,6 +183,7 @@ public class BSTImpl {
             printInRange(root.right, X, Y);
     }
 
+    ////add all possible paths from root to nodes
     private static void root2LeafPath(Node root, ArrayList<Integer> path) {
         if (root == null) return;
 
@@ -222,7 +226,6 @@ public class BSTImpl {
         }
 
         count++;
-
         if(count == k) {
             return root.data;
         }

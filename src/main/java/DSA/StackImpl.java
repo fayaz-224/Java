@@ -12,7 +12,7 @@ public class StackImpl { //Impl stack using arrays
     }
 
     void push(int x) {
-        if (top >= (MAX - 1))
+        if (top >= MAX - 1)
             System.out.println("StackImpl Overflow");
         else
             a[++top] = x;
