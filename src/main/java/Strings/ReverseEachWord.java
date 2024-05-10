@@ -1,7 +1,6 @@
 package Strings;
 /*
-class StringFormatter 
-{  
+class StringFormatter {
 	public static String reverseWord(String str){  
     String words[]=str.split("\\s+");  
     String reverseWord="";  
@@ -11,7 +10,7 @@ class StringFormatter
         reverseWord += sb.toString()+" ";  
     }  
     return reverseWord.trim();  
-}  
+   }
 }  
 public class ReverseEachWord {  
 public static void main(String[] args) {  
@@ -26,15 +25,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ReverseEachWord
-{
-    static void reverseEachWordOfString(String inputString)
-    {
-        String[] words = inputString.split("\\s+"); // + means continous spaces
+public class ReverseEachWord {
+    static void reverseEachWordOfString(String inputString) {
+        String[] words = inputString.split("\\s+"); // + means continuous spaces
          //using Streams
-        List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).collect(Collectors.toList());
+        List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).toList();
         System.out.println("Stream op: "+res);
 
+        //without streams
         String reverseString = "";
         for (int i = 0; i < words.length; i++) {
             String word = words[i];  //take words one by one.
@@ -44,7 +42,7 @@ public class ReverseEachWord
                 reverseWord += word.charAt(j);
             }
              
-            reverseString = reverseString + reverseWord + " ";
+            reverseString += reverseWord + " ";
         }
          
         System.out.println(inputString);

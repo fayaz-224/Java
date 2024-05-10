@@ -1,6 +1,7 @@
 package DesignPatterns;
 
-//The Builder design pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+//The Builder design pattern used in software design to construct a complex object step by step.
+// It separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
 // It's useful when you need to create objects with many optional parameters or with different configurations.
 public class Dog {
     private String name;
@@ -8,14 +9,14 @@ public class Dog {
     private int age;
     private String color;
 
-    public Dog (DogBuilder builder) {
+    public Dog(DogBuilder builder) {
         this.name = builder.getName();
         this.breed = builder.getBreed();
         this.age = builder.getAge();
         this.color = builder.getColor();
     }
 
-    // No setters are exposed to clients or we can also make setters as private
+    // No setters are exposed to clients (or) we can also make setters as private
     public String getBreed() {
         return breed;
     }

@@ -2,57 +2,59 @@ package DSA;
 
 //circular queue using array
 public class CircularQueue {
-    static int[] arr;
-    static int size;
-    static int front = -1;
-    static int rear = -1;
+    int[] arr;
+    int size;
+    int capacity;
+    int front;
+    int rear;
 
-    CircularQueue(int size) {
-        CircularQueue.size = size;
-        arr = new int[size];
+    CircularQueue(int capacity) {
+        this.capacity = capacity;
+        this.arr = new int[capacity];
+        this.front = 0;
+        this.rear = -1;
+        this.size = 0;
     }
 
-    public static boolean isEmpty() {
-        return rear == -1 && front == -1;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    public static boolean isFull() {
-        return (rear + 1) % size == front;
+    public boolean isFull() {
+        return size == capacity;
     }
 
-    public static void add(int data) {
+    public int size() {    // Get the size of the queue
+        return size;
+    }
+
+    // Add an element to the rear of the queue
+    public void enqueue(int item) {
         if (isFull()) {
-            System.out.println("Overflow");
+            System.out.println("Queue is full. Unable to enqueue.");
             return;
         }
-        //if it's the 1st element we need to make front as '0'
-        if (front == -1) {
-            front = 0;
-        }
-
-        rear = (rear + 1) % size; //as its circular queue, we need to fill empty places in array from beginning
-        arr[rear] = data;
+        rear = (rear + 1) % capacity;
+        arr[rear] = item;
+        size++;
     }
 
-    public static int remove() {
+    // Remove and return the element from the front of the queue
+    public int dequeue() {
         if (isEmpty()) {
-            System.out.println("empty queue");
-            return -1;
+            System.out.println("Queue is empty. Unable to dequeue.");
+            return -1; // Returning -1 indicating an error condition. Modify as needed.
         }
-        int res = arr[front];
-
-        //if only 1 element is present
-        if (front == rear)
-            front = rear = -1;
-        else
-            front = (front + 1) % size;
-
-        return res;
+        int item = arr[front];
+        front = (front + 1) % capacity;
+        size--;
+        return item;
     }
 
-    public static int peek() {
+    // Get the element at the front of the queue without removing it
+    public int peek() {
         if (isEmpty()) {
-            System.out.println("empty queue");
+            System.out.println("Queue is empty.");
             return -1;
         }
         return arr[front];
@@ -60,21 +62,21 @@ public class CircularQueue {
 
     public static void main(String[] args) {
         CircularQueue q = new CircularQueue(5);
-        add(1);
-        add(2);
-        add(3);
-        add(4);
-        add(5);
-        System.out.println("Removed : " + remove());
-        add(6);
-        System.out.println("Removed : " + remove());
-        add(7);
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.enqueue(5);
+        System.out.println("Removed : " + q.dequeue());
+        q.enqueue(6);
+        System.out.println("Removed : " + q.dequeue());
+        q.enqueue(7);
 
-        while (!isEmpty()) {
-            System.out.println("Remove all : " + remove());
+        while (!q.isEmpty()) {
+            System.out.println("Remove all : " + q.dequeue());
         }
 
-        System.out.println("Is queue empty : " + isEmpty());
+        System.out.println("Is queue empty : " + q.isEmpty());
     }
 }
 

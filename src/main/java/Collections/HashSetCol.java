@@ -24,7 +24,7 @@ public class HashSetCol {
         set.add(0);
         System.out.println(set);
 
-        Iterator it = set.iterator();   //iterrator
+        Iterator it = set.iterator();   //iterator
         while (it.hasNext()) {
             System.out.print(it.next() + ", ");
         }

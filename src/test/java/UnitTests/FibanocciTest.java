@@ -15,7 +15,7 @@ public class FibanocciTest {
 
     @Test
     public void test1() {
-        int actual = Fibanocci.fib(5);  //gives nth fib number
+        int actual = Fibanocci.nthFibNumber(5);  //gives nth fib number
         System.out.println(actual);
         assertEquals(3, actual);
     }

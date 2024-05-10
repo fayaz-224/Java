@@ -2,6 +2,7 @@ package Collections;
 
 import java.util.*;
 //Apna college
+@SuppressWarnings("unchecked")  //add @SuppressWarnings("unchecked") annotation to the class level, which is generally the preferred way to suppress warnings.
 public class HashMapImpl<K, V> {
     private class Node {
         K key;
@@ -17,7 +18,6 @@ public class HashMapImpl<K, V> {
     private final int N; //buckets
     private LinkedList<Node>[] buckets;
 
-    @SuppressWarnings("unchecked")
     public HashMapImpl() {
         this.N = 4;
         this.buckets = new LinkedList[4];
@@ -42,7 +42,6 @@ public class HashMapImpl<K, V> {
         return -1;
     }
 
-    @SuppressWarnings("unchecked")
     private void rehash() {
         LinkedList<Node>[] oldBucket = buckets;
         buckets = new LinkedList[N * 2];
@@ -132,6 +131,6 @@ public class HashMapImpl<K, V> {
         }
 
         map.remove("India");
-        System.out.println(map.get("India")); //returns null as were removed this key
+        System.out.println("fetch India : " + map.get("India")); //returns null as were removed this key
     }
 }

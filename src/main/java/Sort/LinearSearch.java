@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 class LinearSearch // array need not be sorted, like for binary search
 {
-   public static void main(String args[])
-   {
+   public static void main(String args[]) {
 	    int i, n=7, key;  //n is no. of elements
 
 	    Scanner s = new Scanner(System.in);

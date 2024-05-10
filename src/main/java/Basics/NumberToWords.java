@@ -16,11 +16,11 @@ public class NumberToWords {
         }
 
         // Extract digits
-        int thousands = number / 1000;
-        int hundreds = (number % 1000) / 100;
-        int tensPart = (number % 100) / 10;
         int onesPart = number % 10;
-        System.out.println("Digits are "+thousands+" "+hundreds+" "+tensPart+" "+onesPart);
+        int tensPart = (number / 10) % 10;
+        int hundreds = (number / 100) % 10;
+        int thousands = number / 1000;
+        System.out.println("Given digits are "+thousands+" "+hundreds+" "+tensPart+" "+onesPart);
 
         StringBuilder result = new StringBuilder();
 
@@ -53,33 +53,36 @@ public class NumberToWords {
 
 
 /*
-public class NumberToWords { //not working properly for 119, 214 etc
+public class NumberToWords {
+    public static void main(String[] args) {
 
- public static void main(String[] args) {
-  int number = 214;
-  
-  if(number < 1|| number > 9999) {
-       System.out.println("Invalid Number");
-  }else {
-       int onesPart = number%10;
-       int b = number/10;
-       int tensPart = b%10;
-       int g = number/100;
-       int hundredsPart = g%10;
-       int thousandsPart = number/1000;
+        int number = 119;
+        if (number < 0 || number > 999) {
+            System.out.println("Invalid Number");
+        } else {
+            int onesPart = number % 10;
+            int tensPart = (number / 10) % 10;
+            int hundredsPart = (number / 100) % 10;
 
-       String sD[] = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Ninteen"};
-       String ty[] = {"","Ten","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+            String sD[] = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+            String ty[] = {"", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
-       if(number < 20)
-          System.out.println(sD[number]);
-       else if (number >= 20 && number <= 100)
-          System.out.println(ty[tensPart]+" "+sD[onesPart]);
-       else if(number >= 100 && number <= 999)
-          System.out.println(sD[g]+" Hundred "+ty[tensPart]+" "+sD[onesPart]);
-       else
-          System.out.println(sD[thousandsPart]+" Thousand "+sD[hundredsPart]+" Hundred "+ty[tensPart]+" "+sD[onesPart]);
-   }
- }
+            if (number == 0) {
+                System.out.println("Zero");
+            } else if (number < 20) {
+                System.out.println(sD[number]);
+            } else if (number < 100) {
+                System.out.println(ty[tensPart] + " " + sD[onesPart]);
+            } else if (number < 1000) {
+                if (number % 100 < 20) {
+                    System.out.println(sD[hundredsPart] + " Hundred " + sD[number % 100]);
+                } else {
+                    System.out.println(sD[hundredsPart] + " Hundred " + ty[tensPart] + " " + sD[onesPart]);
+                }
+            } else {
+                System.out.println("Provide a number below 1000");
+            }
+        }
+    }
 }
 */

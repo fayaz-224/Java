@@ -23,7 +23,7 @@ public class HollowButterfly {
                     System.out.print(" ");
             }
 
-            for (int j = 1; j <= 2 * (n - i); j++) {
+            for (int j = 1; j <= 2 * (n - i); j++) {    //imp
                 System.out.print(" ");
             }
 
@@ -45,7 +45,7 @@ public class HollowButterfly {
                     System.out.print(" ");
             }
 
-            for (int j = 1; j <= 2 * (n - i); j++) {
+            for (int j = 1; j <= 2 * (n - i); j++) {    //imp
                 System.out.print(" ");
             }
 

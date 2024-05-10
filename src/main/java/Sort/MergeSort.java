@@ -1,4 +1,5 @@
 package Sort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -6,15 +7,15 @@ import java.util.Arrays;
 // whereas Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets.
 class MergeSort {
 
-    void sort(int arr[], int l, int r) {
-        if (l < r) {
-            int mid = (l + r) / 2; // or int mid = l + (r - l) / 2; to avoid Space complexity if both l, r are big
+    void sort(int arr[], int start, int end) {
+        if (start < end) {
+            int mid = (start + end) / 2; // or int mid = l + (r - l) / 2; to avoid Space complexity if both l, r are big
 
             // Divide
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
+            sort(arr, start, mid);
+            sort(arr, mid + 1, end);
             // Merge by sorting
-            merge(arr, l, mid, r);
+            merge(arr, start, mid, end);
         }
     }
 
@@ -25,7 +26,7 @@ class MergeSort {
 
         //storing elements in the temporary array in a sorted manner
         while (leftStart <= mid && rightStart <= high) {
-            if (arr[leftStart] <= arr[rightStart]) {  //for sorting in descending, use if(L[i] >= <[j])
+            if (arr[leftStart] <= arr[rightStart]) {  //for sorting in descending, use if(L[i] >= R[j])
                 temp.add(arr[leftStart]);
                 leftStart++;
             } else {
@@ -46,9 +47,9 @@ class MergeSort {
             rightStart++;
         }
 
-        // transfering all elements from temporary to main arr
+        // transferring all elements from temporary to main arr
         for (int i = low; i <= high; i++) {
-            arr[i] = temp.get(i - low);
+            arr[i] = temp.get(i - low);  //imp
         }
     }
 

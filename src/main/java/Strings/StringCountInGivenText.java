@@ -28,3 +28,22 @@ public class StringCountInGivenText {
         System.out.println(countOfString(msg));
     }
 }
+
+
+/*
+public class StringCountInGivenText {
+    public static void main(String[] args) {
+        String text = "This is a sample text to demonstrate string counting. This text contains sample words.";
+        String searchString = "sample";
+
+        int count = 0;
+        int index = text.indexOf(searchString);
+        while (index != -1) {
+            count++;
+            index = text.indexOf(searchString, index + 1);
+        }
+        System.out.println("The string '" + searchString + "' appears " + count + " times in the text.");
+    }
+}
+
+ */

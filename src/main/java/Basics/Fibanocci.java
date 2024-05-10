@@ -1,6 +1,6 @@
 package Basics;
 
-//a series of numbers in which, each number is the sum of the two preceding numbers
+//It's a series of numbers in which, each number is the sum of the two preceding numbers
 
 public class Fibanocci {  //nth fibonacci no. using recursion
 

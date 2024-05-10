@@ -1,7 +1,7 @@
 package PsudoCode;
 
 public class Code1 {
-    //due to a mechanism called "autoboxing," which automatically converts between primitive types and their corresponding wrapper classes (such as int and Integer)
+    //due to a mechanism called "autoboxing," which automatically converts primitive types to their corresponding wrapper classes (such as int to Integer)
     public static void main(String[] arr) {
         Integer num1 = 100;  //within the cached range -127 to 128
         Integer num2 = 100;

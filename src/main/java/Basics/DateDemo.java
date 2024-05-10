@@ -1,14 +1,17 @@
 package Basics;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
-public class DateDemo 
-{
+public class DateDemo {
 	public static void main(String[] args) {
-		Date d = new Date();
-		System.out.println(d);// gives current system date
+		Date d = new Date(); //gives current system date
+		System.out.println(d); //Wed May 08 09:14:54 IST 2024
 
 		SimpleDateFormat f = new SimpleDateFormat("E yyyy:mm:dd 'at' hh:mm:ss a zzz"); //based on our requirement
 		System.out.println(f.format(d));
+
+		LocalDate l = LocalDate.now();
+		System.out.println(l); //2024-05-08
 	}
 }

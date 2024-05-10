@@ -1,11 +1,10 @@
 package Basics;
-//0 and 1 are not prime numbers. The 2 is the only even prime number because all the other even numbers can be divided by 2.
 
-//prime no's up to n
-public class Prime	//a number that is divisible by only 1 and itself.
+//A number that is divisible by only 1 and itself.
+//0 and 1 are not prime numbers. The 2 is the only even prime number because all the other even numbers can be divided by 2.
+public class Prime	//prime no's up to n
 {
-   public static void main (String[] args)
-   {		
+   public static void main (String[] args) {
 	  String str=""; 
 	  for(int i = 2; i <= 100; i++) { //n=100
 		  boolean flag = true;
@@ -42,13 +41,12 @@ public class Prime	//a number that is divisible by only 1 and itself.
 to check given no. is prime or not
 	
 boolean isPrime(int n){
-if(n<=1)
-	return false;
-for(int i=2; i<=n/2; i++) //1 and n(itself) are factors. so, we have to check if any other num divides it.
-{
-   if(n%i==0)
-  	 return false;
-}
-return true;
+	if(n<=1)
+		return false;
+	for(int i=2; i<=n/2; i++) {  //1 and n(itself) are factors. so, we have to check if any other num divides it.
+	   if(n%i==0)
+		 return false;
+	}
+	return true;
 }
 */

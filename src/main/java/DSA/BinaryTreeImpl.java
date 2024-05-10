@@ -20,18 +20,19 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     }
 
     static int idx = -1;
-    public static Node populateTree(int[] nodes) { //forms the tree from given sequence
+    public static Node populateTree(int[] nodes) { //forms the tree from given pre-order sequence
         idx++;
         if (nodes[idx] == -1) { //if empty
             return null;
         }
-        Node newNode = new Node(nodes[idx]);
-        newNode.left = populateTree(nodes);
-        newNode.right = populateTree(nodes);
-        return newNode;
+        Node root = new Node(nodes[idx]);
+        root.left = populateTree(nodes);
+        root.right = populateTree(nodes);
+        return root;
     }
 
     //Preorder =  N -> L -> R
+    //Useful for creating a copy of the tree, as it visits the root node first and then recursively visits the left and right subtrees
     public static void preorder(Node root) {
         if (root == null) {
             System.out.print(-1 + " ");
@@ -54,7 +55,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     }
 
     //Postorder = L -> R -> N
-    // use postorder if we want to delete tree
+    // use if we want to deleting or freeing nodes in tree
     public static void postorder(Node root) {
         if (root == null) {
             System.out.print(-1 + " ");
@@ -135,33 +136,33 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         return Math.max(diam1, Math.max(diam2, diam3));
     }
 
-    static Node findNode(Node node, int x) {
-        if (node == null)
+    static Node findNode(Node root, int x) {
+        if (root == null)
             return null;
-        if (node.data == x)
-            return node;
+        if (root.data == x)
+            return root;
 
-        Node n = findNode(node.left, x);
+        Node n = findNode(root.left, x);
         if (n != null) {
             return n;
         }
-        return findNode(node.right, x);
+        return findNode(root.right, x);
     }
 
     //gives level of given key
-    static int level(Node node, Node x, int lev) {
-        if(node == null) {
+    static int level(Node root, Node x, int lev) {
+        if(root == null) {
             return 0;
         }
-        if(node == x) {
+        if(root == x) {
             return lev;
         }
 
-        int l = level(node.left, x, lev+1);
+        int l = level(root.left, x, lev+1);
         if (l != 0) {
             return l;
         }
-        return level(node.right, x, lev+1);
+        return level(root.right, x, lev+1);
     }
 
     //isSymmetrical -> both sides of a tree should be equal
@@ -177,7 +178,6 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
             if(left == null && right == null) {
                 continue;
             }
-
             if(left == null || right == null) {
                 return false;
             }
@@ -265,12 +265,14 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
 
         prettyDisplay(root, 0);
 
-        System.out.println("preOrder:");
+        System.out.print("preOrder: ");
         preorder(root);
-        System.out.println("InOrder:");
+        System.out.print("InOrder: ");
         inorder(root);
-        System.out.println("postOrder:");
+        System.out.print("postOrder: ");
         postorder(root);
+
+        System.out.println();
         System.out.println("levelOrder:");
         levelOrder(root);
 

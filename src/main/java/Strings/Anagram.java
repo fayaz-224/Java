@@ -25,8 +25,7 @@ public class Anagram {
 //        }
 //    }
 	
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Enter the First String : ");
@@ -46,8 +45,7 @@ public class Anagram {
 // Bitwise XOR returns 1 if the digits are different and 0 if the digits are same.
 // After all the XOR�ing process, if the result is 0 then the strings are anagrams.
 
-    public static boolean checkAnagram(String s1, String s2)
-    {        
+    public static boolean checkAnagram(String s1, String s2) {
         s1 = s1.replaceAll("\\s", "");// Remove all the white space
         s2 = s2.replaceAll("\\s", "");
       
@@ -57,8 +55,7 @@ public class Anagram {
         	char[] arr1 = s1.toLowerCase().toCharArray();
         	char[] arr2 = s2.toLowerCase().toCharArray();
         	int xor = 0;
-        	for (int i = 0; i < arr1.length; i++)
-        	{        		
+        	for (int i = 0; i < arr1.length; i++) {
         		xor ^= arr1[i] ^ arr2[i];
         	}
             return xor == 0; //return type is boolean

@@ -183,7 +183,7 @@ public class BSTImpl {
             printInRange(root.right, X, Y);
     }
 
-    ////add all possible paths from root to nodes
+    //add all possible paths from root to nodes
     private static void root2LeafPath(Node root, ArrayList<Integer> path) {
         if (root == null) return;
 

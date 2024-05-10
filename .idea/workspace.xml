@@ -5,60 +5,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95737011-04b4-47e6-89d4-8842108fae3c" name="Changes" comment="update codes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Arrays/LargestPossibleNum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/BuySellStock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/KadaneAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/RemoveSpecialChars.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/StringRotaion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/PrototypeDP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/SingletonDP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PsudoCode/Code1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Array/ElementInPascal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Array/LongestSubarrayWithZeroSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Array/SegregateEvenOdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Array/SlidingMaximum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Array/ZeroMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/FirstRepeatingElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/IntSumToSingleDigit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/NextPermutation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/Sort_012.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/Sum2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/Sum3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/Sum4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basics/Swap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/CollectionsDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/StreamsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Collections/StreamsQue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DP/KaprekarConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DP/LIS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DP/NumberOfIslands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PsudoCode/Code2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PsudoCode/PowerOf2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Recursion/NQueens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Recursion/Sudoku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sort/InsertionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Strings/FirstNonRepeatingChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Strings/FirstRepeatingChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Strings/MaxOccuranceOfChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Strings/PalindromePartitioning.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ArrrayRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/ArrrayRotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/DuplicateElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/DuplicateElements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/Frequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/Frequency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/IdentityMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/IdentityMtx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/LargestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/LargestSmallestElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MoAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MoAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxAddition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxMultiplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RemoveDuplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/RemoveDuplicate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SumOfRowColoum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/SumOfRowColoum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ZerosToEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arrays/ZerosToEnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/CallByValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/CallByValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ArrrayRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/ArrrayRotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/DuplicateElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/DuplicateElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/Frequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/Frequency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/IdentityMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/IdentityMtx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/InifinteArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/InfiniteArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/JaggedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/JaggedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/LargestPossibleNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/LargestPossibleNum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/LargestSmallestElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/LargestSmallestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MoAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/MoAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/MtxAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/MtxMultiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/MtxRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/MtxRotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/PeakInMountainArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/PeakInMountainArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RemoveDuplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/RemoveDuplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/RotationCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/RotationCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SearchInMountainArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/SearchInMountainArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SearchInRotatedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/SearchInRotatedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/SumOfRowColoum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/SumOfRowColoum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/TransposeMtx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/TransposeMtx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Arrays/ZerosToEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Array/ZerosToEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Armstrong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Armstrong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/BigInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/BigInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/DateDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/DateDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Deadlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Deadlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Factorial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Fibanocci.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/GCD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/GCD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/KadaneAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/KadaneAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/LeapYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/LeapYear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/NumberToWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/NumberToWords.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/PalindromeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/PalindromeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Power.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Prime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Prime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/RemoveSpecialChars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/RemoveSpecialChars.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basics/RomanToNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/RomanToNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/StringRotaion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/StringRotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Swapping.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/ValidParanthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/ValidParanthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basics/Vowels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basics/Vowels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Collections/HashMapCol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapCol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Collections/HashMapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/HashMapImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/HashSetCol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/HashSetCol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections/LinkedListCol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/LinkedListCol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Collections/OverrideHashCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/OverrideHashCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Collections/StreamApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections/StreamApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/BSTImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/BSTImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/BinaryTreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/BinaryTreeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DSA/LinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/LinkedListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DSA/CircularQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/CircularQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DSA/QueueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/QueueImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DSA/StackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DSA/StackImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Abstraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Abstraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DesignPatterns/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DesignPatterns/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DesignPatterns/PrototypeDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DesignPatterns/PrototypeDP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Deadlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Deadlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Encapsulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Encapsulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Oops/HybridInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/HybridInheritance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Oops/MethodOverriding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Oops/MethodOverriding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/CharPyramid3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Floyd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Floyd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/HollowButterfly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/HollowButterfly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/IllusionPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/IllusionPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/NumPyramid2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Pascal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/Rhombus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/Rhombus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patterns/StringPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patterns/StringPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PsudoCode/Code1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PsudoCode/Code1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Recursion/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Recursion/Permutations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Recursion/Recursion1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Recursion/Recursion1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/LinearSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/LinearSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sort/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sort/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Anagram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Pangram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Pangram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Strings/ReverseEachWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/ReverseEachWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/StringCountInGivenText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/StringCountInGivenText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/Swap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/Swap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/UpperCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/UpperCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Strings/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Strings/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/credentials.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/credentials.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UnitTests/FibanocciTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UnitTests/FibanocciTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,16 +166,16 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="BSTImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.BSTImpl" />
+  <component name="RunManager" selected="Application.IntSumToSingleDigit">
+    <configuration name="ArrrayRotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Array.ArrrayRotation" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DSA.*" />
+          <option name="PATTERN" value="Array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,12 +183,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.BinaryTreeImpl" />
+    <configuration name="IdentityMtx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Array.IdentityMtx" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DSA.*" />
+          <option name="PATTERN" value="Array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,12 +196,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Oops.Deadlock" />
+    <configuration name="IntSumToSingleDigit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basics.IntSumToSingleDigit" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Oops.*" />
+          <option name="PATTERN" value="Basics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,12 +209,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DesignPatterns.Main" />
+    <configuration name="ReverseEachWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Strings.ReverseEachWord" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DesignPatterns.*" />
+          <option name="PATTERN" value="Strings.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,8 +222,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamApi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Collections.StreamApi" />
+    <configuration name="StreamsQue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Collections.StreamsQue" />
       <module name="Java" />
       <extension name="coverage">
         <pattern>
@@ -175,11 +237,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.BSTImpl" />
-        <item itemvalue="Application.BinaryTreeImpl" />
-        <item itemvalue="Application.StreamApi" />
-        <item itemvalue="Application.Deadlock" />
+        <item itemvalue="Application.IntSumToSingleDigit" />
+        <item itemvalue="Application.StreamsQue" />
+        <item itemvalue="Application.ArrrayRotation" />
+        <item itemvalue="Application.IdentityMtx" />
+        <item itemvalue="Application.ReverseEachWord" />
       </list>
     </recent_temporary>
   </component>
@@ -224,8 +286,27 @@
       <option name="project" value="LOCAL" />
       <updated>1711351034005</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update codes">
+      <option name="closed" value="true" />
+      <created>1713683943174</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713683943174</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

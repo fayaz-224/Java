@@ -3,11 +3,11 @@ package Collections;
 import java.util.HashSet;
 import java.util.Objects;
 
+//if we override equals() method, we must override hashcode(). Others we might face improper functionality
 class Employee {
 
     String name;
     int age;
-
     public Employee(String name, int age) {
         this.name = name;
         this.age = age;
@@ -43,10 +43,6 @@ class Employee {
 
     @Override
     public int hashCode() { //custom hashing
-        // int result=17;
-        // result=31*result+age;
-        // result=31*result+(name!=null ? name.hashCode():0);
-        // return result;
         return Objects.hash(name, age);
     }
 }

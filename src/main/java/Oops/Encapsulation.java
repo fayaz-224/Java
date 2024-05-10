@@ -26,11 +26,11 @@ public float getAmount() {
 
 public class Encapsulation extends Account{
 	public static void main(String[] args) {  
-	//if we dont have setter methods, other cant access/manipulate those data members
+		//if we dont have setter methods, other cant access/manipulate those data members
 		Encapsulation acc=new Encapsulation();
 	    acc.setAcc_no(7560504000L);  
 	    acc.setName("Sonoo Jaiswal");
 	   
 	    System.out.println(acc.getAcc_no()+"\n"+acc.getName()+"\n"+acc.getAmount());  
 	}  
-	}  
+}

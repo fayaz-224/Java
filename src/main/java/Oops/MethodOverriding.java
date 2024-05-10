@@ -15,15 +15,15 @@ class Bank {
 	}  
 	class AXIS extends Bank{  
 	int getRateOfInterest(){return 9;}  
-	}  
-	 
-	class MethodOverriding{  
+	}
+
+class MethodOverriding{
 	public static void main(String args[]){  
-	Bank s=new SBI();  //upcating--reference variable of Parent class refers to the object of Child class
-	ICICI i=new ICICI();  
-	AXIS a=new AXIS();  
-	System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());  
-	System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());  
-	System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());  
+		Bank s=new SBI();  //upcating--reference variable of Parent class refers to the object of Child class
+		ICICI i=new ICICI();
+		AXIS a=new AXIS();
+		System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());
+		System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());
+		System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());
 	}  
 }

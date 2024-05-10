@@ -1,15 +1,7 @@
 package Sort;
 
 //Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half.
- 
-class BinarySearch
-{
-   public static void main(String args[]) {
-      int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89}; //the elements should be in sorted order
-      int target = 22;
-      int pos = binarySearch(arr, target);
-      System.out.println("found at : "+pos);
-   }
+class BinarySearch {
 
    static int binarySearch(int[] arr, int target) {
       int start = 0;
@@ -22,7 +14,6 @@ class BinarySearch
           if (arr[mid] == target) {
               return mid;
           }
-
           if (target < arr[mid])  // for ascending order of input array
               end = mid - 1;
           else
@@ -39,4 +30,11 @@ class BinarySearch
       //return start;      // to find ceiling number - The smallest no. greater than or equals to given key
       //return end;      // to find floor number - The biggest no. less than or equals to given key
    }
+
+    public static void main(String args[]) {
+        int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89}; //the elements should be in sorted order
+        int target = 22;
+        int pos = binarySearch(arr, target);
+        System.out.println("found at : "+pos);
+    }
 }

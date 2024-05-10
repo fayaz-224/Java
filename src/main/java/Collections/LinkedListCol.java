@@ -2,8 +2,7 @@ package Collections;
 import java.util.LinkedList;
 
 class LinkedListCol {
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
         LinkedList<Integer> ar = new LinkedList<>();
 
         ar.add(10);    //add is by default addLast

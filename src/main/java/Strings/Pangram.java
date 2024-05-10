@@ -1,13 +1,10 @@
 package Strings;
 
 //A pangram is a sentence containing every letter in the English Alphabet.(A to Z)
-
 class Pangram {
 
-	public static boolean checkPangram(String str) //A=65 to Z=90; a=97 to z=122
-	{
+	public static boolean checkPangram(String str) { //A=65 to Z=90; a=97 to z=122
 		boolean[] mark = new boolean[26];
-
 		int index = 0;
 
 		for (int i = 0; i < str.length(); i++) {
@@ -18,17 +15,16 @@ class Pangram {
 			// If lowercase character, subtract 'a' to get index.
 			else if ('a' <= str.charAt(i) && str.charAt(i) <= 'z')
 				index = str.charAt(i) - 'a';
-			
 			else
-				continue;// If this is not an alphabet
-			
+				continue; // If this is not an alphabet
+
 			mark[index] = true;
 		}
 
-		for (int i = 0; i <= 25; i++)
-			if (mark[i] != true)
-				return false;	//to find missing characters: arrList.add((char)(i + 'a')); return arrList;
-
+		for (int i = 0; i <= 25; i++) {
+			if (!mark[i])  //mark[i] != true
+				return false;    //to find missing characters: arrList.add((char)(i + 'a')); return arrList;
+		}
 		return true;
 	}
 

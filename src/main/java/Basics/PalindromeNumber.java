@@ -35,7 +35,6 @@ class PalindromeNumber {
 	public static void main(String[] args) {
 		int n = 123464321;
 		int rev = recursive_func(n, 0);
-		System.out.println("Reverse of n = " + rev);
 
 		if (n == rev)
 			System.out.println("Palindrome = Yes");

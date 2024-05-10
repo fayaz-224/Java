@@ -8,8 +8,7 @@ package Patterns;
 // 1 3 3 1 
 //1 4 6 4 1 
 
-public class Pascal
-{
+public class Pascal {
 	public static void main(String[] args) {
 	    int n=5;
 	    for(int i=1;i<=n;i++){
@@ -20,7 +19,7 @@ public class Pascal
 	        int k=1;
             for(int j=1;j<=i;j++) {
                 System.out.print(k+" ");
-                k = k*(i-j)/j; 	//main logic
+                k = (k*(i-j)) / j; 	//main logic
             }
             System.out.println();
         }

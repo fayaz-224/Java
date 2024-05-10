@@ -1,7 +1,7 @@
 package DesignPatterns;
 
 //The Prototype design pattern is used to create new objects by copying an existing object, known as the prototype.
-// This pattern is particularly useful when the construction of a new object is more efficient by copying an existing object rather than creating a new one from scratch.
+//This pattern is useful when the cost of creating a new object directly is more expensive or inefficient compared to copying an existing object.
 // It helps in reducing the overhead of creating new objects.
 public class PrototypeDP implements Cloneable {
     int id;

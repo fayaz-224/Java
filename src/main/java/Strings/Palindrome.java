@@ -6,33 +6,38 @@ import java.util.Scanner;
 public class Palindrome {
 	public boolean isPalindrome(String str) {
 		//strings are immutable. so convert it into string buffer or builder
-		StringBuffer sb=new StringBuffer(str);
+		StringBuilder sb = new StringBuilder(str);
 		sb.reverse();
 		String rev = sb.toString();  //Again convert it into string
         return str.equals(rev);
 	}
 
+	//Approach2
+	static boolean isPalindrome2(String s, int start, int end) {
+		while (start <= end) {
+			if (s.charAt(start++) != s.charAt(end--))
+				return false;
+		}
+		return true;
+	}
+
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		String str = s.nextLine();    //strings are immutable. so convert it into string buffer or builder
+		String str = s.nextLine();
 
 		Palindrome p = new Palindrome();
-		if (p.isPalindrome(str)) {
+		if (p.isPalindrome2(str, 0, str.length()-1))
 			System.out.println("Palindrome");
-		}
-		else{  
-			System.out.println("not a Palindrome"); 
-		}  
+		else
+			System.out.println("not a Palindrome");
 	}  
 } 
 
 
 /*
 
-public class Palindrome
-{
-public static void main(String args[])
-{
+public class Palindrome{
+public static void main(String args[]){
     String a, b = "";
     Scanner s = new Scanner(System.in);
     System.out.print("Enter the string you want to check:");
