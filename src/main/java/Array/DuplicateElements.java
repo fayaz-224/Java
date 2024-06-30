@@ -2,16 +2,15 @@ package Array;
 import java.util.*;
 
 /*
-public class DuplicateElements {
+public class DuplicateElements {    //time complexity : O(n*m)
     public static void main(String[] args) {
 
         int[] arr = new int[] {1, 3, 1, 4, 2, 7, 8, 8, 3};  
         System.out.println("Duplicate elements in given array: ");  
         
         //Searches for duplicate element  
-        for(int i = 0; i < arr.length; i++) {  
-            for(int j = i + 1; j < arr.length; j++) //time complexity : O(n*m)
-            {  
+        for(int i = 0; i < arr.length-1; i++) {
+            for(int j = i + 1; j < arr.length; j++) {
                 if(arr[i] == arr[j])  
                     System.out.println(arr[j]);  
             }  
@@ -56,5 +55,23 @@ public class DuplicateElements {
     }
 }
 
-
-
+/*
+class TUF {
+    static int findDuplicate(int[] arr) {
+        int n = arr.length;
+        int freq[] = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            if (freq[arr[i]] == 0) {
+                freq[arr[i]] += 1;
+            } else {
+                System.out.println(arr[i]+" ");
+            }
+        }
+        return 0;
+    }
+    public static void main(String args[]) {
+        int arr[] = {1,3,4,2,3};
+        System.out.println("The duplicate element is " + findDuplicate(arr));
+    }
+}
+ */

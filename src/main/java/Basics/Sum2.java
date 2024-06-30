@@ -30,7 +30,7 @@ class Solution {    // O(N) + O(N*logN)
         while (left < right) {
             int sum = nums[left] + nums[right];
 
-            if (nums[left] + nums[right] == target)
+            if (sum == target)
                return new int[]{left, right};
             else if (sum < target)
                left++;
@@ -41,3 +41,27 @@ class Solution {    // O(N) + O(N*logN)
     }
 }
 */
+
+/*
+import java.util.HashMap;
+
+public class FindPairsSumEquals11 {
+    public static void main(String[] args) {
+        int[] arr = {0, 14, 0, 4, 7, 8, 3, 5, 7};
+        findPairsWithSum(arr, 11);  //this may return duplicates, fix if needed
+    }
+
+    public static void findPairsWithSum(int[] arr, int targetSum) {
+        HashMap<Integer, Integer> complementMap = new HashMap<>();
+
+        for (int num : arr) {
+            int complement = targetSum - num;
+
+            if (complementMap.containsKey(complement)) {  // Check if complement exists in the map
+                System.out.println("(" + complement + ", " + num + ")");
+            }
+            complementMap.put(num, num);
+        }
+    }
+}
+ */

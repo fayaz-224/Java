@@ -34,11 +34,13 @@ class Employee {
         if (obj == this)
             return true;
 
-        if (!(obj instanceof Employee employee))
+        if (!(obj instanceof Employee)) // Check if obj is not an instance of Employee
             return false;
 
+        Employee employee = (Employee) obj; // Cast obj to Employee
+
         return employee.getAge() == this.getAge()
-                && employee.getName() == this.getName();
+                && employee.getName().equals(this.getName()); // Compare age and name
     }
 
     @Override

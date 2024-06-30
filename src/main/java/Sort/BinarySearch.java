@@ -11,15 +11,14 @@ class BinarySearch {
           //  int mid = (start + end) / 2; // might be possible that (start + end) exceeds the range of int in java
           int mid = start + (end - start) / 2;
 
-          if (arr[mid] == target) {
+          if (arr[mid] == target)
               return mid;
-          }
-          if (target < arr[mid])  // for ascending order of input array
+          else if (target < arr[mid])  // for ascending order of input array
               end = mid - 1;
           else
               start = mid + 1;
 
-//          if (target < arr[mid]) // for descending order of input array
+//          else if (target < arr[mid]) // for descending order of input array
 //              start = mid + 1;
 //          else
 //              end = mid - 1;

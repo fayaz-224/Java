@@ -28,15 +28,15 @@ public class Sum3 {
     public static void main(String[] args) {
         int[] arr = { -1, 0, 1, 2, -1, -4};
         int n = arr.length;
-        List<List<Integer>> ans = triplet(arr, n);
-        System.out.println(ans.stream().toList());
+
+        System.out.println(triplet(arr, n));
     }
 }
 
 
 /*
 //Better Approach
-public static List<List<Integer>> triplet(int n, int[] arr) {
+public static List<List<Integer>> triplet(int n, int[] arr) {  //target = 0
         Set<List<Integer>> st = new HashSet<>();
 
         for (int i = 0; i < n; i++) {

@@ -10,8 +10,8 @@ class Main {
         System.out.println(obj2.hashCode());
 
         //builder
-        Dog dog1 = new Dog.DogBuilder().setName("Bruno").setBreed ("Pug").setAge(4).setColor("black").build();
-        Dog dog2 = new Dog.DogBuilder().setName("Alissa").setAge(1).build();
+        BuilderDP dog1 = new BuilderDP.DogBuilder().setName("Bruno").setBreed ("Pug").setAge(4).setColor("black").build();
+        BuilderDP dog2 = new BuilderDP.DogBuilder().setName("Alissa").setAge(1).build();
         System.out.println(dog1);
         System.out.println(dog2);
 

@@ -1,17 +1,17 @@
 package Strings;
 
-public class StringCountInGivenText {
+public class StringCountInGivenText {  //matches non-absolute strings
     static int countOfString(String text) {
         String str="balloon";
         char[] ch = text.toCharArray();
         int i,j,count=0;
-        // we had to take infinite loop, as we need to check string until end of given text whose len is unknown.
+        // we had to take infinite loop, as we need to check string until end of given text whose length is unknown.
         while(true)
         {
-            for(i=0;i<str.length();i++){
-                for(j=0;j<ch.length;j++){
-                    if(str.charAt(i)==ch[j]){
-                        ch[j]=0;
+            for(i=0;i<str.length();i++) {
+                for(j=0;j<ch.length;j++) {
+                    if(str.charAt(i)==ch[j]) {
+                        ch[j]=0;  //to avoid visited ones
                         break;
                     }
                 }
@@ -24,14 +24,14 @@ public class StringCountInGivenText {
     }
 
     public static void main(String args[]) {
-        String msg = "The balloons are so beautiful, red balloons are my fav";
+        String msg = "The ballddddoons are so beautiful, red balloons are my fav";
         System.out.println(countOfString(msg));
     }
 }
 
 
 /*
-public class StringCountInGivenText {
+public class StringCountInGivenText {  //matches absolute strings
     public static void main(String[] args) {
         String text = "This is a sample text to demonstrate string counting. This text contains sample words.";
         String searchString = "sample";

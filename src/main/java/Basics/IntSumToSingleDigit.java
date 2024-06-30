@@ -1,27 +1,21 @@
 package Basics;
 
-//find sum of
-// digits of a number until
-// sum becomes single digit.
-
+//find sum of digits of a number until sum becomes single digit.
 public class IntSumToSingleDigit {
-
-    static int digSum(int n) {
-        int sum = 0;
-        while (n > 0 || sum > 9) {
-            if (n == 0) {
-                n = sum;
-                sum = 0;
-            }
-            int k = n % 10;
-            sum += k;
-            n /= 10;
+    public static void main(String[] args) {
+        int num = 1234;
+        while (num >= 10) {
+            num = sumOfIndividualDigits(num);
         }
-        return sum;
+        System.out.println("Sum of digits until single digit: " + num);
     }
 
-    public static void main(String argc[]) {
-        int n = 1234;
-        System.out.println(digSum(n));
+    public static int sumOfIndividualDigits(int num) {
+        int sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
     }
 }

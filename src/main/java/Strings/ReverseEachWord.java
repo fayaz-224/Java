@@ -29,7 +29,7 @@ public class ReverseEachWord {
     static void reverseEachWordOfString(String inputString) {
         String[] words = inputString.split("\\s+"); // + means continuous spaces
          //using Streams
-        List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).toList();
+        List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).collect(Collectors.toList());
         System.out.println("Stream op: "+res);
 
         //without streams

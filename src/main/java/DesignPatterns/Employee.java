@@ -8,7 +8,6 @@ public interface Employee {
 }
 
 class AndroidDeveloper implements  Employee {
-
     @Override
     public int getSalary() {
         System.out.println("AndroidDeveloper salary: ");
@@ -17,7 +16,6 @@ class AndroidDeveloper implements  Employee {
 }
 
 class WebDeveloper implements  Employee {
-
     @Override
     public int getSalary() {
         System.out.println("WebDeveloper salary: ");

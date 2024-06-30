@@ -1,8 +1,9 @@
 package Strings;
+
 import java.util.Scanner;
+
 // check given string is a palindrome or not
 //String should be same in any direction
-
 public class Palindrome {
 	public boolean isPalindrome(String str) {
 		//strings are immutable. so convert it into string buffer or builder

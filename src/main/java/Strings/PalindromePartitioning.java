@@ -17,7 +17,7 @@ public class PalindromePartitioning {
             if (isPalindrome(s, start, end)) {
                 currentList.add(s.substring(start, end + 1));
                 partitionHelper(s, end + 1, currentList);
-                currentList.remove(currentList.size() - 1); // Backtrack
+                currentList.remove(currentList.size() - 1); // Backtrack, remove previously added element in line 18
             }
         }
     }

@@ -1,8 +1,6 @@
 package Collections;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -10,9 +8,21 @@ public class StreamsQue {
     public static void main(String[] args) {
         String str = "geeksforgeeks";
 
-        //count - count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code]
-        int count = (int) str.chars().filter(ch -> ch == 'e').count();
+        //count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code]
+        int count = (int) str.chars()
+                .filter(ch -> ch == 'e')
+                .count();
         System.out.println("occurrence of given char: " + count);
+
+        //find max occurring char
+        char maxChar = str.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse('\0');
+        System.out.println("max occurring char: "+maxChar);
 
         //FirstNonRepeatingChar
         Optional<Character> ch = str.chars()           // IntStream
@@ -32,5 +42,35 @@ public class StreamsQue {
                 .findFirst() // Find the first repeating character
                 .orElse('\0');
         System.out.println("firstRepeatingChar: "+ch1);
+
+        //count words
+        String strSentence = " HI EPAM bYe EPAM goodbye EPAM welcome ePAM Hi There epAM BYE bye EPaM";
+        String[] words = strSentence.toLowerCase().split("\\s+");
+        Arrays.stream(words)
+                .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() > 1)
+                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+
+        //sum of 2 arrays
+        int arr1[] = {9, 8, 9};
+        int arr2[] = {9, 9};
+        String num1 = Arrays.stream(arr1)   // Convert arrays to strings
+                .mapToObj(String::valueOf)
+                .reduce("", String::concat);
+        String num2 = Arrays.stream(arr2)
+                .mapToObj(String::valueOf)
+                .reduce("", String::concat);
+        int number1 = Integer.parseInt(num1);     // Convert strings to integers
+        int number2 = Integer.parseInt(num2);
+        System.out.println("Sum: " + number1 + number2);
+
+        //Count the frequency of each word and print its count in descending order of frequency
+        List<String> ls = Arrays.asList("apple", "banana", "orange", "apple", "kiwi", "banana", "kiwi", "kiwi");
+        ls.stream()
+            .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+            .entrySet().stream()
+            .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())) // Sort by value descending
+            .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
     }
 }

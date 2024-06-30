@@ -9,20 +9,20 @@ import java.util.stream.Stream;
 public class StreamApi {
     public static void main(String args[]) {
         Employee1[] arrayOfEmps = {
-                new Employee1("Jeff Bezos", 100000),
-                new Employee1("Bill Gates", 200000),
-                new Employee1("Mark Zuckerberg", 300000)
+                new Employee1("Jeff Bezos", "Computer Science", 100000),
+                new Employee1("Bill Gates", "Computer Science", 200000),
+                new Employee1("Mark Zuckerberg", "Mechanical Engineering", 300000)
         };
-        List<Employee1> empList = Stream.of(arrayOfEmps).toList();
+        List<Employee1> empList = Stream.of(arrayOfEmps).collect((Collectors.toList()));
         List<Integer> numbers = Arrays.asList(2, 3, 4, 5, 1, 3);
-        List<String> names = Arrays.asList("Cat", "Cow", "Snake", "Dog");
+        List<String> names = Arrays.asList("Cat", "Cow", "Snake", "BuilderDP");
         IntStream intstrm = IntStream.range(10, 20);  //which creates IntStream of numbers 10 to 19.
 
 
         //create stream
         Stream<Integer> employees = Stream.of(1,2,3,4);
         Stream<String> streamEmpty = Stream.empty(); //empty stream
-        System.out.println(streamEmpty.toList() +" - "+ employees.toList());
+        System.out.println(streamEmpty.collect(Collectors.toList()) +" - "+ employees.collect(Collectors.toList()));
 
         //findFirst method
         int num = numbers.stream().distinct().findFirst().get();
@@ -32,7 +32,7 @@ public class StreamApi {
         //map() returns a Stream<Integer>, mapToInt() returns an IntStream.
         List<Integer> square = numbers.stream()
                 .map(x -> x * x)
-                .toList();
+                .collect(Collectors.toList());
         System.out.println(square);
         List<Integer> lengths = names.stream()
                 .map(String::length)    //s -> s.length()
@@ -45,7 +45,7 @@ public class StreamApi {
         System.out.println("List<Lists> :"+listOfLists);
         List<Integer> flattenedList = listOfLists.stream()
                 .flatMap(Collection::stream)    //list -> list.stream()
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("flatMapped: " + flattenedList);
 
         // filter method
@@ -62,7 +62,7 @@ public class StreamApi {
         System.out.println("size and limit: "+collect);
 
         // sorted method
-        List<String> show = names.stream().sorted().toList();
+        List<String> show = names.stream().sorted().collect(Collectors.toList());
         System.out.println("sort: "+show);
         List<Employee1> emp = empList.stream()
                 .sorted(Comparator.comparing(Employee1::getName)) //(e1, e2) -> e1.getName().compareTo(e2.getName())
@@ -70,7 +70,7 @@ public class StreamApi {
         System.out.println(emp);
 
         //distinct method
-        List<String> nums = names.stream().distinct().toList();
+        List<String> nums = names.stream().distinct().collect(Collectors.toList());
         System.out.println("distinct: "+nums);
 
         // collect method returns a set
@@ -100,6 +100,7 @@ public class StreamApi {
         int max = numbers.stream().max(Integer::compareTo).get();  //stream() expects predicate for min and max
         int min = numbers.stream().min((x,y) -> x.compareTo(y)).get();
         System.out.println(max + " "+ min);
+
         //IntStream, LongStream, and DoubleStream – which are primitive specializations for int, long and double respectively.
         //These specialized streams do not extend Stream but extend BaseStream on top of which Stream is also built.
         //For example, the standard min() and max() take a comparator, whereas the specialized streams do not.
@@ -126,7 +127,7 @@ public class StreamApi {
         List<Integer> sumOfSquaresParallel = numbers.stream()
                 .parallel() // Convert the stream to a parallel stream
                 .map(x -> x * x)
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Sum of squares (parallel): " + sumOfSquaresParallel);
     }
 }

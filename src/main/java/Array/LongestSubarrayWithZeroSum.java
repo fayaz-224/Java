@@ -6,7 +6,7 @@ package Array;
 //Result: 5
 //Explanation: The following subarrays sums to zero:
 //{-3, 3} , {-1, 6, -5}, {-3, 3, -1, 6, -5}
-//Since we require the length of the longest subarray, our answer is 5!
+//Since we require the length of the longest subarray, our answer is 5.
 public class LongestSubarrayWithZeroSum {
 
     static int solve(int[] a) {
@@ -15,7 +15,7 @@ public class LongestSubarrayWithZeroSum {
             int sum = 0;
             for(int j = i; j < a.length; ++j) {
                 sum += a[j];
-                if(sum == 0){
+                if(sum == 0) {
                     max = Math.max(max, j-i+1);  //imp: j - i + 1 is used to calculate the length of the current subarray
                 }
             }

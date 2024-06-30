@@ -31,8 +31,7 @@ public class Sum4 {
                 }
             }
         }
-        List<List<Integer>> ans = new ArrayList<>(st);
-        return ans;
+        return new ArrayList<>(st);  //convert set to list
     }
 
     public static void main(String[] args) {
@@ -40,7 +39,7 @@ public class Sum4 {
         int target = 9;
         List<List<Integer>> ans = fourSum(nums, target);
 
-        //System.out.println(ans.stream().toList());
+        //System.out.println(ans.stream().collect(Collectors.toList()));
         System.out.println("The quadruplets are: ");
         for (List<Integer> it : ans) {
             System.out.print("[");

@@ -4,13 +4,11 @@ package Basics;
 //gcd(a,b) = a*b/lcm(a,b);
 //lcm(a,b) = a*b/gcd(a,b);
 /*
-public class GCD
-{
+public class GCD {
     public static void main(String[] args) {
     	
         int num1 = 55, num2 = 121, gcd = 1, lcm=1;
-        for(int i = 1; i <= num1 && i <= num2; i++) //GCD
-        {
+        for(int i = 1; i <= num1 && i <= num2; i++) {   //GCD
             if(num1%i==0 && num2%i==0)
                 gcd = i;
         }

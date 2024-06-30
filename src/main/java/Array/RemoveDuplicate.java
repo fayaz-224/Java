@@ -24,13 +24,31 @@ public class RemoveDuplicate { // array is sorted, if not sort it
 
 
 //This method can be used even if the array is not sorted.
-//	Another Approach: 
+/*
+public static void removeDuplicates(int[] array) {
+        int length = array.length;
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i] == array[j]) {
+                    // Shift elements to the left to fill the gap, and replace duplicate values
+                    for (int k = j; k < length - 1; k++) {
+                        array[k] = array[k + 1];
+                    }
+                    // Decrement the length of the array and adjust loop variables
+                    length--;
+                    j--; //we need to do this, as replaced element might also be a duplicate
+                }
+            }
+        }
+        // Resize the array to remove the duplicates
+        array = Arrays.copyOf(array, length);
+    }
+ */
 
-//Take a Set 
-//Insert all array elements in the Set. 
-//Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion so it will remove duplicates
-//and elements will be printed in the same order in which it is inserted.
 
+//Approach-2:
+//Take a Set, Insert all array elements in the Set.
+//Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion.
 
 /*
 import java.util.ArrayList;
@@ -56,5 +74,4 @@ public class RemoveDuplicate {
         findDuplicates(arr, n);
     }
 }
-
 */

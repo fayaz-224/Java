@@ -1,8 +1,7 @@
 package Basics;
 
 /*
-class PalindromeNumber	//a number that is same even after reversing it.
-{  
+class PalindromeNumber {	//a number that is same even after reversing it.
 	public static void main(String args[]) {
 		int k,sum=0,temp;    
 		int n=151;
@@ -11,7 +10,7 @@ class PalindromeNumber	//a number that is same even after reversing it.
 			k=n%10;    
 			sum=(sum*10)+k;    
 			n=n/10;    
-		}    
+		}
 		if(temp==sum)    
 			System.out.println("palindrome number ");    
 		else    

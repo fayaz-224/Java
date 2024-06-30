@@ -1,13 +1,13 @@
 package Array;
 
-//Maximum of all subarrays of size K
+//Maximum of all subarrays of size K - find max element in each subarray of size k
 public class SlidingMaximum {
     static void printKMax(int arr[], int k) {
         int j, max;
         int n = arr.length;
         for (int i = 0; i <= n - k; i++) {
             max = arr[i];
-            for (j = 1; j < k; j++) {
+            for (j = 1; j < k; j++) { //k-1 times as we're already assuming arr[0] as max
                 if (arr[i + j] > max)
                     max = arr[i + j];
             }

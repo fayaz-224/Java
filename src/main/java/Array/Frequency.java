@@ -20,7 +20,7 @@ public class Frequency {
                 fr[i] = count;  
         }
 
-        System.out.println(" Element | Frequency");  
+        System.out.println(" Element | Frequency");
         System.out.println("---------------------");
         for(int i = 0; i < fr.length; i++){  
             if(fr[i] != -1)  
@@ -30,7 +30,7 @@ public class Frequency {
         /*
         int maxFreq = 0, minFreq = n;
         int maxEle = 0, minEle = 0;
-        // logic same as above
+        // logic same as above, add after inner for-loop
          if (count > maxFreq) {     //to Find the highest/lowest frequency element
             maxEle = arr[i];
             maxFreq = count;

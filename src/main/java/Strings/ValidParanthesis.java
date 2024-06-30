@@ -15,15 +15,11 @@ class ValidParanthesis {
                 else
                     return false;
             else if(s.charAt(i) ==']')
-                if (!st.empty() && st.peek() == '[')
-                    st.pop();
-                else
+                if (st.empty() || st.pop() != '[')     //simple way to return false directly
                     return false;
             else if(s.charAt(i) =='}')
-                if (!st.empty() && st.peek() == '{')
-                    st.pop();
-                else
-                    return false; 
+                if (st.empty() || st.pop() != '{')     //simple way to return false directly
+                    return false;
         }
         return st.empty();
     }

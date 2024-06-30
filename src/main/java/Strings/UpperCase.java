@@ -1,8 +1,8 @@
 package Strings;
 
-// without using string functions
 import java.util.*;
 
+// without using string functions
 class UpperCase {  //A=65 to Z=90; a=97 to z=122
      public static void main(String args[]) {
          System.out.println("Enter any string which is to be converted to upper case");

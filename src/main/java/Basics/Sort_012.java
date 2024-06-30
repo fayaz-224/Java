@@ -3,6 +3,7 @@ package Basics;
 //we can also sort the array to achieve this.
 //or
 //we can take counts of 0,1,2 and manually add them with 3 loops
+//or
 public class Sort_012 {
     public static void sortArray(int[] nums) {
         int low = 0, mid = 0, high = nums.length - 1;
