@@ -15,22 +15,32 @@
     </properties>
 
     <dependencies>
+        <!-- For encryption -->
         <dependency>
             <groupId>org.jasypt</groupId>
             <artifactId>jasypt</artifactId>
             <version>1.9.3</version>
         </dependency>
+        <!--
+            junit-jupiter-api: It is the main module where all core annotations are located, such as @Test, Lifecycle method annotations and assertions.
+            junit-jupiter-engine: It has test engine implementation which is required at runtime to execute the tests.
+            junit-platform-suite: The @Suite support provided by this module to make the JUnitPlatform runner obsolete.
+            junit-jupiter-params: Support for parameterized tests in JUnit 5.
+        -->
+        <!-- JUnit5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>    <!-- for all junit jars -->
-            <version>5.9.3</version>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- JUnit4 -->
         <dependency>
             <groupId>junit</groupId>
-            <artifactId>junit</artifactId> <!-- for @Before,@After tags -->
+            <artifactId>junit</artifactId>
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

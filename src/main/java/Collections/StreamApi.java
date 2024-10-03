@@ -56,7 +56,7 @@ public class StreamApi {
                 .collect(Collectors.toList());
         System.out.println(result);
 
-        //size and limit
+        //skip and limit
         List<Integer> collect = numbers.stream()
                 .skip(3)  //skips first 3 elements
                 .limit(5)  //it limits the output
@@ -80,10 +80,10 @@ public class StreamApi {
                 .map(x -> x * x)
                 .collect(Collectors.toSet());
         System.out.println(squareSet);
+        //Collectors.joining() will insert the delimiter between the two String elements of the stream
         String empNames = empList.stream()
                 .map(Employee::getName)
-                .collect(Collectors.joining(", "))  //Collectors.joining() will insert the delimiter between the two String elements of the stream
-                .toString();
+                .collect(Collectors.joining(", "));
         System.out.println(empNames);
 
         // forEach method

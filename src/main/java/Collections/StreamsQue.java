@@ -26,9 +26,9 @@ public class StreamsQue {
         System.out.println("max occurring char: "+maxChar);
 
         //FirstNonRepeatingChar
-        Optional<Character> ch = str.chars()           // IntStream
-                .mapToObj(i -> Character.toLowerCase((char) i))  // convert to lowercase & then to Character object Stream
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) // store in a LinkedHashMap with the count
+        Optional<Character> ch = str.toLowerCase().chars()           // IntStream
+                .mapToObj(i -> (char) i)  // convert to Character object Stream
+                .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting())) // store in a LinkedHashMap with the count
                 .entrySet().stream()                       // EntrySet stream
                 .filter(entry -> entry.getValue() == 1)   // extracts characters with a count of 1
                 .map(entry -> entry.getKey())              // get the keys of EntrySet

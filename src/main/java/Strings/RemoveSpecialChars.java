@@ -10,10 +10,10 @@ public class RemoveSpecialChars {
         //int count = s.replaceAll("[\\w\\s]", "").length();
 
         for (int i = 0; i < s.length(); i++) {
-            if (!Character.isDigit(s.charAt(i)) && !Character.isLetter(s.charAt(i)) && !Character.isWhitespace(s.charAt(i)))
-                count++;
-            else
+            if (Character.isDigit(s.charAt(i)) || Character.isLetter(s.charAt(i)) || Character.isWhitespace(s.charAt(i)))
                 str += s.charAt(i); //string without special chars
+            else
+                count++;  //count of special chars
         }
 
         if (count == 0) {

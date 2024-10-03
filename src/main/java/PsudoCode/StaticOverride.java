@@ -11,6 +11,7 @@ class Base {
 }
 
 class Derived extends Base {
+    // This method is hidden by display() in Base
     public static void display() {  // This method is hidden by display() in Base
         System.out.println("Static method from subclass");
     }

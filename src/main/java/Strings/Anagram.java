@@ -1,7 +1,8 @@
 package Strings;
-import java.util.Scanner;
-//two strings are anagrams if they contain the same characters but in a different order.
 
+import java.util.Scanner;
+
+//two strings are anagrams if they contain the same characters but in a different order.
 public class Anagram {
 //    public static boolean checkAnagram(String s1, String s2)
 //    {        
