@@ -2,7 +2,7 @@ package Collections;
 
 import java.util.*;
 //Apna college
-@SuppressWarnings("unchecked")  //add @SuppressWarnings("unchecked") annotation to the class level, which is generally the preferred way to suppress warnings.
+@SuppressWarnings("unchecked")  //this is generally the preferred way to suppress warnings.
 public class HashMapImpl<K, V> {
     private class Node {
         K key;

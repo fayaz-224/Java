@@ -44,8 +44,7 @@ public class ReverseEachWord {
              
             reverseString += reverseWord + " ";
         }
-         
-        System.out.println(inputString);
+
         System.out.println(reverseString.trim()); //strip() can also be used
          
         System.out.println("-------------------------");

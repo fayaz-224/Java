@@ -94,5 +94,15 @@ public class StreamsQue {
             System.out.println(inputString+" is a palindrome");
         else
             System.out.println(inputString+" is not a palindrome");
+
+
+        //Sort characters in a string using java 8 features
+        String s = "aaabfdifdihofrefjferfergrgergerggerg";
+        String sortedString = s.chars()             // Convert the String into an IntStream
+                            .mapToObj(c -> String.valueOf((char)c))  // Convert each int to a String
+                            .sorted()
+                            .collect(Collectors.joining());  // Collect the stream elements into a single String
+
+        System.out.println("Sorted string: "+sortedString);
     }
 }

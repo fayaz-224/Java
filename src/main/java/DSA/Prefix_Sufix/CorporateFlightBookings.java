@@ -6,8 +6,8 @@ public class CorporateFlightBookings {
 
         int[] res = new int[n];
         for(int[] curr : bookings){
-            int start = curr[0]-1;
-            int end = curr[1];
+            int start = curr[0]-1;  // to make 0-index
+            int end = curr[1];  //exclusive
             int val = curr[2];
 
             for(int i = start ; i < end ; i++){

@@ -11,7 +11,7 @@ public class StringCompression {
             if (input.charAt(i) == input.charAt(i - 1)) {  //to avoid IndexOutOfBounds
                 count++;
             } else {
-                compressed.append(input.charAt(i - 1)).append(count).append(" ");
+                compressed.append(input.charAt(i - 1)).append(count);
                 count = 1;
             }
         }

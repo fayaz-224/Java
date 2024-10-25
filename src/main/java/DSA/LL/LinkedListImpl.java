@@ -7,7 +7,7 @@ package DSA.LL;
 
 public class LinkedListImpl {   //singly linked-list
     Node head;
-    private int size=0;
+    private int size = 0;
 
     public class Node {
         String data;
@@ -30,6 +30,7 @@ public class LinkedListImpl {   //singly linked-list
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
+            return;
         }
 
         Node lastNode = head;
@@ -41,45 +42,32 @@ public class LinkedListImpl {   //singly linked-list
 
     public void addInMiddle(int index, String data) {
         if (index > size || index < 0) {
-            System.out.println("Invalid Index value");
+            System.out.println("Invalid Index Value");
             return;
         }
 
         Node newNode = new Node(data);
         if (head == null || index == 0) {
-            newNode.next = head;
+            newNode.next = head;    //addFirst(data);
             head = newNode;
             return;
         }
 
         Node currNode = head;
-        for (int i = 1; i <= size; i++) {
-            if (i == index) {
-                Node tempNode = currNode.next;
-                currNode.next = newNode;
-                newNode.next = tempNode;
-                break;
-            }
+        for (int i = 1; i < index; i++) {  //will go that middle pos
             currNode = currNode.next;
         }
+        newNode.next = currNode.next;
+        currNode.next = newNode;
     }
 
-    public String getMiddle(Node head) {
-
-        int length = 0;
-        Node temp = head;
-        while (temp != null) {  //to get the size of LL
-            length++;
-            temp = temp.next;
+    public String getMiddle(Node head) {  //2 pointer Technique
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-
-        int mid_index = length / 2;
-        while (mid_index > 0) {  //or we can use for loop
-            head = head.next;
-            mid_index--;
-        }
-
-        return head.data;
+        return slow.data;
     }
 
     public void removeFirst() {
@@ -88,32 +76,27 @@ public class LinkedListImpl {   //singly linked-list
             return;
         }
 
-        head = this.head.next;
+        head = head.next;
         size--;
     }
 
     public void removeLast() {
-        if (head == null) {
-            System.out.println("Empty List, nothing to delete");
-            return;
-        }
-
-        size--;
-        if (head.next == null) { //if we have only one node
+        if (head == null) return;
+        if (head.next == null) {  //if we have only one Node
             head = null;
+            size = 0;
             return;
         }
 
-        Node currNode = head;
-        Node lastNode = head.next;
-        while (lastNode.next != null) { //we need to go to last before node
-            currNode = currNode.next;
-            lastNode = lastNode.next;
+        Node secondLast = head;
+        while (secondLast.next.next != null) {
+            secondLast = secondLast.next;
         }
-        currNode.next = null;
+        secondLast.next = null;
+        size--;
     }
 
-    public Node DeleteNthNodefromEnd(Node head, int N) {
+    public Node DeleteNthNodeFromEnd(Node head, int N) {
         if (head == null) {
             return null;
         }
@@ -176,21 +159,8 @@ public class LinkedListImpl {   //singly linked-list
         return size;
     }
 
-    static Node rotateRight(Node head, int k) {  //rotate list by k times
-        if (head == null || head.next == null) return head;
-
-        for (int i = 0; i < k; i++) {
-            Node temp = head;
-            while (temp.next.next != null) temp = temp.next;
-            Node end = temp.next;
-            temp.next = null;
-            end.next = head;
-            head = end;
-        }
-        return head;
-    }
-
-    public void printList(Node currNode) {
+    public void printList() {
+        Node currNode = head;
         while (currNode != null) {
             System.out.print(currNode.data + " -> ");
             currNode = currNode.next;
@@ -203,33 +173,28 @@ public class LinkedListImpl {   //singly linked-list
         list.addLast("is");
         list.addLast("a");
         list.addLast("list");
-        list.printList(list.head);
+        list.printList();
 
         list.addFirst("this");
-        list.printList(list.head);
-        System.out.println("Size of LL: "+list.getSize());
-        System.out.println("Mid val of LL: "+ list.getMiddle(list.head));
+        list.printList();
+        System.out.println("Size of LL: " + list.getSize());
+        System.out.println("Mid val of LL: " + list.getMiddle(list.head));
 
         list.removeFirst();
-        list.printList(list.head);
+        list.printList();
         list.removeLast();
-        list.printList(list.head);
-        System.out.println("Size of LL: "+list.getSize());
+        list.printList();
+        System.out.println("Size of LL: " + list.getSize());
 
         list.addInMiddle(2, "only");
-        list.printList(list.head);
+        list.printList();
 
         list.reverseList();
         System.out.println("Reversing LL: ");
-        list.printList(list.head);
+        list.printList();
 
-        Node newHead = list.rotateRight(list.head, 1);
-        System.out.println("Rotate LL: ");
-        list.printList(newHead);
-
-        list.DeleteNthNodefromEnd(list.head, 2);
+        list.DeleteNthNodeFromEnd(list.head, 2);
         System.out.println("After deleting nth node from right: ");
-        list.printList(list.head);
+        list.printList();
     }
 }
-

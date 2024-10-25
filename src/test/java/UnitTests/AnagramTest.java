@@ -11,7 +11,7 @@ public class AnagramTest {
 
     //Before each Test case - used to set any counters etc
     @Before //Junit4
-    public void beforeEach() {
+    public void beforeEachOld() {
         System.out.println("Before Executed");
     }
     @BeforeEach //Junit5
@@ -43,7 +43,7 @@ public class AnagramTest {
 
     //After each Test case - used to reset counters etc
     @After //Junit4
-    public void afterEach() {
+    public void afterEachOld() {
         System.out.println("After Executed");
     }
     @AfterEach //Junit5

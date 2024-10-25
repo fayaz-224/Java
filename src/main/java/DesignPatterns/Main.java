@@ -15,12 +15,6 @@ class Main {
         System.out.println(dog1);
         System.out.println(dog2);
 
-        //Factory
-        Employee emp1 = FactoryDP.getEmployee("WebDeveloper");
-        Employee emp2 = FactoryDP.getEmployee("AndroidDeveloper");
-        System.out.println(emp1.getSalary());
-        System.out.println(emp2.getSalary());
-
         //Prototype
         PrototypeDP p1 = new PrototypeDP(1, "flash");
         System.out.println(p1);

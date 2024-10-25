@@ -51,7 +51,7 @@ public class BSTImpl {
 
         while (!queue.isEmpty()) {
             int levelSize = queue.size();
-            List<Integer> currentLevel = new ArrayList<>(levelSize); //to store level result
+            List<Integer> currentLevel = new ArrayList<>(); //to store level result
             for (int i=0; i < levelSize; i++) {
                 Node currentNode = queue.poll();
                 currentLevel.add(currentNode.data);
@@ -63,6 +63,7 @@ public class BSTImpl {
                     queue.offer(currentNode.right);
                 }
             }
+
             result.add(currentLevel);
         }
         return result;
