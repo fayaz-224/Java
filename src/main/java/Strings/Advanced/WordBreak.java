@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Advanced;
 
 import java.util.*;
 import java.util.stream.Collectors;

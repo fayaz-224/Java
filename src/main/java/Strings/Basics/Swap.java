@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 // swapping 2 strings without using 3rd string
 public class Swap {

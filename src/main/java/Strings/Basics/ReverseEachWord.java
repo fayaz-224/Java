@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 /*
 class StringFormatter {
 	public static String reverseWord(String str){  

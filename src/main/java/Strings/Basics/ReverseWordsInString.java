@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 //https://leetcode.com/problems/reverse-words-in-a-string/description/
 public class ReverseWordsInString {

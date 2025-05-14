@@ -1,6 +1,6 @@
 package UnitTests;
 
-import Strings.Palindrome;
+import Strings.Basics.Palindrome;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 

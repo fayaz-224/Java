@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 //A pangram is a sentence containing every letter in the English Alphabet.(A to Z)
 class Pangram {

@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 public class StringRotation {
     public static void main(String[] args) {

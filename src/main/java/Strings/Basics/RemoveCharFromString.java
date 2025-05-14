@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 public class RemoveCharFromString {
     public static String removeCharAt(String str, int index) {

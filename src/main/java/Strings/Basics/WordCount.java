@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 //counting no. of words in a string
 public class WordCount {

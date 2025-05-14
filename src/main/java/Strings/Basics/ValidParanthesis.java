@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -10,9 +10,7 @@ class ValidParanthesis {
             if(s.charAt(i) == '{' || s.charAt(i) == '(' || s.charAt(i) == '[')
                 st.push(s.charAt(i));
             else if(s.charAt(i) ==')')
-                if (!st.empty() && st.peek() == '(')
-                    st.pop();
-                else
+                if (st.empty() && st.pop() != '(')
                     return false;
             else if(s.charAt(i) ==']')
                 if (st.empty() || st.pop() != '[')     //simple way to return false directly

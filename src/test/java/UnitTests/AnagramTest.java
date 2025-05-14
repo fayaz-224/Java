@@ -1,6 +1,6 @@
 package UnitTests;
 
-import Strings.Anagram;
+import Strings.Basics.Anagram;
 import org.junit.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;

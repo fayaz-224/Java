@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 public class RemoveSpecialChars {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 public class StringCompression {
     public static String compressString(String input) {

@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Basics;
 
 public class StringCountInGivenText {  //matches non-absolute strings
     static int countOfString(String text) {
