@@ -28,8 +28,12 @@ public class CorporateFlightBookings {
 
             res[start] += seats; // Start adding seats from this flight
             if(end < n){
-                res[end] -= seats; // Subtract the seat count just after the end position, as end is exclusive
-                                  //we ensure that the increment of seats no longer affects positions beyond the end when a prefix sum is performed.
+                res[end] -= seats;
+                //we ensure that the increment of seats no longer affects positions beyond the end when a prefix sum is performed.
+
+                //Instead of updating every element from start-1 to end-1 with seats, we:
+                //Add seats at start-1
+                //Subtract seats at end, so that when we compute the prefix sum, the addition stops at the correct point (end) will not propagate to other indices means, addition will be done from start-1 to end-1.
             }
         }
 
@@ -42,14 +46,14 @@ public class CorporateFlightBookings {
 
     public static void main(String[] args) {
         CorporateFlightBookings fb = new CorporateFlightBookings();
-        int[][] bookings = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};  //[10,55,45,25,25]
+        int[][] bookings = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};  //[firstFlight, lastFlight, seatsBooked]
         int n = 5;  //no. of flights
 
         int[] result = fb.corpFlightBookings2(bookings, n);
 
         System.out.println("Seats booked on each flight:");
         for (int seats : result) {
-            System.out.print(seats + " ");
+            System.out.print(seats + " ");  //[10,55,45,25,25]
         }
     }
 }

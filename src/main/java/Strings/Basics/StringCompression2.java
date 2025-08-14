@@ -7,14 +7,14 @@ public class StringCompression2 {
     public static String compressString(String compressed) {
         if (compressed == null || compressed.isEmpty()) return compressed;
 
-        Map<Character, Integer> countMap = new HashMap<>();
+        Map<Character, Integer> countMap = new LinkedHashMap<>();
         int i = 0;
 
         while (i < compressed.length()) {
             char currentChar = compressed.charAt(i);
-            int numStart = ++i;  //imp
+            int numStart = ++i;  //'i' will change below, so saving i+1 to track digit length
 
-            // Move until a non-digit character (the next letter or end of string)
+            // Move 'i' until a non-digit character (the next letter or end of string)
             while (i < compressed.length() && Character.isDigit(compressed.charAt(i))) {
                 i++;
             }

@@ -1,14 +1,13 @@
 package DSA.Sort;
 
 //Compares the current element to adjacent elements repeatedly.
-//At the end of each iteration, the highest element gets bubbled up at its proper place.
+//At the end of each iteration, the highest element gets bubbled up at its proper place (end).
 class BubbleSort {
   public static void main(String []args) {
     int n=5, i, j, temp;
     int[] arr = {4, 7, 13, 0, 1};
 
-   // main logic 
-    for (i = 0; i < n-1; i++) {
+    for (i = 0; i < n-1; i++) {  //n-1 to avoid indexOutOfBounds in below if cond.
         for (j = 0; j < n-i-1; j++) {   //n-i-1 as last elements are already sorted
             if (arr[j] > arr[j+1]) {  // For descending order use '<' condition
               temp = arr[j];

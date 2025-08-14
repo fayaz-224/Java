@@ -13,10 +13,10 @@ public class PalindromePartitioning {
             return;
         }
 
-        for (int end = start; end < s.length(); end++) {
-            if (isPalindrome(s, start, end)) {
-                currentList.add(s.substring(start, end + 1));
-                partitionHelper(s, end + 1, currentList);
+        for (int i = start; i < s.length(); i++) {
+            if (isPalindrome(s, start, i)) {
+                currentList.add(s.substring(start, i + 1));
+                partitionHelper(s, i + 1, currentList);
                 currentList.remove(currentList.size() - 1); // Backtrack, remove previously added element in line 18
             }
         }
@@ -37,7 +37,7 @@ public class PalindromePartitioning {
         obj.partitionHelper(input, 0, new ArrayList<>());
 
         System.out.println("Palindrome Partitions for '" + input + "': ");
-        for (List<String> partition : obj.result) {
+        for (List<String> partition : obj.result) {  //[a, a, b], [aa, b]
             System.out.println(partition);
         }
     }

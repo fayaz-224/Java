@@ -2,8 +2,7 @@ package Matrix;
 
 // where rows become columns, columns become rows
 /* 
-public class TransposeMtx
-{
+public class TransposeMtx {
    public static void main(String args[]) {
       int m, n, i, j;
       Scanner in = new Scanner(System.in);

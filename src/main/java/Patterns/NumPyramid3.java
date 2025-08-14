@@ -1,4 +1,5 @@
 package Patterns;
+
 /*
 54321
 5432
@@ -6,7 +7,6 @@ package Patterns;
 54
 5
 */
-
 public class NumPyramid3 {	//TCS question
 
 	public static void main(String[] args) {

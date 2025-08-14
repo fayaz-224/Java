@@ -14,7 +14,7 @@ public class RomanToNum {
         romanMap.put('D', 500);
         romanMap.put('M', 1000);
 
-        int returnNumber = romanMap.get(s.charAt(s.length() - 1));
+        int returnNumber = romanMap.get(s.charAt(s.length() - 1));  //from back to front
         for (int i = 0; i < s.length() - 1; i++) {  //imp: i < len-1 as we are taking i+1 below
             if (romanMap.get(s.charAt(i)) >= romanMap.get(s.charAt(i + 1))) {
                 returnNumber += romanMap.get(s.charAt(i));

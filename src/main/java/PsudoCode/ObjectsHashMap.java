@@ -37,7 +37,7 @@ public class ObjectsHashMap {
         map.put(it1, 100);
         map.put(it2, 200);  // This will replace the entry of it1 due to identical keys
 
-        // Outputs "1" because it1 and it2 are treated as the same key due to overriding equals() and hashCode()
+        // Output: "1" because it1 and it2 are treated as the same key due to overriding equals() and hashCode()
         System.out.println(map.size());
     }
 }

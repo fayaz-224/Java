@@ -3,21 +3,20 @@ package DSA.TwoPointers;
 //Floyd's Tortoise and Hare Algorithm
 public class LoopDetector {
 
-    public static int findLoopLength(int[] array, int startIndex) {   //count Length Of Cycle in array
-        if (startIndex < 0 || startIndex >= array.length || array.length == 0) {
+    public static int findLoopLength(int[] arr, int startIndex) {   //count Length Of Cycle in arr
+        if (startIndex < 0 || startIndex >= arr.length || arr.length == 0) {
             return -1;
         }
 
         int slow = startIndex, fast = startIndex;
 
         while (true) {
-            slow = array[slow];
-            if (slow < 0 || slow >= array.length) {
+            slow = arr[slow];
+            if (slow < 0 || slow >= arr.length) {
                 return -1;
             }
-
-            fast = array[array[fast]];
-            if (fast < 0 || fast >= array.length || array[fast] < 0 || array[fast] >= array.length) {
+            fast = arr[arr[fast]];
+            if (fast < 0 || fast >= arr.length || arr[fast] < 0 || arr[fast] >= arr.length) {
                 return -1;
             }
 
@@ -25,7 +24,7 @@ public class LoopDetector {
                 // Loop detected, calculate the length of the loop
                 int loopLength = 0;
                 do {
-                    slow = array[slow];
+                    slow = arr[slow];  //moving slow till it reaches its position, to calculate cycle
                     loopLength++;
                 } while (slow != fast);
 

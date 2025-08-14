@@ -25,11 +25,22 @@ public class GCD {
     static int gcd(int a, int b) {
       if (b == 0)
         return a;
-      return gcd(b, a % b);	 // replacing a with b and b with modulus(a,b) as long as b != 0
+      return gcd(b, a % b);	 // replacing a with b, and b with modulus(a,b) as long as b != 0
     }
-     
+
+    // Function to compute GCD (Euclidean algorithm)
+    public static int gcd2(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
     public static void main(String[] args) {
-        int a = 93, b = 9;
+        int a = 98, b = 8;
         System.out.println("GCD of " + a +" and " + b + " is " + gcd(a, b));
+        System.out.printf("GCD of %d and %d is: %d", a, b, gcd2(a, b));
     }
 }

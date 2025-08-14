@@ -9,45 +9,52 @@ import java.util.Set;
 public class LongestSubstringWithoutRepeatChars {
     public static void main(String[] args) {
         String s = "abcdabcbb";
-        int result = lengthOfLongestSubstring1(s);
-        System.out.println("longest substring without repeating characters:" + result);
+        System.out.println("Length of longest substring without repeating characters:" + lengthOfLongestSubstring(s));
+        System.out.println("longest substring without repeating characters:" + longestSubstring(s));
     }
 
     //Approach - 1
-    public static int lengthOfLongestSubstring1(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.isEmpty()) {
             return -1;
         }
 
-        int left = 0, right = 0, length = 0;
+        int left = 0, right = 0;
         int maxLength = 0;  //gives count of longest substring
+        //int start = 0;  // Start index of longest substring - to get actual string
         Map<Character, Integer> map = new HashMap<>();
 
-        while(right < s.length()) {
+        while(right < s.length()) {  //At each step, we expand the window to the right.
             char c = s.charAt(right);
             map.put(c, map.getOrDefault(c,0)+1);
 
+            //If c appears more than once, we shrink the window from the left until it's unique again.
             while(map.get(c) > 1) {
                 char leftCh = s.charAt(left);
-                map.put(leftCh, map.get(leftCh)-1);
+                map.put(leftCh, map.get(leftCh)-1);  //Reduce its count in the map, because we are "removing" it from the window.
                 left++;
             }
-
             maxLength = Math.max(maxLength, right - left + 1);
+            // Update max length and starting index if longer substring found - to get the longest substring itself (not just its length)
+//            if (right - left + 1 > maxLength) {
+//                maxLength = right - left + 1;
+//                start = left;
+//            }
             right++;
         }
         return maxLength;
+        //return s.substring(start, start + maxLength);
     }
 
     //Approach - 2
-    static String LongestSubstring(String s) {
+    static String longestSubstring(String s) {
         if (s == null || s.isEmpty()) {
             return "String is empty.";
         }
 
         int maxLength = 0;  //gives count of longest substring
         int start = 0;
-        int longestStart = 0;  //starting index of longest substring of maxLength
+        int longestStart = 0;  //start index of longest valid substring so far
         Map<Character, Integer> map = new HashMap<>();
 
         for (int end = 0; end < s.length(); end++) {

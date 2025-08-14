@@ -19,6 +19,23 @@ public class RotationCount {
         return min_index;
     }
 
+    public static int countRotations2(int[] nums) {  //binary search
+        int left = 0, right = nums.length - 1;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            // If mid-element is less than the rightmost, min is to the left
+            if (nums[mid] < nums[right]) {
+                right = mid;
+            } else {
+                // Min is at mid or to the right
+                left = mid+1;
+            }
+        }
+        return left;  // Index of the smallest element = rotation count
+    }
+
 //    static int countRotations(int[] arr) { //Approach 2
 //        int pivot = findPivot(arr); //pivot is the max element
 //        return pivot + 1;

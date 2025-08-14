@@ -3,17 +3,17 @@ package Array.Advance;
 import java.util.Arrays;
 
 //take a four-digit number, arrange its digits in descending and ascending order to create two new numbers, and then subtract the smaller number from the larger one.
-// Repeating this process will eventually lead to Kaprekar's Constant, 6174
+// Repeating this process will eventually lead to Kaprekar's Constant, 6174.
+//3-digit Kaprekar constant is 495.
 public class KaprekarConstant {
 
     public static final int KAPREKAR_CONSTANT = 6174;
 
     public static int kaprekarSteps(int num) {
-        int steps = 0;
+        int steps = 0; //count
         while (num != KAPREKAR_CONSTANT) {
-            // Get four digits of given number
-            int[] digits = new int[4]; //nums.length
-            for (int i=0; i<4; i++) {
+            int[] digits = new int[4];
+            for (int i=0; i<4; i++) {  // Get digits from number
                 digits[i] = num % 10;
                 num /= 10;
             }
@@ -21,7 +21,18 @@ public class KaprekarConstant {
             int asc = ascending(digits);
             int desc = descending(digits);
             num = desc - asc;  //Math.abs(asc - desc);
-            steps++;  //count
+            steps++;
+
+            //or
+            //String s = String.format("%04d", num);  //using formatter as we only need 4 digit num
+            //char[] digits = s.toCharArray();
+            //Arrays.sort(digits);
+            //int asc = Integer.parseInt(new String(digits));
+            //int desc = Integer.parseInt(new StringBuilder(new String(digits)).reverse().toString());
+            //num = desc - asc;
+            //count++;
+
+            if (num == 0) break;  // all digits same
         }
         return steps;
     }

@@ -26,7 +26,7 @@ public class GenerateParentheses {
         List<String> results = generateParentheses(result, "", 0, 0, n);
         System.out.println("Valid combinations of parentheses: " + results.size());
         for (String str : results) {
-            System.out.println(str);
+            System.out.println(str);  //5 -> ((())), (()()), (())(), ()(()), ()()()
         }
     }
 }

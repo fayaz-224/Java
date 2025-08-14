@@ -1,7 +1,6 @@
 package Matrix;
 
-public class SumOfRowColoum
-{    
+public class SumOfRowColumn {
     public static void main(String[] args) {    
         int sumRow, sumCol;
         int a[][] = {{1, 2, 3},    

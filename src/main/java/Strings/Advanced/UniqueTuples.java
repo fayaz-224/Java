@@ -20,7 +20,7 @@ public class UniqueTuples {
 
     public static void main(String[] args) {
         String input = "abbccde";
-        int tupleSize = 2;
+        int tupleSize = 3;
         Set<String> uniqueTuples = getUniqueTuples(input, tupleSize);
 
         System.out.println("Unique tuples:");

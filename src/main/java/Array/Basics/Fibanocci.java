@@ -21,19 +21,18 @@ public class Fibanocci {  //nth fibonacci no. using recursion
  }
 
  /*
-
 import java.util.Arrays;
 
 public class FibonacciDP {   //DP
 
     static int fibonacciDP(int n) {
         int[] fib = new int[n + 1];
+        fib[0] = 0;
         fib[1] = 1;
 
         for (int i = 2; i <= n; ++i) {
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-
         return fib[n];
     }
 
@@ -44,20 +43,20 @@ public class FibonacciDP {   //DP
   */
 
 
+/*
+class Fibonacci {	//Fibonacci series up to a given number
+public static void main(String[] args) {
+   if (n <= 1) return n;
 
- /*
- class Fibonacci {	//Fibonacci series up to a given number
- public static void main(String[] args) {
+  int n = 100, firstTerm = 0, secondTerm = 1;
+  System.out.println("Fibonacci Series Upto " + n + ": ");
 
-   int n = 100, firstTerm = 0, secondTerm = 1;
-   System.out.println("Fibonacci Series Upto " + n + ": ");
-   
-   while (firstTerm <= n) {
-     System.out.print(firstTerm + ", ");
+  while (secondTerm <= n) {
+    System.out.print(firstTerm + ", ");
 
-     int nextTerm = firstTerm + secondTerm;
-     firstTerm = secondTerm;
-     secondTerm = nextTerm;
+    int nextTerm = firstTerm + secondTerm;
+    firstTerm = secondTerm;
+    secondTerm = nextTerm;
    }
  }
 }

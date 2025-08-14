@@ -1,30 +1,27 @@
 package DSA.DP;
 
-//Given an array arr of non-negative integers and an integer sum, the task is to find subset is possible with given sum.
+//Given an array arr of non-negative integers and an integer sum, the task is to find that the subset is possible with given sum.
 public class SubsetSum {
 
     public static boolean subsetsWithSum(int[] arr, int sum) {  //DP
         int n = arr.length;
-        boolean[][] dp = new boolean[n + 1][sum + 1];  //rows = arr, cols = sum
+        boolean[][] dp = new boolean[n+1][sum+1];  //1-based indexing dp table, if we use o-based dp then we must manually setup First element
 
         // If sum is 0, then answer is true
         for (int i = 0; i <= n; i++)
             dp[i][0] = true;
-        // If sum is not 0 and set is empty, then answer is false
-        for (int i = 1; i <= sum; i++)
-            dp[0][i] = false;
 
         // Fill the subset table in bottom up manner
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= sum; j++) {
-                if (j >= arr[i - 1]) {
+            for (int target = 1; target <= sum; target++) {
+                if (arr[i - 1] <= target) {
                     // If the current element can be included
-                    dp[i][j] = dp[i-1][j] || dp[i-1][j-arr[i-1]];
+                    dp[i][target] = dp[i - 1][target] || dp[i - 1][target - arr[i-1]];
                 } else {
-                    // If the current element is greater than the sum, exclude it -> if(j < set[i-1])
-                    dp[i][j] = dp[i - 1][j];
+                    // If the current element is greater than the sum, exclude it -> if(target < arr[i-1])
+                    dp[i][target] = dp[i - 1][target];
                 }
-                //dp[i][j] %= mod;  //if larger values are given - to avoid overflow
+                //dp[i][target] %= mod;  //if larger values are given - to avoid overflow
             }
         }
 
@@ -37,7 +34,6 @@ public class SubsetSum {
         System.out.println("Subset is found? " + subsetsWithSum(arr, sum));
     }
 }
-
 
 /*
 public class SubsetSumRecursive {

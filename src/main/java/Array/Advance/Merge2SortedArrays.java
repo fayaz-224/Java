@@ -1,7 +1,6 @@
 package Array.Advance;
 
-//without using extra space
-public class Merge2SortedArrays { //Approach-1
+public class Merge2SortedArrays { //without using extra space
     public static void mergeArrays(int[] arr1, int m, int[] arr2, int n) {
         int i = m - 1; // Index of last element in arr1
         int j = n - 1; // Index of last element in arr2
@@ -49,12 +48,8 @@ public class Merge2SortedArrays { //Approach-1
     }
 }
 
-
-//Approach-2: we can also use InsertionSort logic to impl this.
-
 /*
-//Using extra space
-public class Merge2SortedArrays {
+public class Merge2SortedArrays {  //Using extra space - TC: O(n + m)
 public static int[] mergeAndSortDescending(int[] arr1, int[] arr2) {
         int n1 = arr1.length;
         int n2 = arr2.length;
@@ -73,16 +68,8 @@ public static int[] mergeAndSortDescending(int[] arr1, int[] arr2) {
         while (i < n1) {
             merged[k++] = arr1[i++];
         }
-
         while (j < n2) {
             merged[k++] = arr2[j++];
-        }
-
-        // Sort in descending order
-        for (int l = 0; l < merged.length / 2; l++) {
-            int temp = merged[l];
-            merged[l] = merged[merged.length - 1 - l];
-            merged[merged.length - 1 - l] = temp;
         }
 
         return merged;

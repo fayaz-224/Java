@@ -8,16 +8,15 @@ public class NextPermutation {
         int n = nums.length;
         int idx = -1;
 
-        // To find the break-point, we will traverse the array backward and store the index i
-        // where; nums[i] < nums[i+1]
-        for (int i = n - 2; i >= 0; i--) {  //i = n - 2 is to avoid ArrayIndexOutOfBounds in next line
-            if(nums[i] < nums[i + 1]) {
+        // Step 1: Find the first index 'i' from the end where nums[i] < nums[i+1]
+        for (int i = n - 2; i >= 0; i--) {  //i = n-2 is to avoid ArrayIndexOutOfBounds in next line
+            if (nums[i] < nums[i + 1]) {
                 idx = i;
                 break;
             }
         }
 
-        // If such a pair was found, look for the smallest number greater than nums[idx] from the end
+        // Step 2: If such index found, find the next greater element to swap with
         if (idx != -1) {
             for (int i = n - 1; i > idx; i--) {
                 if (nums[i] > nums[idx]) {
@@ -27,8 +26,8 @@ public class NextPermutation {
             }
         }
 
-        // Reverse the part of the array after idx to get the next smallest lexicographical order
-        reverse(nums, idx + 1);  //idx + 1 as Follows: if we got result in above method this moves idx to end to avoid any other changes, if Not it'll reverse array from 0 index as idx=-1 initially.
+        // Step 3: Reverse the subarray from i+1 to end(n-1) to get next smallest sequence
+        reverse(nums, idx+1);
     }
 
     private static void swap(int[] nums, int i, int j) {
@@ -58,3 +57,14 @@ public class NextPermutation {
         System.out.println("Next lexicographically greater permutation (returning to smallest): " + Arrays.toString(nums2));
     }
 }
+
+/*
+Walkthrough
+For nums = [1, 2, 3]:
+Step 1: Find i = 1 (2 < 3)
+Step 2: Find j = 2 (3 > 2), swap -> [1, 3, 2]
+Step 3: Reverse from i+1 = 2 to end (no effect in this example, see 5 digit example for ref) → [1, 3, 2]
+
+For nums = [3, 2, 1]:
+Step 1: No such i found → reverse entire array → [1, 2, 3]
+ */

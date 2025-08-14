@@ -31,9 +31,9 @@ AAAA
 FFFFF
 */
 
-public class StringPattern {
+public class CharPyramid4 {
 	public static void main(String[] args){
-		String s= "FAYAZ";
+		String s = "FAYAZ";
 		int n=s.length();
 		
 		for(int i=1,k=n-1;i<=n;i++,k--) {

@@ -1,6 +1,6 @@
 package Array.Basics;
 
-import java.util.Arrays;
+import java.util.*;
 
 //Please use the below two arrays as inputs and try to write a program addition of the two arrays.
 //int arr1[] = { 9, 8, 9 };
@@ -12,54 +12,37 @@ public class ArraySum {
         int arr1[] = {9, 8, 9};
         int arr2[] = {9, 9};
 
-        // Reverse arrays as we perform addition from the last digit
-        int[] revArr1 = reverseArray(arr1);
-        int[] revArr2 = reverseArray(arr2);
-
-        // Determine the maximum length required for the result array
-        int maxLength = Math.max(revArr1.length, revArr2.length);
-
-        // Result array to store the sum
-        int[] result = new int[maxLength + 1]; // +1 in case there's a carry at the end
-
-        int carry = 0;
-
-        // Perform addition digit by digit
-        for (int i = 0; i < maxLength; i++) {
-            int digit1 = (i < revArr1.length) ? revArr1[i] : 0;
-            int digit2 = (i < revArr2.length) ? revArr2[i] : 0;
-
-            int sum = digit1 + digit2 + carry;
-            result[i] = sum % 10; // Store the current digit in the result array
-            carry = sum / 10;     // Update the carry
-        }
-
-        // If there's any remaining carry, add it to the result
-        if (carry > 0) {
-            result[maxLength] = carry;
-        } else {
-            // Trim the result array if no carry in the last step
-            result = Arrays.copyOf(result, maxLength);
-        }
-
-        // Reverse the result array to get the correct order of digits
-        result = reverseArray(result);
-
-        System.out.println("Output array: " + Arrays.toString(result));
+        List<Integer> result = addArrays(arr1, arr2);
+        System.out.println("Resulting array: " + result);
     }
 
-    private static int[] reverseArray(int[] arr) {
-        int left = 0, right = arr.length - 1;
+    public static List<Integer> addArrays(int[] arr1, int[] arr2) {
+        //iterate arrays in reverse order, as we perform addition from the last digit
+        List<Integer> result = new ArrayList<>();
+        int i = arr1.length - 1;
+        int j = arr2.length - 1;
+        int carry = 0;
 
-        while (left < right) {
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-
-            left++;
-            right--;
+        // Add digits from right to left
+        while (i >= 0 || j >= 0 || carry > 0) {
+            int digit1 = i >= 0 ? arr1[i] : 0;
+            int digit2 = j >= 0 ? arr2[j] : 0;
+            int sum = digit1 + digit2 + carry;
+            result.add(sum % 10);         // Add last digit of sum
+            carry = sum / 10;             // Carry for next iteration
+            i--;
+            j--;
         }
-        return arr;
+
+        // Reverse result list to get correct order
+        Collections.reverse(result);
+        return result;
+
+        //convert List to array if needed
+        //int[] result = new int[result.size()];
+        //for (int k = 0; k < result.size(); k++) {
+        //    result[k] = result.get(result.size() - 1 - k); // reverse while copying
+        //}
     }
 }
 

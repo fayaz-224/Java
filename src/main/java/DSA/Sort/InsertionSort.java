@@ -5,7 +5,6 @@ package DSA.Sort;
 public class InsertionSort {
     public static void main(String[] args) {
         int[] arr = {5, 2, 4, 6, 1, 3};
-
         insertionSort(arr);
 
         System.out.println("Array after sorting:");
@@ -18,13 +17,12 @@ public class InsertionSort {
             int key = arr[i];
             int j = i - 1;
 
-            //Compare second element with the first element and if the second element is small then swap them.
-            //Continue this process, comparing each element with the ones before it and swapping as needed to place it in the correct position
+            // Move elements greater than key to one position ahead
             while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
+                arr[j + 1] = arr[j];    // Shift element to right
                 j--;
             }
-            arr[j + 1] = key;
+            arr[j + 1] = key; // Place key in its correct position
         }
     }
 

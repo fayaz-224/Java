@@ -2,7 +2,8 @@ package Array.Advance;
 
 import java.util.HashMap;
 
-public class LargestSubarrayWithGivenSum {
+//find length of Longest SubArray Of Given Sum
+public class LongestSubArrayOfGivenSum {
 
     static int solve(int[] a, int targetSum) { //Brute Force Approach O(N^2)
         int  max = 0;
@@ -16,6 +17,24 @@ public class LargestSubarrayWithGivenSum {
             }
         }
         return max;
+    }
+
+    static int solve2(int[] a, int targetSum) {  //Optimal O(n) - sliding window technique for non-negative numbers
+        int maxLen = 0, left = 0, sum = 0;
+
+        for (int right = 0; right < a.length; right++) {
+            sum += a[right];
+
+            while (sum > targetSum) {
+                sum -= a[left++];
+            }
+
+            if (sum == targetSum) {
+                maxLen = Math.max(maxLen, right - left + 1);
+            }
+        }
+
+        return maxLen;
     }
 
     static int maxLenSubarray(int[] arr, int targetSum) { //Optimal Approach O(N)
@@ -46,15 +65,15 @@ public class LargestSubarrayWithGivenSum {
     public static void main(String[] args) {
         int[] arr1 = {1, -1, 5, -2, 3};
         int targetSum1 = 3;
-        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr1, targetSum1));
+        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr1, targetSum1)); //4
 
         int[] arr2 =  {15, 4, -2, 2, -3, 1, 3, 3, 0};
         int targetSum2 = 4;
-        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr2, targetSum2));
+        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr2, targetSum2)); //7
 
         int arr3[] = {9, -3, 3, -1, 6, -5};
         int targetSum3 = 0;
-        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr3, targetSum3));
+        System.out.println("Length of the largest subarray: " + maxLenSubarray(arr3, targetSum3)); //5
 
     }
 }

@@ -1,5 +1,6 @@
 package Array.Advance;
-// the sum of the two numbers immediately above it.
+
+//PASCAL: the sum of the two numbers immediately above it.
 //    1
 //   1 1
 //  1 2 1
@@ -18,19 +19,19 @@ public class ElementInPascal {
         return n * factorial(n - 1);
     }
 
+    public static int pascalElement(int row, int col) {
+        int n = row - 1;
+        int r = col - 1;
+        //formula: nCr = n! / (r! * (n-r)!)
+        return  factorial(n) / (factorial(r) * factorial(n - r));
+    }
+
     public static void pascalRow(int row) {
         int n = row-1;
         for (int col = 1; col <= row; col++) { // printing the entire row n:
             int r = col-1;
             System.out.print(factorial(n) / (factorial(r) * factorial(n - r)) + " ");
         }
-    }
-
-    public static int pascalElement(int row, int col) {
-        int n = row - 1;
-        int r = col - 1;
-        //formula: nCr = n! / (r! * (n-r)!)
-        return  factorial(n) / (factorial(r) * factorial(n - r));
     }
 
     public static void main(String[] args) {

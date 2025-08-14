@@ -26,7 +26,7 @@ public class MaxMinElement {
         int max = arr[0];
         int secMax = Integer.MIN_VALUE;
         for (int i = 0;i < arr.length;i++) {
-            max = Math.max(max, arr[i]); //find largest element element
+            max = Math.max(max, arr[i]); //find largest element first
         }
 
         for (int i = 0; i < arr.length; i++) {

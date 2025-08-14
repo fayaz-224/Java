@@ -115,7 +115,7 @@ class SearchInRotatedArray {
 
             // Check if left half is sorted
             if (nums[left] <= nums[mid]) {
-                if (nums[left] <= target && target < nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {  //check if target is in this sorted left half
                     right = mid - 1;
                 } else {
                     left = mid + 1;

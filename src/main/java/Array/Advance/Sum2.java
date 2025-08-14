@@ -15,7 +15,7 @@ public class Sum2 { //O(n^2)
 
     public static void main(String[] args){
         int arr[] = {2,6,5,8,11};
-        int res[] = twoSum(arr, 22);
+        int res[] = twoSum(arr, 14);
         System.out.println("[" +res[0] + "," + res[1] +"]");
     }
 }
@@ -41,11 +41,8 @@ public class FindPairsSumEquals {
                 List<Integer> temp = Arrays.asList(num, complement);
                 temp.sort(null);
                 res.add(temp);
-                //--or--
-                //String pair = Math.min(num, complement) + "," + Math.max(num, complement);
-                //pairs.add(pair);
-            }
-            set.add(num);
+            } else
+                set.add(num);
         }
 
         System.out.println(res);
@@ -54,10 +51,8 @@ public class FindPairsSumEquals {
  */
 
 
-
 /*
-//2 pointers approach TC: O(n logn), SC: O(1)
-public class FindPairsTwoPointers {
+public class FindPairsTwoPointers { //2 pointers approach TC: O(n logn), SC: O(1)
     public static void findPairsWithSum(int[] arr, int k) {
         Arrays.sort(arr); // Sort the array first
 

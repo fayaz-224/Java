@@ -1,7 +1,7 @@
 package Array.Advance;
 
 //ASCII(String) to Integer
-public class Atoi {
+public class AtoI {
     public static int myAtoi(String str) {
         if (str == null)
             return 0;

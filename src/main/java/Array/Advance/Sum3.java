@@ -12,8 +12,7 @@ public class Sum3 {
                 for (int k = j + 1; k < n; k++) {
                     if (arr[i] + arr[j] + arr[k] == 0) {    //target = 0
                         List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k]);
-                        //Collections.sort(temp);
-                        temp.sort(Integer::compareTo); //we need this, becoz there's a chance to get duplicated result
+                        Collections.sort(temp);  //we need this, becoz there's a chance to get duplicated result
                         set.add(temp);
                     }
                 }

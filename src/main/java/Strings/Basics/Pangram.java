@@ -4,26 +4,20 @@ package Strings.Basics;
 class Pangram {
 
 	public static boolean checkPangram(String str) { //A=65 to Z=90; a=97 to z=122
-		boolean[] mark = new boolean[26];
+		boolean[] alphabets = new boolean[26];
 		int index = 0;
-
-		for (int i = 0; i < str.length(); i++) {
-			// If uppercase character, subtract 'A' to get index.
-			if ('A' <= str.charAt(i) && str.charAt(i) <= 'Z')
-				index = str.charAt(i) - 'A';	// (or) mark[str.charAt(i) - 'A'] = true;
-
-			// If lowercase character, subtract 'a' to get index.
-			else if ('a' <= str.charAt(i) && str.charAt(i) <= 'z')
-				index = str.charAt(i) - 'a';
-			else
-				continue; // If this is not an alphabet
-
-			mark[index] = true;
+		str = str.toLowerCase();
+		for (char c : str.toCharArray()) {  //for (int i = 0; i < str.length(); i++)
+			if (c >= 'a' && c <= 'z') {
+				// for lowercase character, subtract 'a' to get index of that character.
+				index = c - 'a'; //or mark[c - 'a'] = true;
+			}
+			alphabets[index] = true;
 		}
 
-		for (int i = 0; i <= 25; i++) {
-			if (!mark[i])  //mark[i] != true
-				return false;    //to find missing characters: arrList.add((char)(i + 'a')); return arrList;
+		// Check if all 26 letters are present
+		for (boolean present : alphabets) {
+			if (!present) return false;
 		}
 		return true;
 	}
@@ -33,8 +27,8 @@ class Pangram {
 		String str = "The quick brown fox jumps over the lazy dog";
 
 		if (checkPangram(str))
-			System.out.print(str + " - pangram");
+			System.out.print("It's a PANGRAM");
 		else
-			System.out.print(str + " - not a pangram");
+			System.out.print("Not a PANGRAM");
 	}
 }

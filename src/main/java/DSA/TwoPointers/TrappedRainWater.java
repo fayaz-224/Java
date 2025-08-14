@@ -2,24 +2,23 @@ package DSA.TwoPointers;
 
 //Given an array of non-negative integers representation elevation of ground. Your task is to find the water that can be trapped after rain.
 //https://takeuforward.org/data-structure/trapping-rainwater/
-class TrappedRainWater {
+class TrappedRainWater { //Sum of water trapped between bars
 
     //2 pointer approach TC: O(N), SC: O(1)
     //https://leetcode.com/problems/trapping-rain-water/solutions/5010489/java-clean-solution/
     static int trap1(int[] height) {
-        int left = 0;
-        int right = height.length - 1;
+        int left = 0, right = height.length - 1;
 
         int leftMax = Integer.MIN_VALUE, rightMax = Integer.MIN_VALUE;
         int waterTrapped = 0;
 
         while (left < right) {
-            //Instead of storing leftMax, rightMax as shown in trap2(), use them directly
+            //the maximum height seen so far from both sides.
             leftMax = Math.max(leftMax, height[left]);
             rightMax = Math.max(rightMax, height[right]);
 
-            if (leftMax <= rightMax) {
-                waterTrapped += leftMax - height[left];
+            if (leftMax <= rightMax) {   //water will be held upto height smaller wall only
+                waterTrapped += leftMax - height[left];  //leftMax is the highest wall to the left of the current position. If height[left] is lower than leftMax, then there's a “pit” that can collect water. The difference gives the actual volume of water that fits at that point. same from right.
                 left++;
             } else {
                 waterTrapped += rightMax - height[right];

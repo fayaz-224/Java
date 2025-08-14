@@ -2,8 +2,7 @@ package Matrix;
 
 import java.util.Scanner;
 
-public class MtxAddition
-{
+public class MtxAddition {
    public static void main(String args[]) {
        int i, j, n;
        Scanner scan = new Scanner(System.in);
@@ -19,7 +18,6 @@ public class MtxAddition
                a[i][j] = scan.nextInt();
            }
        }
-	   
        System.out.print("Enter Matrix 2 Elements : ");
        for(i=0; i<n; i++) {
            for(j=0; j<n; j++) {
@@ -31,8 +29,9 @@ public class MtxAddition
        for(i=0; i<n; i++) {
            for(j=0; j<n; j++) {
                c[i][j] = a[i][j]+ b[i][j];
-               
-               //c[i][j]=a[i][j] - b[i][j];    for matrix subtraction
+               //c[i][j]=a[i][j] - b[i][j];    //for matrix subtraction
+
+               //a[i][j] += b[i][j];    //without using extra space
                                     
                System.out.print(c[i][j]+ " ");
            }

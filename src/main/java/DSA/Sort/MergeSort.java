@@ -40,7 +40,6 @@ class MergeSort {
             temp.add(arr[leftStart]);
             leftStart++;
         }
-
         //  if elements on the right half are still left
         while (rightStart <= high) {
             temp.add(arr[rightStart]);
@@ -49,7 +48,7 @@ class MergeSort {
 
         // transferring all elements from temporary to main arr
         for (int i = low; i <= high; i++) {
-            arr[i] = temp.get(i - low);  //imp
+            arr[i] = temp.get(i - low);  //imp -> (i - low) aligns the original array’s index [low...high] with index [0...temp.size()-1] in the temporary merged list.
         }
     }
 

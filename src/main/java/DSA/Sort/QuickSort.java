@@ -16,7 +16,7 @@ public class QuickSort {    //O(n^2)
      int partition(int[] arr, int start, int end) {
         int middle = (start + end) / 2;
         int pivot = arr[middle]; //take pivot element based on our req. ie, left, middle, right of the list
- 
+
         int temp;
         while (start <= end) {
             while (arr[start] < pivot) //Check until all values on left are lower than pivot
@@ -26,7 +26,7 @@ public class QuickSort {    //O(n^2)
                 end--;
            
             if (start <= end) {
-            	temp = arr[start]; //swap values becoz both conditions above failed means they are in incorrect position, then increment both sides.
+            	temp = arr[start]; //swap values becoz both conditions above failed means they are in incorrect position.
                 arr[start] = arr[end];
                 arr[end] = temp;
                 start++;
@@ -44,5 +44,4 @@ public class QuickSort {    //O(n^2)
      
     	System.out.println(Arrays.toString(arr));
     }
-   
 }

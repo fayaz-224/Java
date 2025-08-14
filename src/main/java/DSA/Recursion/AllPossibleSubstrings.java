@@ -2,7 +2,7 @@ package DSA.Recursion;
 
 //Time Complexity: O(2^n)
 //Space Complexity: O(n), recursion stack.
-public class AllPossibleSubstrings {  //power set
+public class AllPossibleSubstrings {
     static int count = 0;
     static void solve(int i, String str, String newStr) {
         if (i == str.length()) {
@@ -10,10 +10,10 @@ public class AllPossibleSubstrings {  //power set
             count++;
             return;
         }
-        // picking
+        // pick
         solve(i+1, str,  newStr+str.charAt(i));
-        // poping out while backtracking
-        solve(i + 1, str,  newStr);  //Now while backtracking we have to pop the last character since now we have to implement the non-pick condition and then move to next index.
+        // don't pick
+        solve(i + 1, str,  newStr);
     }
 
     public static void main(String args[]) {
@@ -23,3 +23,20 @@ public class AllPossibleSubstrings {  //power set
         System.out.println("\ncount: " + count);
     }
 }
+
+/*
+public class AllSubstrings {  //O(n^2) better than recursion
+
+    public static void main(String[] args) {
+        String s = "abc";
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j <= s.length(); j++) {
+                System.out.print(s.substring(i, j) + " ");
+                count++;
+            }
+        }
+        System.out.println("\nCount: " + count);
+    }
+}
+ */

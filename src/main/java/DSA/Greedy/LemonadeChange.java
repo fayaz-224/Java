@@ -1,14 +1,13 @@
 package DSA.Greedy;
 
 //Given an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.
-// - Greedy Algorithm
+// Greedy Algorithm
 public class LemonadeChange {
     public static boolean lemonadeChange(int[] bills) {
         // Initialize variables to keep track of available change
         int fives = 0;
         int tens = 0;
 
-        // Iterate through each customer
         for (int bill : bills) {
             if (bill == 5) { // If the customer pays with $5, no change needed
                 fives++;
@@ -53,8 +52,8 @@ Output: true
 Explanation:
 From the first 3 customers, we collect three $5 bills in order.
 From the fourth customer, we collect a $10 bill and give back a $5.
-From the fifth customer, we give a $10 bill and a $5 bill.
-Since all customers got correct change, we output true.
+From the fifth customer, we collect a $20 bill and give a $10 bill and a $5 bill.
+Since all customers got correct change, output is true.
 
 Example 2:
 Input: bills = [5,5,10,10,20]

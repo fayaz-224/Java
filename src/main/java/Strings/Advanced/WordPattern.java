@@ -11,7 +11,7 @@ public class WordPattern {
         System.out.println(findWordMatch(pattern, s));
     }
 
-    private static boolean findWordMatch(String pattern, String s) {
+    private static boolean findWordMatch(String pattern, String s) {  //similar to Isomorphic strings
         HashMap<Character, String> map = new HashMap<>();
         String[] str = s.split("\\s+");
         if (pattern.length() != str.length)

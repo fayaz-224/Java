@@ -22,16 +22,13 @@ public class Pyramid {
 
 //		for(int i=1;i<=n;i++) 	//decreasing py
 //		{
-//			for(int j=1;j<i;j++) //j<i for no space in the beggining of pyramid
-//			{
+//			for(int j=1;j<i;j++) {  //j<i for no space in the beginning of pyramid
 //				System.out.print(" ");
 //			}
-//			for(int j=i;j<n;j++)
-//			{
+//			for(int j=i;j<n;j++) {
 //				System.out.print("*");
 //			}
-//			for(int j=i;j<=n;j++)
-//			{
+//			for(int j=i;j<=n;j++) {
 //				System.out.print("*");
 //			}
 //

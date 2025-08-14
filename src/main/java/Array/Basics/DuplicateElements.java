@@ -18,7 +18,6 @@ public class DuplicateElements {    //time complexity : O(n*m)
     }  
 } 
 */
-
  
 public class DuplicateElements {
     public static void main(String[] args) {
@@ -29,7 +28,6 @@ public class DuplicateElements {
 
     private static void printDuplicates(int[] arr, int n) {
         Map<Integer,Integer> map = new HashMap<>();
-        int count = 0;
         boolean dup = false;
 
         for(int i = 0; i < n; i++) {
@@ -56,7 +54,7 @@ public class DuplicateElements {
 }
 
 /*
-class TUF {
+class TUF {  //faster than hashmap, Better for small inputs
     static int findDuplicate(int[] arr) {
         int n = arr.length;
         int freq[] = new int[n + 1];

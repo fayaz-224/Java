@@ -1,8 +1,9 @@
 package Array.Advance;
 
-public class RemoveDuplicate { // array is sorted, if not sort it
+public class RemoveDuplicate {
     static int removeDuplicates(int[] arr) {
-        int i = 0;  //imaginary index
+        //Arrays.sort(arr);  // array should be sorted, if not sort it
+        int i = 0;  //imaginary index - 2 pointer
         for (int j = 1; j < arr.length; j++) {
             if (arr[i] != arr[j]) {
                 i++;
@@ -20,11 +21,14 @@ public class RemoveDuplicate { // array is sorted, if not sort it
             System.out.print(arr[i] + " ");
         }
     }  
-}  
+}
 
+//Approach-2:
+//Take a Set, Insert all array elements in the Set.
+//Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion.
 
-//This method can be used even if the array is not sorted.
 /*
+//This method can be used even if the array is not sorted.
 public static void removeDuplicates(int[] array) {
         int length = array.length;
         for (int i = 0; i < length - 1; i++) {
@@ -45,19 +49,12 @@ public static void removeDuplicates(int[] array) {
     }
  */
 
-
-//Approach-2:
-//Take a Set, Insert all array elements in the Set.
-//Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion.
-
 /*
 import java.util.ArrayList;
-
 public class RemoveDuplicate {
  
     static void findDuplicates(int arr[], int len){
         ArrayList<Integer> al = new ArrayList<Integer>();
- 
         for (int i = 0; i < len - 1; i++) {
             if (al.contains(arr[i]))
                  continue;
@@ -70,7 +67,6 @@ public class RemoveDuplicate {
     public static void main(String[] args) {
         int arr[] = { 12, 11, 40, 12, 5, 6, 5, 12, 11 };
         int n = arr.length;
- 
         findDuplicates(arr, n);
     }
 }

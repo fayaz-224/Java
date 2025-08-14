@@ -23,7 +23,7 @@ class Derived extends Base {
 
 class StaticOverride {
     public static void main(String args[ ]) {
-        //display() will be invoked based on the reference type Base class
+        //display() will be invoked based on the reference type of Base class
         Base obj1 = new Derived();
         obj1.display(); //calls base method
         obj1.print();  //calls subclass method

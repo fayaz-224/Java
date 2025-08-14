@@ -2,7 +2,7 @@ package DSA.TwoPointers;
 
 import java.util.*;
 
-//Set approach TC:O(n) SC: O(n)
+//Set approach TC:O(n), SC: O(n)
 public class FindPairs {
 
     //2 pointers approach - opp. direction  TC: O(n logn), SC: O(1)
@@ -27,6 +27,7 @@ public class FindPairs {
                 right--;
             }
         }
+        System.out.println(pairs);
     }
 
     public static void findPairsWithSum2(int[] arr, int k) {
@@ -39,13 +40,11 @@ public class FindPairs {
                 // Use a sorted order to avoid duplicates
                 String pair = Math.min(num, complement) + "," + Math.max(num, complement);
                 pairs.add(pair);
-            }
-            seen.add(num);
+            } else
+                seen.add(num);
         }
 
-        for (String pair : pairs) {
-            System.out.println(pair);
-        }
+        System.out.println(pairs);
     }
 
     public static void main(String[] args) {

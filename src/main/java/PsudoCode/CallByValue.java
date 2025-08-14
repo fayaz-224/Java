@@ -10,7 +10,7 @@ class CallByValue {
  	}  
      
  	public static void main(String args[]) {
- 		CallByValue op=new CallByValue();
+ 		CallByValue op = new CallByValue();
  		System.out.println("before change "+op.x);  
  		op.change(50);  
  		System.out.println("after change "+op.x);  //we get o/p as 50 only.

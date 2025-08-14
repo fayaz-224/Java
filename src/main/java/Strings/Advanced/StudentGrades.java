@@ -17,17 +17,16 @@ public class StudentGrades {
         for (String[] scorePair : scores) {
             String student = scorePair[0];
             int score = Integer.parseInt(scorePair[1]);
-            if (!scoreRecords.containsKey(student)) {
-                scoreRecords.put(student, new int[]{score, 1}); // Store total score and count
-            } else {
+            if (scoreRecords.containsKey(student)) {
                 int[] current = scoreRecords.get(student);
                 current[0] += score; // Update total score
                 current[1] += 1; // Update count
+            } else {
+                scoreRecords.put(student, new int[]{score, 1}); // Store total score and count
             }
         }
 
         int maxAverage = Integer.MIN_VALUE;
-
         for (int[] values : scoreRecords.values()) {
             int average = values[0] / values[1]; //one is sum, other is count
             if (average > maxAverage) {
@@ -40,12 +39,11 @@ public class StudentGrades {
 
     public static void main(String[] args) {
         String[][] input = {
-                {"Bobby", "87"},
-                {"Charles", "100"},
-                {"Eric", "64"},
-                {"Charles", "92"}
-        };
-//
-        System.out.println(bestAverageGrade(input));  // Output: 87
+                              {"Bobby", "87"},
+                              {"Charles", "100"},
+                              {"Eric", "64"},
+                              {"Charles", "92"}
+                           };
+        System.out.println(bestAverageGrade(input));  // Output: 96
     }
 }

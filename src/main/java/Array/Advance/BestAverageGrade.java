@@ -29,8 +29,8 @@ public class BestAverageGrade {
         int maxAverage = Integer.MIN_VALUE;
 
         for (int[] values : scoreRecords.values()) {
-            int average = values[0] / values[1]; //one is sum, other is count or //maxAverage = Math.max(maxAverage, values[0] / values[1]);
-            if (average > maxAverage) {
+            int average = values[0] / values[1]; //sum / count
+            if (average > maxAverage) {  //maxAverage = Math.max(maxAverage, values[0] / values[1]);
                 maxAverage = average;
             }
         }

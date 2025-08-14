@@ -1,5 +1,6 @@
 package Patterns;
-/* diamond pattern with increasing nums
+
+/*
     1
    222
   33333
@@ -10,7 +11,6 @@ package Patterns;
    888
     9
 */
-
 public class NumDiamond {
 	public static void main(String[] args) {
 		int n=5,k=1;

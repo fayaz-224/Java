@@ -9,7 +9,6 @@ public class FactorialAndTrailingZeroes {
         }
         return n * factorial(n - 1);
     }
-
     static int countTrailingZeroes(long factorialResult) { //Approach-1
         int count = 0;
         while (factorialResult % 10 == 0) {
@@ -36,9 +35,9 @@ public class FactorialAndTrailingZeroes {
         int n = 10;
         long fact = factorial(n);
         System.out.println("Factorial of " + n + ": " + fact);
-        System.out.println("Number of trailing zeroes: " + countTrailingZeroes(fact));
+        System.out.println("Number of trailing zeroes: " + countTrailingZeroes(fact));  //passing factorial result
 
-        System.out.println("Number of trailing zeroes: " + countTrailingZeroes(n));
+        System.out.println("Number of trailing zeroes: " + countTrailingZeroes(n));  //passing num directly
     }
 }
 

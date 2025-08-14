@@ -3,11 +3,11 @@ package DSA.DP;
 //Given an array arr of non-negative integers and an integer sum, the task is to count all subsets of the given array with a sum equal to a given sum.
 public class SubsetSumCount {
 
-    //Diff from SubsetSum; In SubsetSum we do || with boolean[][] dp
-    //                      and in CountSubsetSum we do + operation with int[][] dp
+    //Diff from SubsetSum; In SubsetSum we do || with dp[][] inside loop
+    //                 but in CountSubsetSum we do + operation with dp[][]
     public static int countSubsetsWithSum(int[] arr, int sum) {
         int n = arr.length;
-        int[][] dp = new int[n + 1][sum + 1];  //1st idx = arr, 2nd idx = sum
+        int[][] dp = new int[n + 1][sum + 1];
 
         // Base case: If the sum is 0 for i elements, then there's one subset (empty subset)
         for (int i = 0; i <= n; i++) {
@@ -16,17 +16,13 @@ public class SubsetSumCount {
 
         // Fill the dp table
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= sum; j++) {
-                if (arr[i - 1] <= j) {
-                    // If the current element can be included, add the count of subsets without the element
-                    // and the count of subsets including the element from the previous row
-                    dp[i][j] = dp[i-1][j]
-                            + dp[i-1][j - arr[i-1]];
+            for (int target = 1; target <= sum; target++) {
+                if (arr[i - 1] <= target) {
+                    dp[i][target] = dp[i-1][target] + dp[i-1][target - arr[i-1]];  //take
                 } else {
-                    // If the current element is greater than the sum, exclude it
-                    dp[i][j] = dp[i - 1][j];
+                    dp[i][target] = dp[i - 1][target];  //no take
                 }
-                //dp[i][j] %= mod;  //if larger values are given - to avoid overflow
+                //dp[i][target] %= mod;  //if larger values are given - to avoid overflow
             }
         }
 

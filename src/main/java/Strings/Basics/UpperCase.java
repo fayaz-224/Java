@@ -1,24 +1,21 @@
 package Strings.Basics;
 
-import java.util.*;
-
 // without using string functions
 class UpperCase {  //A=65 to Z=90; a=97 to z=122
      public static void main(String args[]) {
-         System.out.println("Enter any string which is to be converted to upper case");
-         Scanner sc = new Scanner(System.in);
-         String st=sc.nextLine();
+         String st = "welcome";
 
-         char[] str = st.toCharArray();
-         for(int i=0;i<str.length;i++) {
-             if(str[i]>='a' && str[i]<='z') {
-                 str[i]=(char)(str[i]-32);  //for uppercase case
-                 // str[i]=(char)(str[i]+32);  //for lower case
+         char[] ch = st.toCharArray();
+         for(int i=0;i<ch.length;i++) {
+             if(ch[i]>='a' && ch[i]<='z') {
+                 //Difference between corresponding lowercase and uppercase letters is 32
+                 ch[i]=(char)(ch[i]-32);  //for uppercase case
+                 // ch[i]=(char)(ch[i]+32);  //for lower case
              }
          }
 
          System.out.println("The string in UpperCase is");
-         for(int i=0;i<str.length;i++)
-             System.out.print(str[i]);
+         for(int i=0;i<ch.length;i++)
+             System.out.print(ch[i]);
      }
 }

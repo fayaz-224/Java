@@ -1,10 +1,10 @@
 package Patterns;
+
 //    A
 //   BBB
 //  CCCCC
 // DDDDDDD
 //EEEEEEEEE
-
 public class CharPyramid {
 	public static void main(String args[]){ 
 		int n=5, k='A'; //we can put k inside 1st for loop also

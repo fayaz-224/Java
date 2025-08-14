@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Backtracking
-public class Permutations { //permutaions = n! but not always
+public class Permutations { //permutations = n! but not always
 
     static int count = 0;
     public static void printPermutationForString(String str, String perm) {
         if (str.isEmpty()) {
-            System.out.println(perm); //this will print all the permutations
+            System.out.println(perm); //this will print the permutations or add to List as below example
             count++;
+            return;
         }
 
         for (int i = 0; i < str.length(); i++) {
             char currChar = str.charAt(i);
-            String newStr = str.substring(0, i) + str.substring(i + 1); //In str.substring(0, i), i is exclusive
+            String newStr = str.substring(0, i) + str.substring(i + 1); //In str.substring(0, i), i is exclusive ie; remove the used char from string
             printPermutationForString(newStr, perm + currChar);
         }
     }
@@ -24,10 +25,11 @@ public class Permutations { //permutaions = n! but not always
     public static void printPermutationForInt(int[] nums, StringBuilder perm) {
         if (perm.length() == nums.length) {
             permutation.add(perm.toString());
+            return;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (perm.indexOf(String.valueOf(nums[i])) != -1) {
+            if (perm.indexOf(String.valueOf(nums[i])) != -1) {  //Don’t use indexOf if the input string may contain duplicate characters. use visited[] array logic
                 continue; // Skip if the digit is already in permutation
             }
             perm.append(nums[i]);

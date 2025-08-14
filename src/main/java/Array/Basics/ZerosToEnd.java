@@ -14,13 +14,29 @@ class ZerosToEnd {
         while (count < n)
             arr[count++] = 0;
     }
- 
+
+    public static void moveZeros(int[] arr) {  //2 pointer approach
+        int i = 0; // slow pointer
+
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] != 0) {
+                // Swap only if i and j are different
+                if (i != j) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                i++; // move to next position
+            }
+        }
+    }
     
     public static void main (String[] args) {
         int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
         int n = arr.length;
         pushZerosToEnd(arr, n);
         System.out.println("Array after pushing zeros to the back: ");
-        for (int j : arr) System.out.print(j + " ");
+        for (int j : arr)
+            System.out.print(j + " ");
     }
 }

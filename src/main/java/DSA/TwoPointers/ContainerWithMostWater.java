@@ -3,8 +3,8 @@ package DSA.TwoPointers;
 //2 pointer approach - moving at diff speeds
 // given an array of integers where each integer represents the height of a vertical line drawn on a 2D plane. The width between any two lines is the distance between their indices.
 // The goal is to find the maximum area of water that can be trapped between two lines.
-//So we need to find max water that can bve stored
-public class ContainerWithMostWater {
+//So we need to find max water that can be stored
+public class ContainerWithMostWater {  //Maximize area between two bars
 
     public static int maxArea(int[] height) {
         int left = 0, right = height.length - 1;

@@ -1,11 +1,11 @@
-package Array.Advance;
+package Strings.Basics;
 
 import java.util.Arrays;
 
 public class BiggestPossibleNum {
     public static void main(String[] args) {
         String s = "4891";
-        String[] arr = new String[s.length()];  //let's have a string array
+        String[] arr = new String[s.length()];  //or String[] result = s.split("");
         for (int i = 0; i < s.length(); i++) {
             arr[i] = String.valueOf(s.charAt(i));
         }
@@ -15,7 +15,7 @@ public class BiggestPossibleNum {
     }
 
     public static String largestNumber(String[] arr) {
-        //sorts the array in descending order based on the custom comparison logic provided in comparator
+        //The provided comparator sorts the array in descending order
         //If num2 + num1 is lexicographically greater, it means num2 should come before num1 in the sorted array, resulting in descending order.
         Arrays.sort(arr, (num1, num2) -> (num2 + num1).compareTo(num1 + num2)); //Arrays.sort(arr, comparator);
         StringBuilder str = new StringBuilder();
@@ -28,11 +28,12 @@ public class BiggestPossibleNum {
     public static String smallestNumber(String[] arr) {
         //This comparator sorts the elements in ascending order
         Arrays.sort(arr, (num1, num2) -> (num1 + num2).compareTo(num2 + num1));
-        String str = "";
-        for (String s : arr) {
-            str += s;
-        }
-        return str;
+        return String.join("", arr);
+//        String str = "";
+//        for (String s : arr) {
+//            str += s;
+//        }
+//        return str;
     }
 }
 

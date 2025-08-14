@@ -17,7 +17,7 @@ public class FractionToDecimal {
             return "0";
         }
 
-        // Determine the sign of the result
+        // Determine the sign of the result - using XOR as we might get both -ve values
         StringBuilder result = new StringBuilder();
         if ((numerator < 0) ^ (denominator < 0)) {
             result.append("-");
@@ -58,16 +58,14 @@ public class FractionToDecimal {
 
             remainderMap.put(remainder, result.length());
         }
-
         return result.toString();
     }
 
     public static void main(String[] args) {
-        // Test cases
         System.out.println(fractionToDecimal(1, 3)); // Output: "0.(3)"
         System.out.println(fractionToDecimal(2, 7)); // Output: "0.(285714)"
-        System.out.println(fractionToDecimal(1, 2)); // Output: "0.5"
-        System.out.println(fractionToDecimal(1, 6)); // Output: "0.1(6)"
+        System.out.println(fractionToDecimal(-1, -2)); // Output: "0.5"
+        System.out.println(fractionToDecimal(1, -6)); // Output: "-0.1(6)"
         System.out.println(fractionToDecimal(0, 1)); // Output: "0"
     }
 }

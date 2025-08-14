@@ -2,7 +2,6 @@ package PsudoCode;
 
 
 class Parent{
-
     public static void print(){  //static method
         System.out.println("I am Parent");
     }

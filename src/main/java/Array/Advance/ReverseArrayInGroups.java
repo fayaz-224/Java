@@ -2,7 +2,7 @@ package Array.Advance;
 
 import java.util.Arrays;
 
-public class ReverseArrayInGroups {
+public class ReverseArrayInGroups {  //O(n)
 
     static void reverseInGroups(int[] arr, int k) {
         int n = arr.length;
@@ -23,9 +23,7 @@ public class ReverseArrayInGroups {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int k = 3; // group size
-
-        System.out.println("Original array: " + Arrays.toString(arr));
-        reverseInGroups(arr, k);
+        reverseInGroups(arr, k);  //op: [3, 2, 1, 6, 5, 4, 9, 8, 7, 10]
         System.out.println("Array after reversing in groups of " + k + ": " + Arrays.toString(arr));
     }
 }

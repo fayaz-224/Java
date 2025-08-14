@@ -23,8 +23,8 @@ public class HollowButterfly {
                     System.out.print(" ");
             }
 
-            for (int j = 1; j <= 2 * (n - i); j++) {    //imp
-                System.out.print(" ");
+            for(int j=i;j<n;j++) {
+                System.out.print("  ");  // 2 spaces to maintain symmetry or use below code
             }
 
             for (int j = 1; j <= i; j++) {
@@ -45,8 +45,8 @@ public class HollowButterfly {
                     System.out.print(" ");
             }
 
-            for (int j = 1; j <= 2 * (n - i); j++) {    //imp
-                System.out.print(" ");
+            for(int j=i;j<n;j++) {
+                System.out.print("  ");  // 2 spaces to maintain symmetry or use below code
             }
 
             for (int j = 1; j <= i; j++) {

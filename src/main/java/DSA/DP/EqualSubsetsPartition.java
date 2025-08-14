@@ -1,7 +1,7 @@
 package DSA.DP;
 
 //given multiset of integers can be partitioned into two subsets such that the sum of the numbers on both subsets is equal or false otherwise
-public class EqualSubsetsPartition {
+public class EqualSubsetsPartition { //TC: O(n * target) where target = total / 2.
 
     public static void main(String[] args) {
         int[] nums = {1, 5, 11, 5};
@@ -19,34 +19,25 @@ public class EqualSubsetsPartition {
             return false;
         }
 
+        //Early pruning: If any single element > target, return false early. (optional enhancements)
+
         int target = total / 2;
-
-        // Use dynamic programming to find if there's a subset with sum == target
-        boolean[] dp = new boolean[target + 1];
-        dp[0] = true;
-
-        // Update dp array: if dp[j] was true before considering num, then dp[j + num] should be true to
-        // Iterate through the elements of the array
+        boolean[] dp = new boolean[target + 1]; //1D DP array dp[target + 1] where dp[i] means "Is there a subset with sum i?
+        dp[0] = true;  //because the empty subset always sums to 0.
         for (int num : nums) {
-            // Iterate from sum to 0 - reverse to ensure each number is only used once
-            for (int j = target; j >= num; j--) {
-                dp[j] = dp[j] || dp[j - num];
+            for (int j = target; j >= num; j--) { // Iterate in reverse to ensure each number is used only once
+                dp[j] = dp[j] || dp[j - num]; // Either we already could make sum j, or now we can because we can add num to a previous subset sum (j - num).
             }
         }
-
         return dp[target];
     }
 }
 
-
 /*
-
 //Approach - 2
 public class PartitionEqualSubsetSumRecursive { //Using Recursion and DP
     public boolean canPartition(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return false;
-        }
+        if (nums == null || nums.length == 0) return false;
 
         int sum = 0;
         for (int num : nums) {
@@ -64,12 +55,8 @@ public class PartitionEqualSubsetSumRecursive { //Using Recursion and DP
     }
 
     private boolean canPartitionRecursive(int[] nums, int index, int target, Boolean[][] memo) {
-        if (target == 0) {
-            return true;
-        }
-        if (target < 0 || index >= nums.length) {
-            return false;
-        }
+        if (target == 0) return true;
+        if (target < 0 || index >= nums.length) return false;
 
         // Check memoized result
         if (memo[index][target] != null) {
@@ -85,7 +72,36 @@ public class PartitionEqualSubsetSumRecursive { //Using Recursion and DP
         PartitionEqualSubsetSumRecursive solver = new PartitionEqualSubsetSumRecursive();
         int[] nums = {1, 5, 11, 5};
         System.out.println("Can partition: " + solver.canPartition(nums));
-        // Output: Can partition: true
     }
 }
+ */
+
+/*
+DRY RUN:
+Initial dp: [true, false, false, false, false, false, false, false, false, false, false, false]
+
+num = 1
+Loop j = 11 down to 1:
+dp[1] = dp[1] || dp[0] = false || true → true
+updated dp: [true, true, false, false, false, false, false, false, false, false, false, false]
+
+
+num = 5
+Loop j = 11 down to 5:
+dp[5] = dp[5] || dp[0] = false || true → true
+dp[6] = dp[6] || dp[1] = false || true → true
+updated dp: [true, true, false, false, false, true, true, false, false, false, false, false]
+
+num = 11
+Loop j = 11 down to 11:
+dp[11] = dp[11] || dp[0] = false || true → true
+updated dp: [true, true, false, false, false, true, true, false, false, false, false, true]
+
+num = 5
+Loop j = 11 down to 5:
+dp[10] = dp[10] || dp[5] = false || true → true
+dp[11] = dp[11] || dp[6] = true || true → true (already true)
+Final dp: [true, true, false, false, false, true, true, false, false, false, true, true]
+
+return dp[target] => dp[11] = true
  */

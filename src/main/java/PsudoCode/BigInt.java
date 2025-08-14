@@ -1,4 +1,4 @@
-package Array.Basics;
+package PsudoCode;
 import java.math.BigInteger;
 
 public class BigInt {
