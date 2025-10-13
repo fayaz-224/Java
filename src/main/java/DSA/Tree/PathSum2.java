@@ -1,4 +1,4 @@
-package DSA.BFS_DFS;
+package DSA.Tree;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 //Print all possible paths from root-to-leaf, whose sum is equals to targetSum
 public class PathSum2 {
 
-    private static List<List<Integer>> gatherAllPathSum(TreeNode root, int targetSum) {
+    private static List<List<Integer>> gatherAllPathSum(Node root, int targetSum) {
         List<List<Integer>> res = new LinkedList<>();
         if(root==null) return res;
 
@@ -14,11 +14,11 @@ public class PathSum2 {
         return res;
     }
 
-    private static void dfs(TreeNode root, int targetSum, List<List<Integer>> res, LinkedList<Integer> path) {
-        targetSum -= root.val;
-        path.add(root.val);
+    private static void dfs(Node root, int targetSum, List<List<Integer>> res, LinkedList<Integer> path) {
+        targetSum -= root.data;
+        path.add(root.data);
 
-        if (root.left == null && root.right == null && targetSum==0) {
+        if (root.left == null && root.right == null && targetSum == 0) {
             res.add(new LinkedList<>(path));
         } else {
             if(root.left != null)
@@ -31,15 +31,15 @@ public class PathSum2 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(5);
-        root.left = new TreeNode(4);
-        root.right = new TreeNode(8);
-        root.left.left = new TreeNode(11);
-        root.left.left.left = new TreeNode(7);
-        root.left.left.right = new TreeNode(2);
-        root.right.left = new TreeNode(13);
-        root.right.right = new TreeNode(4);
-        root.right.right.right = new TreeNode(1);
+        Node root = new Node(5);
+        root.left = new Node(4);
+        root.right = new Node(8);
+        root.left.left = new Node(11);
+        root.left.left.left = new Node(7);
+        root.left.left.right = new Node(2);
+        root.right.left = new Node(9);
+        root.right.right = new Node(4);
+        root.right.right.right = new Node(1);
         int targetSum = 22;
 
         System.out.println("All Paths for given targetSum: "+ gatherAllPathSum(root, targetSum));

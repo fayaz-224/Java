@@ -1,11 +1,41 @@
 package DSA.BFS_DFS;
 
-import java.util.*;
-
 //You are given: A 7-character string s made of digits (0–8) or ? and A target sum T (e.g., 24).
 //Replace each ? with a digit between 0 and 8.
 //Count how many valid assignments make the total sum = T.
-public class WorkHoursAssignment {  //backtracking with memoization (DFS + DP)
+public class WorkHoursAssignment {  //Using Recursion - O(9^n), where n = number of '?' in the string
+
+    public static int countWays(String s, int index, int currentSum, int target) {
+        if (index == s.length()) {  //if we reached the end of string
+            return currentSum == target ? 1 : 0;
+        }
+
+        char ch = s.charAt(index);
+        int total = 0;
+        if (ch == '?') {
+            for (int i = 0; i <= 8; i++) {
+                total += countWays(s, index + 1, currentSum + i, target);
+            }
+        } else {
+            int val = ch - '0';
+            total += countWays(s, index + 1, currentSum + val, target);
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+        String s = "?23??7?";
+        int target = 24;
+
+        int res = countWays(s, 0, 0, target);
+        System.out.println("Total valid ways: " + res);
+    }
+}
+
+/*
+import java.util.*;
+public class WorkHoursAssignment {  //DFS with memoization
 
     public static int countValidAssignments(String s, int target) {
         return dfs(s.toCharArray(), 0, target, new HashMap<>());
@@ -44,35 +74,4 @@ public class WorkHoursAssignment {  //backtracking with memoization (DFS + DP)
         System.out.println("Valid combinations: " + countValidAssignments(s, T));  //op: 12 (0230077, 1230076, 0230176 etc)
     }
 }
-
-/*
-public class WorkingHoursSimple {  //Using Recursion (without memoization) - O(9^n), where n = number of '?' in the string
-
-    static int count = 0;
-
-        public static void countWays(String s, int index, int currentSum, int target) {
-            if (index == 7) {  //if we reached the end of string
-                if (currentSum == target) count++;
-                return;
-            }
-
-            char ch = s.charAt(index);
-            if (ch == '?') {
-                for (int i = 0; i <= 8; i++) {
-                    countWays(s, index + 1, currentSum + i, target);
-                }
-            } else {
-                int val = ch - '0';
-                countWays(s, index + 1, currentSum + val, target);
-            }
-        }
-
-    public static void main(String[] args) {
-        String s = "?23??7?";
-        int target = 24;
-
-        countWays(s, 0, 0, target);
-        System.out.println("Total valid ways: " + count);
-    }
-}
- */
+*/

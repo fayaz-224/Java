@@ -1,7 +1,5 @@
 package DesignPatterns.AbstractFactoryDP;
 
-// Abstract Factory to get the factories for Model and Specifications
-
 // Abstract Factory Interface
 public interface CarFactory {
     Model getCar(String name);

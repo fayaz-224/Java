@@ -3,91 +3,90 @@ package Threads;
 import java.util.function.IntConsumer;
 
 //https://leetcode.com/problems/print-zero-even-odd/
+//Input: n = 5
+//Output: "0102030405"
+//Input: n = 2
+//Output: "0102"
 class ZeroEvenOdd {  //Concurrency
-    private int n;
+    private final int n = 5;
 
-    public ZeroEvenOdd(int n) {
-        this.n = n;
-    }
-
-    private boolean zeroPrinted = false;
-    private boolean evenPrinted = false;
-    private boolean oddPrinted = false;
+    private int turn = 0; // 0 = zero, 1 = odd, 2 = even
 
     public synchronized void zero(IntConsumer printNumber) throws InterruptedException {
         for (int i = 1; i <= n; i ++) {
-            if (zeroPrinted) {  // wait while zero is already printed
-                wait();
+            while (turn != 0) {
+                wait();  // Block the thread until it is its turn, after notifyAll() all threads will recheck while (turn != expected) to see if it’s their turn now.
             }
+
             printNumber.accept(0);
-            zeroPrinted = true;
 
+            // Switch to next turn
             if (i % 2 == 0) {
-                evenPrinted = false;
-                oddPrinted = true;   // Allow odd to print next
+                turn = 2; // even
             } else {
-                evenPrinted = true;  // Allow even to print next
-                oddPrinted = false;
+                turn = 1; // odd
             }
 
-            notifyAll();
-        }
-    }
-
-    public synchronized void even(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 2; i <= n; i += 2) {
-            while (evenPrinted) {
-                wait();
-            }
-            printNumber.accept(i);
-            evenPrinted = true;
-            zeroPrinted = false;
-            notifyAll();
+            notifyAll(); // wake up odd/even threads
         }
     }
 
     public synchronized void odd(IntConsumer printNumber) throws InterruptedException {
         for (int i = 1; i <= n; i += 2) {
-            while (oddPrinted) {
+            while (turn != 1) {
                 wait();
             }
+
             printNumber.accept(i);
-            oddPrinted = true;
-            zeroPrinted = false;
-            notifyAll();
+            turn = 0; // back to zero
+
+            notifyAll();  // wake up zero/even threads
+        }
+    }
+
+    public synchronized void even(IntConsumer printNumber) throws InterruptedException {
+        for (int i = 2; i <= n; i += 2) {
+            while (turn != 2) {
+                wait();
+            }
+
+            printNumber.accept(i);
+            turn = 0; // back to zero
+
+            notifyAll(); // wake up zero/odd threads
         }
     }
 
     public static void main(String[] args) {
-        ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(5);
-        IntConsumer printNumber = System.out::println;
+        ZeroEvenOdd obj = new ZeroEvenOdd();
+        IntConsumer printNumber = System.out::print;  //assigning a method reference to a functional interface that takes an int as input and performs an action — specifically, printing it.
 
-        Thread zeroThread = new Thread(() -> {
+        Thread t0 = new Thread(() -> {
             try {
-                zeroEvenOdd.zero(printNumber);
+                obj.zero(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         });
 
-        Thread oddThread = new Thread(() -> {
+        Thread t1 = new Thread(() -> {
             try {
-                zeroEvenOdd.odd(printNumber);
+                obj.odd(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         });
 
-        Thread evenThread = new Thread(() -> {
+        Thread t2 = new Thread(() -> {
             try {
-                zeroEvenOdd.even(printNumber);
+                obj.even(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         });
 
-        zeroThread.start();
-        oddThread.start();
-        evenThread.start();
+        t0.start();
+        t1.start();
+        t2.start();
     }
 }

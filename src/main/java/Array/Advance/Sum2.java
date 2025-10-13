@@ -2,6 +2,7 @@ package Array.Advance;
 
 //Return YES if there exist two numbers such that their sum is equal to the target. Otherwise, return NO.
 //Brute Force Approach
+/*
 public class Sum2 { //O(n^2)
     public static int[] twoSum(int[] nums, int target) {
         for(int i=0; i<nums.length; i++){
@@ -19,13 +20,13 @@ public class Sum2 { //O(n^2)
         System.out.println("[" +res[0] + "," + res[1] +"]");
     }
 }
+*/
 
 
-/*
-import java.util.HashMap;
+import java.util.*;
 
 //Set approach TC:O(n) SC: O(n)
-public class FindPairsSumEquals {
+public class Sum2 {
     public static void main(String[] args) {
         int[] arr = {0, 14, 0, 4, 7, 8, 3, 5, 7};
         findPairsWithSum(arr, 11);
@@ -33,13 +34,13 @@ public class FindPairsSumEquals {
 
     public static void findPairsWithSum(int[] arr, int targetSum) {
         Set<List<Integer>> res = new HashSet<>();
-        Set<List<Integer>> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
         for (int num : arr) {
             int complement = targetSum - num;
             if (set.contains(complement)) {
                 List<Integer> temp = Arrays.asList(num, complement);
-                temp.sort(null);
+                Collections.sort(temp); //temp.sort(null);
                 res.add(temp);
             } else
                 set.add(num);
@@ -48,7 +49,6 @@ public class FindPairsSumEquals {
         System.out.println(res);
     }
 }
- */
 
 
 /*

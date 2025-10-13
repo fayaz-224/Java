@@ -8,7 +8,7 @@ public class LeapYear {
 		Scanner S = new Scanner(System.in);
 		int year = S.nextInt();
 		 
-		 if(((year%4==0) && (year%100!=0)) || (year%400==0)) {
+		 if((year%4==0 && year%100!=0) || (year%400==0)) {
 		       System.out.println("LEAP YEAR");
 		 } else {
 		       System.out.println("NORMAL YEAR");

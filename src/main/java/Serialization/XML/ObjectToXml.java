@@ -21,7 +21,6 @@ public class ObjectToXml {
                 add(new Answer("java is platform independent", "fayaz"));
                 add(new Answer("java is secure", "munni"));
             }};
-
             Question que = new Question(1, "Java Advantages?", answerList);
 
             jaxbMarshaller.marshal(que, new File("src/main/java/Serialization/XML/writeTo.xml"));
@@ -29,6 +28,5 @@ public class ObjectToXml {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -3,15 +3,15 @@ import java.util.LinkedList;
 
 class LinkedListCol {
 	public static void main(String[] args) {
-        LinkedList<Integer> ar = new LinkedList<>();
+        LinkedList<Integer> ar = new LinkedList<>();  //better to use LIST interface, here we need addFirst(), addLast() so we used LinkedList
 
         ar.add(10);    //add is by default addLast
 		ar.add(20);
 		System.out.println(ar);
-		
-		ar.add(3,300);
+
 		ar.add(40);
-        ar.add(5, 300);
+		ar.add(2,300);
+		ar.add(3,300);
 		System.out.println(ar);
 		System.out.println(ar.size());
 		System.out.println(ar.contains(30));
@@ -33,18 +33,13 @@ class LinkedListCol {
 		ll.add(null);
 		System.out.println(ll);
 		
-		ll.addAll(ar);
+		ll.addAll(2, ar);
 		System.out.println(ll);
 		System.out.println(ll.containsAll(ar));
-		
-		ll.addAll(2,ar);
-		System.out.println(ll);
 		System.out.println(ll.getClass());
-		
+
+		//stack operations
 		ll.push(100);
-		System.out.println(ll);		//stack operatons
-		
-		ll.pop();
 		System.out.println(ll);
 		
 		ll.pop();
@@ -53,13 +48,14 @@ class LinkedListCol {
 		ll.remove(2);
 		System.out.println(ll);
 
-        System.out.println(ll.peek());    //just retreives
-        System.out.println(ll.pop());    //retreives and deletes
+        System.out.println(ll.peek());    //just retrieves
+        System.out.println(ll.pop());  //retrieves and deletes
 		System.out.println(ll.peekLast());
 		System.out.println(ll.pollLast());
 		System.out.println(ll);
 		
 		System.out.println(ll.clone());
+
 		ll.clear();
 		System.out.println(ll);
 	}

@@ -21,10 +21,8 @@ public class QuickSort {    //O(n^2)
         while (start <= end) {
             while (arr[start] < pivot) //Check until all values on left are lower than pivot
                 start++;
-
             while (arr[end] > pivot) //Check until all values on right are greater than pivot
                 end--;
-           
             if (start <= end) {
             	temp = arr[start]; //swap values becoz both conditions above failed means they are in incorrect position.
                 arr[start] = arr[end];

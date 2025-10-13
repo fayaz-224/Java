@@ -1,4 +1,5 @@
 package DSA.LL;
+
 //Apna college
 //A linear data structure used to store the elements in contiguous locations is called a Linked List in Java.
 // It has addresses and pointers that are used to link the elements, and each element in the linked list consists of two parts, namely the data part and the address part.
@@ -6,28 +7,29 @@ package DSA.LL;
 // Each element in the list is called a node.
 
 public class LinkedListImpl {   //singly linked-list
-    Node head;
-    private int size = 0;
-
-    public class Node {
+    private class Node {
         String data;
         Node next;
 
         Node(String data) {
             this.data = data;
             this.next = null;
-            size++;
         }
     }
 
+    Node head = null;
+    private int size = 0;  //count of nodes
+
     public void addFirst(String data) {
-        Node newNode = new Node(data); //size will increment here only
+        Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
+        size++;
     }
 
-    public void addLast(String data) {  //main
+    public void addLast(String data) {  //main insert
         Node newNode = new Node(data);
+        size++;
         if (head == null) {
             head = newNode;
             return;
@@ -40,25 +42,46 @@ public class LinkedListImpl {   //singly linked-list
         lastNode.next = newNode;
     }
 
-    public void addInMiddle(int index, String data) {
+    public void addAtGivenIndex(int index, String data) {
         if (index > size || index < 0) {
             System.out.println("Invalid Index Value");
             return;
         }
 
         Node newNode = new Node(data);
-        if (head == null || index == 0) {
+        size++;
+        if (index == 0) {
             newNode.next = head;    //addFirst(data);
             head = newNode;
             return;
         }
 
         Node currNode = head;
-        for (int i = 1; i < index; i++) {  //will go that middle pos
+        for (int i = 0; i < index-1; i++) {  //will go that index pos
             currNode = currNode.next;
         }
         newNode.next = currNode.next;
         currNode.next = newNode;
+    }
+
+    String getFirst() {
+        if (head == null) {
+            throw new RuntimeException("List is empty");
+        }
+        return head.data;
+    }
+
+    String getLast() {
+        if (head == null) {
+            throw new RuntimeException("List is empty");
+        }
+
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        return temp.data;
     }
 
     public String getMiddle(Node head) {  //2 pointer Technique
@@ -84,7 +107,7 @@ public class LinkedListImpl {   //singly linked-list
         if (head == null) return;
         if (head.next == null) {  //if we have only one Node
             head = null;
-            size = 0;
+            size--;
             return;
         }
 
@@ -96,44 +119,51 @@ public class LinkedListImpl {   //singly linked-list
         size--;
     }
 
-    public Node DeleteNthNodeFromEnd(Node head, int N) {
-        if (head == null) {
+    Node deleteNthNodeFromEnd(Node head, int N) {
+        if (head == null || N <= 0) {
             return null;
         }
-        int cnt = 0;
-        Node temp = head;
 
         // Count the number of nodes in the linked list
+        int count = 0;
+        Node temp = head;
         while (temp != null) {
-            cnt++;
+            count++;
             temp = temp.next;
         }
 
+        // If N is greater than length, do nothing
+        if (N > count) return null;
+
         // If N equals the total number of nodes, delete the head
-        if (cnt == N) {
+        if (count == N) {
             Node newhead = head.next;
             head = null;
             return newhead;
         }
 
-        // Calculate the position of the node to delete (res)
-        int res = cnt - N;
-        temp = head;
-
         // Traverse to the node just before the one to delete
-        while (temp != null) {
-            res--;
-            if (res == 0) {
-                break;
-            }
+        temp = head;
+        for (int i = 1; i < count - N; i++) {  //count - N gives the index to delete
             temp = temp.next;
         }
 
         // Delete the Nth node from the end
         Node delNode = temp.next;
         temp.next = temp.next.next;
-        delNode = null;
+        delNode = null;  //for GC
+
         return head;
+    }
+
+    boolean search(String data) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == data)
+                return true;
+            current = current.next;
+        }
+        return false;
     }
 
     //https://www.youtube.com/watch?v=t7YaoQOFXzk&list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&index=28
@@ -142,17 +172,16 @@ public class LinkedListImpl {   //singly linked-list
             return;
         }
 
-        Node prevNode = head;
-        Node currNode = head.next;
-        while (currNode != null) {
-            Node nextNodes = currNode.next;
-            currNode.next = prevNode;
+        Node prev = null;
+        Node curr = head;
 
-            prevNode = currNode;
-            currNode = nextNodes;
+        while (curr != null) {
+            Node next = curr.next;  // Store next nodes
+            curr.next = prev;  // Reverse link
+            prev = curr;   // Move prev forward
+            curr = next;   // Move current forward
         }
-        head.next = null;
-        head = prevNode;
+        head = prev;  // Update head to new front
     }
 
     public int getSize() {
@@ -165,7 +194,7 @@ public class LinkedListImpl {   //singly linked-list
             System.out.print(currNode.data + " -> ");
             currNode = currNode.next;
         }
-        System.out.println();
+        System.out.println("null");
     }
 
     public static void main(String[] args) {
@@ -173,27 +202,25 @@ public class LinkedListImpl {   //singly linked-list
         list.addLast("is");
         list.addLast("a");
         list.addLast("list");
-        list.printList();
-
         list.addFirst("this");
         list.printList();
+
         System.out.println("Size of LL: " + list.getSize());
-        System.out.println("Mid val of LL: " + list.getMiddle(list.head));
+        System.out.println("first val: "+list.getFirst());
+        System.out.println("Mid val: " + list.getMiddle(list.head));
 
         list.removeFirst();
-        list.printList();
         list.removeLast();
         list.printList();
-        System.out.println("Size of LL: " + list.getSize());
 
-        list.addInMiddle(2, "only");
+        list.addAtGivenIndex(1, "only");
         list.printList();
 
         list.reverseList();
         System.out.println("Reversing LL: ");
         list.printList();
 
-        list.DeleteNthNodeFromEnd(list.head, 2);
+        list.deleteNthNodeFromEnd(list.head, 2);
         System.out.println("After deleting nth node from right: ");
         list.printList();
     }

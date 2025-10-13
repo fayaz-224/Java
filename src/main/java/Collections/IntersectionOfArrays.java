@@ -36,7 +36,7 @@ public class IntersectionOfArrays {
         int[] n1 = {1, 2, 1};
         int[] n2 = {2, 2};
         int[] r = intersect(n1, n2);
-        System.out.println(Arrays.toString(r)); // Output: [2, 2]
+        System.out.println(Arrays.toString(r)); // Output: [2]
     }
 }
 

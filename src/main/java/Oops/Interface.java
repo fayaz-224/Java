@@ -3,7 +3,7 @@ package Oops;
 // contains only abstract methods ie, no method body
 interface Drawable{  
 	
-    int a = 10; // public, static and final
+    int a = 10; // by default public, static and final
     void draw();  
     default void show()
     {

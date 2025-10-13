@@ -1,6 +1,7 @@
-package Array.Advance;
+package Array.Basics;
 
-public class RemoveDuplicate {
+//Remove Duplicates
+public class Duplicates2 {
     static int removeDuplicates(int[] arr) {
         //Arrays.sort(arr);  // array should be sorted, if not sort it
         int i = 0;  //imaginary index - 2 pointer
@@ -28,34 +29,12 @@ public class RemoveDuplicate {
 //Set does not allow duplicates and sets like "LinkedHashSet" maintains the order of insertion.
 
 /*
-//This method can be used even if the array is not sorted.
-public static void removeDuplicates(int[] array) {
-        int length = array.length;
-        for (int i = 0; i < length - 1; i++) {
-            for (int j = i + 1; j < length; j++) {
-                if (array[i] == array[j]) {
-                    // Shift elements to the left to fill the gap, and replace duplicate values
-                    for (int k = j; k < length - 1; k++) {
-                        array[k] = array[k + 1];
-                    }
-                    // Decrement the length of the array and adjust loop variables
-                    length--;
-                    j--; //we need to do this, as replaced element might also be a duplicate
-                }
-            }
-        }
-        // Resize the array to remove the duplicates
-        array = Arrays.copyOf(array, length);
-    }
- */
-
-/*
 import java.util.ArrayList;
 public class RemoveDuplicate {
  
     static void findDuplicates(int arr[], int len){
         ArrayList<Integer> al = new ArrayList<Integer>();
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < len; i++) {
             if (al.contains(arr[i]))
                  continue;
             else

@@ -5,7 +5,7 @@ package DSA.TwoPointers;
 class TrappedRainWater { //Sum of water trapped between bars
 
     //2 pointer approach TC: O(N), SC: O(1)
-    //https://leetcode.com/problems/trapping-rain-water/solutions/5010489/java-clean-solution/
+    //https://leetcode.com/problems/trapping-rain-water/
     static int trap1(int[] height) {
         int left = 0, right = height.length - 1;
 

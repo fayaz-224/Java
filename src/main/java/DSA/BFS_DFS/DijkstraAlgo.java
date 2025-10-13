@@ -1,38 +1,44 @@
 package DSA.BFS_DFS;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 //Using Greedy method
 //https://www.youtube.com/watch?v=XB4MIexjvY0
 //SingleSourceShortestPath using Dijkstra’s Algorithm - undirected, connected graph
-class Pair {
-    int destination;
-    int weight;
-
-    public Pair(int destination, int weight) {
-        this.destination = destination;
-        this.weight = weight;
-    }
-}
-
 class DijkstraAlgo {
-    static int vertices = 4;  //nodes
-    static int edgeCount = 5;  //edges
 
-    public int[] dijkstra(int src, int[][] edges) {
-        // Create adjacency list - Instead of pair obj we can use int[] also
-        ArrayList<ArrayList<Pair>> adjList = new ArrayList<>(vertices);
+    static class Pair {
+        int destination;
+        int weight;
+
+        public Pair(int destination, int weight) {
+            this.destination = destination;
+            this.weight = weight;
+        }
+    }
+
+    public int[] dijkstra(int vertices, int src, int[][] edges) {
+        List<List<Pair>> adjList = new ArrayList<>(vertices);
         for (int i = 0; i < vertices; i++) {
             adjList.add(new ArrayList<>());
         }
 
         // Populate the adjacency list from the edges array
         for (int[] edge : edges) {
-            int u = edge[0];
-            int v = edge[1];
-            int w = edge[2];
+            int u = edge[0]; //source vertex
+            int v = edge[1]; //destination vertex
+            int w = edge[2];  //distance from S to D
             adjList.get(u).add(new Pair(v, w));
         }
+//        System.out.println("Adjacency List:");  //to see data in adj list
+//        for (int u = 0; u < vertices; u++) {
+//            System.out.print(u + " -> ");
+//            for (Pair neighbor : adjList.get(u)) {
+//                System.out.print("(" + neighbor.destination + ", " + neighbor.weight + ") ");
+//            }
+//            System.out.println();
+//        }
 
         // Distance array
         int[] dist = new int[vertices];
@@ -40,19 +46,19 @@ class DijkstraAlgo {
         dist[src] = 0;
 
         // Priority queue to get the minimum weight edge at each step
-        PriorityQueue<int[]> pq = new PriorityQueue<>(vertices, Comparator.comparingInt(arr -> arr[1]));
-        pq.offer(new int[] {src, 0}); // pq(node, distance from src)
-
+        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(arr -> arr[1]));  //when comparing two arrays, look at index 1 (the cost/distance) and sort by that.
+        pq.offer(new int[]{src, 0}); // pq(node, distance from src)
 
         while (!pq.isEmpty()) {
             int[] current = pq.poll();
             int currentNode = current[0];
+            int distance = current[1];
 
             // Traverse all neighbors
             for (Pair neighbor : adjList.get(currentNode)) {
                 int neighborNode = neighbor.destination;
                 int weight = neighbor.weight;
-                int newDist = dist[currentNode] + weight;
+                int newDist = distance + weight;
 
                 if (newDist < dist[neighborNode]) {
                     dist[neighborNode] = newDist;
@@ -65,13 +71,34 @@ class DijkstraAlgo {
 
     public static void main(String[] args) {
         DijkstraAlgo graph = new DijkstraAlgo();
-        int[][] edges = {{0, 1, 1}, {1, 2, 3}, {2, 3, 4}, {3, 1, -6}, {0, 3, 8}};
-        int sourceVertex = 0;
+        int vertices = 4;  //nodes
 
-        int[] dist = graph.dijkstra(sourceVertex, edges);
+        int[][] edges = {{0, 1, 1}, {1, 2, 3}, {2, 3, 4}, {3, 1, -6}, {0, 3, 8}};  //{source, destination, weight} - Instead of pair obj as below we can use int[] also
+        int sourceVertex = 0;  //choose any vertex/node as source vertex
+
+// Another way for edges
+//        List<List<Edge>> graph = new ArrayList<>();
+//        for (int i = 0; i < vertices; i++) graph.add(new ArrayList<>());
+//
+//        graph.get(0).add(new Pair(1, 1));
+//        graph.get(1).add(new Pair(2, 3));
+//        graph.get(2).add(new Pair(3, 4));
+//        graph.get(0).add(new Pair(3, 8));
+
+        int[] dist = graph.dijkstra(vertices, sourceVertex, edges);
         System.out.println("Vertex Distance from Source Vertex:");
         for (int i = 0; i < dist.length; i++) {
             System.out.println(i + " \t\t " + dist[i]);
         }
     }
 }
+
+
+/*
+output:
+Vertex Distance from Source Vertex:
+0 		 0
+1 		 1
+2 		 4
+3 		 8
+ */

@@ -4,33 +4,22 @@ import java.util.*;
 
 public class BSTImpl {
 
-    static class Node {
-        int data;
-        Node left;
-        Node right;
-        int height;
-
-        Node(int data) {
-            this.data = data;
-        }
-    }
-
-    static Node insert(Node root, int val) { //O(H)
+    static Node insert(Node root, int val) { //inorder way - O(H)
         if (root == null) {
             root = new Node(val);
             return root;
         }
+        
         if (val < root.data)
             root.left = insert(root.left, val);
         else
             root.right = insert(root.right, val);
 
-        root.height = Math.max(height(root.left), height(root.right)) + 1;
         return root;
     }
 
     //Inorder - for BST inorder will always give sorted order of nodes
-    public static void inorder(Node root) {
+    static void inorder(Node root) {
         if (root == null)
             return;
 
@@ -39,7 +28,7 @@ public class BSTImpl {
         inorder(root.right);
     }
 
-    public static List<List<Integer>> levelOrder(Node root) { //Approach 2
+    static List<List<Integer>> levelOrder(Node root) { //Approach 2
         List<List<Integer>> result = new ArrayList<>(); //to store end result of all levels
 
         if (root == null) {
@@ -63,14 +52,13 @@ public class BSTImpl {
                     queue.offer(currentNode.right);
                 }
             }
-
             result.add(currentLevel);
         }
         return result;
     }
 
-    // we return the elements that are at the end of each level, which gives rightside elements only
-    public static List<Integer> rightSideView(Node root) {
+    // we return the elements that are at the end of each level, which gives right-side elements only
+    static List<Integer> rightSideView(Node root) {
         List<Integer> result = new ArrayList<>();
 
         if (root == null) {
@@ -99,7 +87,7 @@ public class BSTImpl {
         return result;
     }
 
-    private static boolean searchNode(Node root, int key) { //O(H)
+    static boolean searchNode(Node root, int key) { //O(H)
         if (root == null)
             return false;
 
@@ -108,10 +96,10 @@ public class BSTImpl {
         else if (root.data < key) //right subtree
             return searchNode(root.right, key);
         else
-            return true;
+            return true;  //root
     }
 
-    private static Node deleteNode(Node root, int val) {
+    static Node deleteNode(Node root, int val) {
         if (root == null)
             return null;
         if (root.data > val)
@@ -138,14 +126,14 @@ public class BSTImpl {
     }
 
     //left most in right subtree
-    private static Node InOrderSuccesor(Node root) {
+    static Node InOrderSuccesor(Node root) {
         while (root.left != null)
             root = root.left; //go to left most child
 
         return root;
     }
 
-    private static Node invertBST(Node root){
+    static Node invertBST(Node root){
         if(root == null) return null;
 
         Node left = invertBST(root.left);
@@ -156,19 +144,24 @@ public class BSTImpl {
         return root;
     }
 
-    public static int height(Node node) {
-        if (node == null) {
-            return -1;
+    static int height(Node root) {
+        if (root == null) {
+            return -1; // or return 0 if you prefer height in terms of nodes
         }
-        return node.height;
+
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    private static boolean isBalanced(Node node) {
+    static boolean isBalanced(Node node) {
         if (node == null) {
             return true;
         }
-        return Math.abs(height(node.left) - height(node.right)) <= 1
-                && isBalanced(node.left) && isBalanced(node.right);
+        return Math.abs(height(node.left) - height(node.right)) <= 1 &&
+                isBalanced(node.left) &&
+                isBalanced(node.right);
     }
 
     static void printInRange(Node root, int X, int Y) {
@@ -185,7 +178,7 @@ public class BSTImpl {
     }
 
     //add all possible paths from root to nodes
-    private static void root2LeafPath(Node root, ArrayList<Integer> path) {
+    static void root2LeafPath(Node root, ArrayList<Integer> path) {
         if (root == null) return;
 
         path.add(root.data);
@@ -198,7 +191,7 @@ public class BSTImpl {
         path.remove(path.size() - 1); //need to remove it as we already calculated path of this node
     }
 
-    public static boolean isValidBST(Node node, Integer low, Integer high) { //initially pass nulls for low, high
+    static boolean isValidBST(Node node, Integer low, Integer high) { //initially pass nulls for low, high
         if (node == null) {
             return true;
         }
@@ -245,7 +238,7 @@ public class BSTImpl {
         System.out.println();
 
         System.out.println("Node present: " + searchNode(root, 4));
-        System.out.println("Node present: " + searchNode(root, 10));
+        System.out.println("Node present: " + searchNode(root, 0));
 
         deleteNode(root, 2);
         inorder(root);
@@ -267,7 +260,7 @@ public class BSTImpl {
 
         System.out.println(rightSideView(root));
 
-        System.out.println("Given BST is Valid :"+isValidBST(root, null, null));
+        System.out.println("Given BST is Valid :"+isValidBST(root, null, null));  //false - as we inverted BST
 
         System.out.println("kth Smallest node:"+ kthSmallest(root, 4)); //tree is inverted, so ans might wary
     }

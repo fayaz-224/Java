@@ -1,14 +1,15 @@
 package DSA.Stack_Queue;
+
 //A stack is a linear data structure in which the insertion of a new element and removal of an existing element
 // takes place at the same end represented as the top of the stack - LIFO
 
-public class StackImpl { //Impl stack using arrays
+public class StackImpl {  //Impl stack using arrays
     static final int MAX = 10;
     int top;
     int[] a = new int[MAX];
 
     StackImpl() {
-        top = -1;
+        top = -1;  //we can directly initialize top above
     }
 
     void push(int x) {
@@ -36,7 +37,7 @@ public class StackImpl { //Impl stack using arrays
         }
     }
 
-    public int size() {
+    int size() {
         return top + 1;
     }
 
@@ -49,6 +50,7 @@ public class StackImpl { //Impl stack using arrays
         for (int i = 0; i <= top; i++) {
             System.out.print(a[i] + " ");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -57,11 +59,12 @@ public class StackImpl { //Impl stack using arrays
         s.push(20);
         s.push(30);
         s.push(40);
+        s.print();
+
         System.out.println("Popped from stack : " + s.pop());
         System.out.println("Top element is : " + s.peek());
         System.out.println("Is stack empty : " + s.isEmpty());
         System.out.println("StackImpl size: " + s.size());
-
         s.print();
     }
 }

@@ -5,6 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 // BlockingQueue is thread-safe.
 // I.e, multiple threads can add and remove messages from this queue without any concurrency issues.
+// All synchronization (waiting/blocking) is handled internally by the BlockingQueue. No manual handling of synchronized, wait() and notifyAll()
 // This will solve ProducerConsumerProblem
 class Producer implements Runnable {
     private final BlockingQueue<Integer> queue;
@@ -19,7 +20,6 @@ class Producer implements Runnable {
             while (true) {
                 Integer item = (int) (Math.random() * 100);
                 queue.put(item); // Blocks if the queue is full
-                System.out.println("Produced: " + item);
                 System.out.println("Queue: " + queue);
                 Thread.sleep(500); // Simulating delay in producing
             }
@@ -39,6 +39,7 @@ class Consumer implements Runnable {
     @Override
     public void run() {  //consume
         try {
+            Thread.sleep(500);  //just enough time to produce something in queue
             while (true) {
                 Integer item = queue.take(); // Blocks if the queue is empty
                 System.out.println("Consumed: " + item);
@@ -59,8 +60,5 @@ public class ProducerConsumerProblem {
 
         producerThread.start();
         consumerThread.start();
-
     }
-
-
 }

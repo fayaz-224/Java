@@ -14,7 +14,8 @@ Design a data structure with following features:
 Ex: 1,2,3,4,5
 pop() -> 2,3,4,5
 pop() -> 3,4,5
-Seek(0) -> 3 seek(1)-> 4
+Seek(0) -> 3
+seek(1) -> 4
  */
 class CustomDS{
     Map<Integer,Integer> map = new HashMap<>();

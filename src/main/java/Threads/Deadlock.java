@@ -1,4 +1,4 @@
-package Oops;
+package Threads;
 
 public class Deadlock {
   public static void main(String[] args) {

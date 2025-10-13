@@ -15,18 +15,19 @@ public class StreamApi {
                 new Employee("Jack", 44, "Computer Science", 75000)
         };
 
-        List<Employee> empList = Stream.of(arrayOfEmps).collect((Collectors.toList()));
+        // List<Employee> empList = Stream.of(arrayOfEmps).collect((Collectors.toList()));
+        List<Employee> empList = Arrays.stream(arrayOfEmps).collect((Collectors.toList()));
         List<Integer> numbers = Arrays.asList(2, 3, 4, 5, 1, 3);
         List<String> names = Arrays.asList("Cat", "Cow", "Snake", "BuilderDP");
         IntStream intstrm = IntStream.range(10, 20);  //which creates IntStream of numbers 10 to 19.
 
 
         //create stream
-        Stream<Integer> employees = Stream.of(1,2,3,4);
+        Stream<Integer> si = Stream.of(1,2,3,4);
         Stream<String> streamEmpty = Stream.empty(); //empty stream
-        System.out.println(streamEmpty.collect(Collectors.toList()) +" - "+ employees.collect(Collectors.toList()));
+        System.out.println(streamEmpty.collect(Collectors.toList()) +" - "+ si.collect(Collectors.toList()));
 
-        //findFirst method
+        //findFirst & distinct method
         int num = numbers.stream().distinct().findFirst().get();
         System.out.println(num);
 
@@ -71,32 +72,37 @@ public class StreamApi {
                 .collect(Collectors.toList());
         System.out.println(emp);
 
-        //distinct method
-        List<String> nums = names.stream().distinct().collect(Collectors.toList());
-        System.out.println("distinct: "+nums);
-
         // collect method returns a set
         Set<Integer> squareSet = numbers.stream()
                 .map(x -> x * x)
                 .collect(Collectors.toSet());
         System.out.println(squareSet);
-        //Collectors.joining() will insert the delimiter between the two String elements of the stream
-        String empNames = empList.stream()
-                .map(Employee::getName)
-                .collect(Collectors.joining(", "));
-        System.out.println(empNames);
 
         // forEach method
         numbers.stream().map(x -> x + x).forEach(System.out::println);  //y -> System.out.println(y)
 
-        // reduce method
+        // reduce method - Used to combine all elements into a single result
+        // syntax: T result = stream.reduce(identity, (a, b) -> someOperation);
+        // identity -> Initial/default value (e.g. 0 for sum, 1 for product, "" for strings)
+        // (a, b) -> Two elements being combined — one from the stream and one accumulated
         int even = numbers.stream()
                 .filter(x -> x % 2 == 0)
                 .reduce(0, Integer::sum); //we start with the initial value of 0 and repeated apply addition on i,j
-        System.out.println("EvenReduce : " + even);
+        System.out.println("Even Reduce : " + even);
         int mul = numbers.stream()
-                .reduce(1, (i, j) -> i*j); //Identity should be given as 1. As we are doing multiplication
-        System.out.println("MulReduce : " + mul);
+                .reduce(1, (i, j) -> i*j); //Identity = 1
+        System.out.println("Mul Reduce : " + mul);
+        int maxR = numbers.stream()
+                .reduce(Integer::max)
+                .get();
+        System.out.println("Max Reduce : " + maxR);
+        //| Task         | Code Example                  |
+        //| ------------ | ----------------------------- |
+        //| Sum          | `reduce(0, Integer::sum)`     |
+        //| Product      | `reduce(1, (a, b) -> a * b)`  |
+        //| Max          | `reduce(Integer::max)`        |
+        //| Min          | `reduce(Integer::min)`        |
+        //| Join strings | `reduce("", (a, b) -> a + b)` |
 
         //Max & min methods
         int max = numbers.stream().max(Integer::compareTo).get();  //stream() expects predicate for min and max
@@ -111,13 +117,23 @@ public class StreamApi {
                 .max()
                 .orElseThrow(NoSuchElementException::new);
         System.out.println(latestEmpId);
-
         //average
         Double avgSal = empList.stream()
                 .mapToDouble(Employee::getSalary)
                 .average()
                 .orElseThrow(NoSuchElementException::new);
         System.out.println(avgSal);
+
+        //Collectors.joining() will insert the delimiter between the two String elements of the stream
+        String empNames = empList.stream()
+                .map(Employee::getName)
+                .collect(Collectors.joining(", "));
+        System.out.println(empNames);
+        String empNames2 = empList.stream()
+                .map(Employee::getName)
+                .reduce((a, b) -> a + ", " + b)
+                .orElse("");
+        System.out.println(empNames2);
 
         //allMatch, anyMatch, and noneMatch
         boolean allEven = numbers.stream().allMatch(i -> i % 2 == 0);  //checks if the predicate is true for all the elements in the stream

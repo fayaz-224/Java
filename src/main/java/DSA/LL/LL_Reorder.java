@@ -8,20 +8,21 @@ public class LL_Reorder {
         if (head == null || head.next == null) return;
 
         // Step 1. find middle and Split the list into two halves
-        Node slow = head, fast = head, prev = null;
+        Node slow = head, fast = head;
         while (fast != null && fast.next != null) { //Covers both even and odd sizes. 2 pointer way to find middle element
-            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-        prev.next = null;  //end pointer of 1st LL
 
         // Step 2. Reverse the second half
-        Node second = reverse(slow);
+        Node second = reverse(slow.next);
+        slow.next = null;  // Cut first half to avoid cycles
 
         // Step 3. Merge the two halves
+        //first: points to the head of the original first half
+        //second: points to the head of the reversed second half
         Node first = head;
-        while (first != null && second != null) {
+        while (second != null) {
             Node temp1 = first.next;
             Node temp2 = second.next;
 

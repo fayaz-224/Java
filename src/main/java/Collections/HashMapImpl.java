@@ -3,7 +3,7 @@ package Collections;
 import java.util.*;
 //Apna college
 @SuppressWarnings("unchecked")  //this is generally the preferred way to suppress warnings.
-public class HashMapImpl<K, V> {
+public class HashMapImpl<K, V> {  //K stands for Key, V stands for Value
     private class Node {
         K key;
         V value;
@@ -14,14 +14,14 @@ public class HashMapImpl<K, V> {
         }
     }
 
-    private int n; //nodes
-    private final int N; //buckets
-    private LinkedList<Node>[] buckets;
+    private int n; //counter for the total number of key-value pairs (entries) in the map - used to track the load factor and trigger rehashing when necessary.
 
+    private final int N; //buckets size
+    private LinkedList<Node>[] buckets;  //array of nodes
     public HashMapImpl() {
         this.N = 4;
-        this.buckets = new LinkedList[4];
-        for (int i = 0; i < 4; i++) {
+        this.buckets = new LinkedList[N];  //array of nodes initialization
+        for (int i = 0; i < N; i++) {
             this.buckets[i] = new LinkedList<>();
         }
     }
@@ -35,7 +35,7 @@ public class HashMapImpl<K, V> {
         LinkedList<Node> ll = buckets[bi];
 
         for (int i = 0; i < ll.size(); i++) {
-            if (ll.get(i).key == key) {
+            if (ll.get(i).key.equals(key)) {
                 return i; //di
             }
         }
@@ -74,10 +74,15 @@ public class HashMapImpl<K, V> {
         }
     }
 
-    public boolean containsKey(K key) {
+    public V get(K key) {
         int bi = hashFunction(key);
-        int di = searchInLL(key, bi); //di = -1, if key doesn't exist. otherwise di != -1
-        return di != -1;
+        int di = searchInLL(key, bi);
+        if (di == -1) { //key doesn't exist
+            return null;
+        } else { //key exists
+            Node node = buckets[bi].get(di);
+            return node.value;
+        }
     }
 
     public V remove(K key) {
@@ -92,15 +97,10 @@ public class HashMapImpl<K, V> {
         }
     }
 
-    public V get(K key) {
+    public boolean containsKey(K key) {
         int bi = hashFunction(key);
-        int di = searchInLL(key, bi);
-        if (di == -1) { //key doesn't exist
-            return null;
-        } else { //key exists
-            Node node = buckets[bi].get(di);
-            return node.value;
-        }
+        int di = searchInLL(key, bi); //di = -1 if key doesn't exist. otherwise di != -1
+        return di != -1;
     }
 
     public ArrayList<K> keySet() {
@@ -119,6 +119,11 @@ public class HashMapImpl<K, V> {
         return n == 0;
     }
 
+    // Size of map
+    public int size() {
+        return n;
+    }
+
     public static void main(String[] args) {
         HashMapImpl<String, Integer> map = new HashMapImpl<String, Integer>();
         map.put("India", 190);
@@ -130,7 +135,9 @@ public class HashMapImpl<K, V> {
             System.out.println(keys.get(i) + " " + map.get(keys.get(i)));
         }
 
+        System.out.println(map.size());
         map.remove("India");
         System.out.println("fetch India : " + map.get("India")); //returns null as were removed this key
+        System.out.println(map.size());
     }
 }

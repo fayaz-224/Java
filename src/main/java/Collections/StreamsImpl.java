@@ -21,7 +21,7 @@ public class StreamsImpl {
                 .collect(Collectors.toList());
         sortedEmployees.forEach(System.out::println);
 
-        //fetch top 2 employees only in desc order
+        //fetch top 2 employees only based on salary in desc order
         List<Employee> sortedEmployees1 = employees.stream()
                 .sorted(Comparator.comparingInt(Employee::getSalary).reversed())   //use .sorted(Comparator.reverseOrder() for non-objects
                 .limit(2)

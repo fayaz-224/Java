@@ -9,18 +9,18 @@ public class StreamsQue {
     public static void main(String[] args) {
         String str = "geeksforgeeks";
 
-        //count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code]
+        //count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code becoz, Java doesn't have a CharStream So characters are treated as ints]
         int count = (int) str.chars()
-                .filter(ch -> ch == 'e')
+                .filter(ch -> ch == 'e')  //checks IntStream Values anf filters
                 .count();
         System.out.println("occurrence of given char: " + count);
 
-        //find max occurring char
+        //find max occurring/ Most Frequently Occurring char
         char maxChar = str.chars()
-                .mapToObj(c -> (char) c)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .mapToObj(c -> (char) c)  //we need to convert to Character object Stream as these methods will only work with objects
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))  //default grouping - uses HashMap
                 .entrySet().stream()
-                .max(Map.Entry.comparingByValue())
+                .max(Map.Entry.comparingByValue())  //or .max(Comparator.comparing(entry -> entry.getValue()));
                 .map(Map.Entry::getKey)
                 .orElse('\0');
         System.out.println("max occurring char: "+maxChar);
@@ -39,7 +39,7 @@ public class StreamsQue {
         HashSet<Character> set = new HashSet<>();
         Character ch1 = str.chars()
                 .mapToObj(c -> (char) c)
-                .filter(c -> !set.add(c)) //The add() method returns true if the element was successfully added to the set and false if the element was already present in the set.
+                .filter(c -> !set.add(c)) //The add() method returns true if the element was successfully added to the set and false if the element was already present in the set. // keeps only chars already seen
                 .findFirst() // Find the first repeating character
                 .orElse('\0');
         System.out.println("firstRepeatingChar: "+ch1);
@@ -99,7 +99,7 @@ public class StreamsQue {
         //Sort characters in a string using java 8 features
         String s = "aaabfdifdihofrefjferfergrgergerggerg";
         String sortedString = s.chars()             // Convert the String into an IntStream
-                            .mapToObj(c -> String.valueOf((char)c))  // Convert each int to a String
+                            .mapToObj(c -> String.valueOf((char)c))  // Convert each int to a String -> .sorted() and .collect(Collectors.joining()) require a Stream<String>, not a Stream<Character>.
                             .sorted()
                             .collect(Collectors.joining());  // Collect the stream elements into a single String
 

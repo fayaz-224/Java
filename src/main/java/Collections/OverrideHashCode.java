@@ -1,6 +1,7 @@
 package Collections;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class OverrideHashCode {
     public static void main(String[] args) {
@@ -9,16 +10,18 @@ public class OverrideHashCode {
         Employee emp1 = new Employee("Jack", 44, "Social Science", 75000);
         Employee emp2 = new Employee("Alice", 23, "Computer Science",38000);
 
-        HashSet<Employee> employees = new HashSet<Employee>();
-        employees.add(emp);
-        employees.add(emp1);
-        employees.add(emp2);
+        Map<Employee, Employee> employees = new HashMap<>();
+        employees.put(emp, emp);
+        employees.put(emp1, emp1);
+        employees.put(emp2, emp2);
 
         System.out.println("employee.hashCode():  " + emp.hashCode() + "\n" +
                 "employee1.hashCode(): " + emp1.hashCode() + "\n" +
                 "employee2.hashCode(): " + emp2.hashCode());
 
         //since emp and emp2 are same, equals() method override its previous value
-        employees.forEach(e -> System.out.println(e.getName() +","+ e.getAge() +","+ e.getDept() +","+ e.getSalary()));
+        for(Map.Entry<Employee, Employee> e: employees.entrySet()){
+            System.out.println(e.getKey() +" - "+ e.getValue().name +","+ e.getValue().age +","+ e.getValue().dept +","+ e.getValue().salary);
+        }
     }
 }

@@ -34,15 +34,16 @@ class Employee {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
-        return age == employee.age && Double.compare(employee.salary, salary) == 0 &&
-                Objects.equals(name, employee.name) && Objects.equals(dept, employee.dept);
+        return age == employee.age &&
+                Objects.equals(name, employee.name) &&
+                Objects.equals(dept, employee.dept);  // Salary is intentionally excluded to consider employees with same identity but different salary as equal
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, dept, salary);
+        return Objects.hash(name, age, dept);
     }
 
     @Override
@@ -50,8 +51,8 @@ class Employee {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", salary=" + salary +
                 ", dept='" + dept + '\'' +
+                ", salary=" + salary +
                 '}';
     }
 }

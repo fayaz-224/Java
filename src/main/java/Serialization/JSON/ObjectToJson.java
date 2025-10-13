@@ -29,3 +29,10 @@ public class ObjectToJson {
         }
     }
 }
+
+/*
+//Converting the Object to JSONString using Jackson
+      ObjectMapper mapper = new ObjectMapper();
+      String jsonString = mapper.writeValueAsString(std);
+      // then write to a file
+ */

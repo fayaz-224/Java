@@ -34,7 +34,7 @@ class ZerosToEnd {
     public static void main (String[] args) {
         int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
         int n = arr.length;
-        pushZerosToEnd(arr, n);
+        moveZeros(arr);
         System.out.println("Array after pushing zeros to the back: ");
         for (int j : arr)
             System.out.print(j + " ");

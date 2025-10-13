@@ -29,6 +29,5 @@ public class XmlToObject {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
     }
 }

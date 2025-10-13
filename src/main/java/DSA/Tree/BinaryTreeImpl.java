@@ -3,39 +3,59 @@ package DSA.Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//In BinaryTree nodes are not ordered, for BST nodes are ordered in a way that
-// nodes that are left to root are smaller, nodes in right are higher than root.
+//In BinaryTree nodes are not ordered (left and right child can have any value), and each node has at most two children.
+// for BST nodes are ordered in a way that nodes that are left to root are smaller, nodes in right are higher than root. (sorted order)
 
-public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traversal
-
-    static class Node {
-        int data;
-        Node left;
-        Node right;
-        Node(int data) {
-            this.data = data;
-            this.left = null;   // no need to add these lines to assign null
-            this.right = null;
-        }
-    }
+class BinaryTreeImpl {
 
     static int idx = -1;
-    public static Node populateTree(int[] nodes) { //forms the tree from given pre-order sequence
+     static Node buildTreeFromPreorder(int[] nodes) { //forms the tree from given pre-order sequence
         idx++;
-        if (nodes[idx] == -1) { //if empty
+        if (nodes[idx] == -1) { //On -1, it returns null, simulating leaf node termination.
             return null;
         }
         Node root = new Node(nodes[idx]);
-        root.left = populateTree(nodes);
-        root.right = populateTree(nodes);
+        root.left = buildTreeFromPreorder(nodes);
+        root.right = buildTreeFromPreorder(nodes);
         return root;
     }
 
-    //Preorder =  N -> L -> R
-    //Useful for creating a copy of the tree, as it visits the root node first and then recursively visits the left and right subtrees
-    public static void preorder(Node root) {
+    Node root;  //we can a have global root for all methods
+    void buildTreeFromInOrder(int value) {  //InOrder way to build tree. if we pass array as param to insert then we have to find mid-element and use it as root and recursively fill left and right
+        Node newNode = new Node(value);
+
+        // If tree is empty, make it the root
         if (root == null) {
-            System.out.print(-1 + " ");
+            root = newNode;
+            return;
+        }
+
+        // Level order traversal to find the first empty spot
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node temp = queue.poll();
+            if (temp.left == null) {
+                temp.left = newNode;
+                break;
+            } else {
+                queue.add(temp.left);
+            }
+
+            if (temp.right == null) {
+                temp.right = newNode;
+                break;
+            } else {
+                queue.add(temp.right);
+            }
+        }
+    }
+
+    //Preorder =  Root -> Left -> Right
+    //Useful for creating a copy of the tree, as it visits the root node first and then recursively visits the left and right subtrees
+     static void preorder(Node root) {
+        if (root == null) {
+            //System.out.print(-1 + " ");
             return;
         }
         System.out.print(root.data + " ");
@@ -43,10 +63,11 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         preorder(root.right);
     }
 
-    //Inorder = L -> N -> R
-    public static void inorder(Node root) {
+    //Inorder = Left -> Root -> Right
+    //For Binary Search Trees (BSTs), inorder gives sorted order
+     static void inorder(Node root) {
         if (root == null) {
-            System.out.print(-1 + " ");
+            //System.out.print(-1 + " ");
             return;
         }
         inorder(root.left);
@@ -54,11 +75,11 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         inorder(root.right);
     }
 
-    //Postorder = L -> R -> N
-    // use if we want to deleting or freeing nodes in tree
-    public static void postorder(Node root) {
+    //Postorder = Left -> Right -> Root
+    // use if we want to delete or freeing nodes in tree
+     static void postorder(Node root) {
         if (root == null) {
-            System.out.print(-1 + " ");
+            //System.out.print(-1 + " ");
             return;
         }
         postorder(root.left);
@@ -66,17 +87,17 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         System.out.print(root.data + " ");
     }
 
-    //LevelOrder -> gives order of elements based on their levels
-    public static void levelOrder(Node root) { //Approach 1
+    //LevelOrder traversal -> gives order of elements based on their levels
+     static void levelOrder(Node root) { //Approach 1
         if (root == null) {
             return;
         }
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        q.add(null); //add to have a level structure in console
+        q.add(null); // to indicate end of a level
         while (!q.isEmpty()) {
-            Node curr = q.poll(); // Printing the top element and removing it
-            if (curr == null) {
+            Node curr = q.poll();
+            if (curr == null) {  //null means end of a level
                 System.out.println();
                 if (q.isEmpty())
                     break;
@@ -95,17 +116,17 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     }
 
     //Height of Tree
-    public static int height(Node root) {
+     static int height(Node root) {
         if (root == null) {
             return 0;
         }
         int leftHeight = height(root.left);
         int rightHeight = height(root.right);
-        return Math.max(leftHeight, rightHeight) + 1;
+        return Math.max(leftHeight, rightHeight) + 1;  //+1 includes root
     }
 
     //Count of Nodes of Tree
-    public static int countOfNodes(Node root) {
+     static int countOfNodes(Node root) {
         if (root == null) {
             return 0;
         }
@@ -115,7 +136,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     }
 
     //Sum of Nodes of Tree
-    public static int sumOfNodes(Node root) {
+     static int sumOfNodes(Node root) {
         if (root == null) {
             return 0;
         }
@@ -125,7 +146,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
     }
 
     //Diameter of Tree -> no. of nodes in the longest path btw any 2 nodes
-    public static int diameter(Node root) { // O(N^2)
+     static int diameter(Node root) { // O(N^2)
         if (root == null) {
             return 0;
         }
@@ -165,10 +186,10 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         return level(root.right, x, lev+1);
     }
 
-    //isSymmetrical -> both sides of a tree should be equal
-    public static boolean isSymmetric(Node root) {
+    //Symmetrical -> both sides of a tree should be equal
+     static boolean isSymmetric(Node root) {
         Queue<Node> queue = new LinkedList<>();
-        queue.add(root.left); //don't need root as it is common for both sides
+        queue.add(root.left); //we don't need root, as it is common for both sides
         queue.add(root.right);
 
         while(!queue.isEmpty()) {
@@ -186,6 +207,7 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
                 return false;
             }
 
+            //add in the order of symmetry
             queue.add(left.left);
             queue.add(right.right);
             queue.add(left.right);
@@ -194,29 +216,52 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         return true;
     }
 
-    //nodes that are in same level for same parent
+    //sibling -> nodes that are in same level for same parent
     static boolean isSibling(Node root, int x, int y) {
         if (root == null) {
             return false;
         }
-        Node xx = findNode(root, x);
-        Node yy = findNode(root, y);
 
-        return ((root.left == xx && root.right == yy) || (root.left == yy && root.right == xx)
-                        || isSibling(root.left, x, y) || isSibling(root.right, x, y));
+        // Check if current node has both left and right children
+        if (root.left != null && root.right != null) {
+            int leftData = root.left.data;
+            int rightData = root.right.data;
+
+            if ((leftData == x && rightData == y) || (leftData == y && rightData == x)) {
+                return true;
+            }
+        }
+
+        // Recursively check left and right subtrees
+        return isSibling(root.left, x, y) || isSibling(root.right, x, y);
     }
 
-    //nodes that are in same level but diff parent
-    public static boolean isCousins(Node root, int x, int y) {
+    //cousins -> nodes that are in same level but diff parent
+     static boolean isCousins(Node root, int x, int y) {
         Node xx = findNode(root, x);
         Node yy = findNode(root, y);
 
-        return ((level(root, xx, 0) == level(root, yy, 0))
-                && (!isSibling(root, x, y)));
+        if (xx == null || yy == null) return false;
+
+        return ((level(root, xx, 0) == level(root, yy, 0)) &&
+                (!isSibling(root, x, y)));
+    }
+
+    static boolean isIdentical(Node root, Node subRoot) {
+        if (subRoot == null && root == null)
+            return true;
+        if (root == null || subRoot == null)
+            return false;
+
+        if (root.data == subRoot.data)
+            return isIdentical(root.left, subRoot.left) &&
+                    isIdentical(root.right, subRoot.right);
+
+        return false;
     }
 
     //Subtree of another tree
-    public static boolean isSubtree(Node root, Node subRoot) {
+     static boolean isSubtree(Node root, Node subRoot) {
         if (subRoot == null)
             return true;
         if (root == null)
@@ -228,18 +273,6 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
-    public static boolean isIdentical(Node root, Node subRoot) {
-        if (subRoot == null && root == null)
-            return true;
-        if (root == null || subRoot == null)
-            return false;
-
-        if (root.data == subRoot.data)
-            return isIdentical(root.left, subRoot.left) && isIdentical(root.right, subRoot.right);
-
-        return false;
-    }
-
     private static void prettyDisplay(Node node, int level) {
         if (node == null) {
             return;
@@ -248,21 +281,20 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         prettyDisplay(node.right, level + 1);
 
         if (level != 0) {
-            for (int i = 0; i < level - 1; i++) {
+            for (int i = 0; i < level - 1; i++) {  //indentation
                 System.out.print("|\t\t");
             }
             System.out.println("|------->" + node.data);
         } else {
-            System.out.println(node.data);
+            System.out.println(node.data);  //root node
         }
+
         prettyDisplay(node.left, level + 1);
     }
 
-    public static void main(String[] args) {
-        int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        Node root = populateTree(nodes);
-        System.out.println("Root: " + root.data);
-
+     public static void main(String[] args) {
+        int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};  // Build Tree from given Preorder Sequence, -1 marker for null nodes
+        Node root = buildTreeFromPreorder(nodes);
         prettyDisplay(root, 0);
 
         System.out.print("preOrder: ");
@@ -286,14 +318,14 @@ public class BinaryTreeImpl {// Build Tree from given Preorder Sequence / traver
         Node node1 = findNode(root, 6);
         System.out.println("findNode: " + node1.data);
 
-        System.out.println("Level of node " + node1.data +" is :"+ level(root, node1, 0));
+        System.out.println("Level of node " + node1.data +" is: "+ level(root, node1, 0));
 
-        System.out.println("isSymmetric:"+isSymmetric(root));
+        System.out.println("isSymmetric: "+isSymmetric(root));
 
-        System.out.println("isCousins : "+isCousins(root, 1, 4));
+        System.out.println("isCousins: "+isCousins(root, 1, 4));
         System.out.println(isCousins(root, 6, 4));
 
-        System.out.println("isSibblings: "+isSibling(root, 1, 4));
+        System.out.println("isSiblings: "+isSibling(root, 1, 4));
     }
 }
 

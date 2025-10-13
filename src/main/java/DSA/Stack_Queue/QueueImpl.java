@@ -1,45 +1,47 @@
 package DSA.Stack_Queue;
+
 //QueueImpl is a linear data structure, in which elements are added at the rear end and removed from the front end,
 // following the First-In-First-Out (FIFO) principle.
+//enqueue, dequeue, peek -> These are generic terms used in data structures.
+//add, remove, element etc -> java specific methods.
 
 public class QueueImpl {    //Impl queue using array
+    private final int MAX;
     private int[] arr;
     private int front;
     private int rear;
-    private int capacity;
     private int size;
 
-    public QueueImpl(int capacity) {
-        this.capacity = capacity;
-        this.arr = new int[capacity];
+    QueueImpl(int capacity) {
+        this.MAX = capacity;
+        this.arr = new int[MAX];
         this.front = 0;
         this.rear = -1;
         this.size = 0;
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return size == 0;
     }
 
-    public boolean isFull() {
-        return size == capacity;
+    boolean isFull() {
+        return size == MAX;
     }
 
-    public int size() {
+    int size() {
         return size;
     }
 
-    public void add(int item) { //enqueue
+    void add(int item) { //enqueue
         if (isFull()) {
             System.out.println("Queue is full. Unable to enqueue.");
             return;
         }
         arr[++rear] = item;
         size++;
-        System.out.println("Enqueued " + item + " to the queue.");
     }
 
-    public int remove() { //dequeue
+    int remove() { //dequeue
         if (isEmpty()) {
             System.out.println("Queue is empty. Unable to dequeue.");
             return -1; // Returning -1 indicating an error condition. Modify as needed.
@@ -50,7 +52,7 @@ public class QueueImpl {    //Impl queue using array
         return item;
     }
 
-    public int peek() {
+    int peek() {
         if (isEmpty()) {
             System.out.println("Queue is empty.");
             return -1;
@@ -58,7 +60,11 @@ public class QueueImpl {    //Impl queue using array
         return arr[front];
     }
 
-    void print() {
+    void display() {
+        if (isEmpty()) {  //nothing to print
+            System.out.println("Queue is empty.");
+            return;
+        }
         System.out.print("Elements present in stack : ");
         for (int i = front; i <= rear; i++) {
             System.out.print(arr[i] + " ");
@@ -71,11 +77,12 @@ public class QueueImpl {    //Impl queue using array
         q.add(1);
         q.add(2);
         q.add(3);
-        q.print();
+        q.display();
+
         System.out.println("size: " + q.size());
         System.out.println("Removed : " + q.remove());
         System.out.println(q.peek());
         System.out.println("Is queue empty : " + q.isEmpty());
-        q.print();
+        q.display();
     }
 }

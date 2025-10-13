@@ -49,7 +49,7 @@ public class CorporateFlightBookings {
         int[][] bookings = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};  //[firstFlight, lastFlight, seatsBooked]
         int n = 5;  //no. of flights
 
-        int[] result = fb.corpFlightBookings2(bookings, n);
+        int[] result = fb.corpFlightBookings1(bookings, n);
 
         System.out.println("Seats booked on each flight:");
         for (int seats : result) {

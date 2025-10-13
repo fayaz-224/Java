@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement  //annotation from the JAXB (Java Architecture for XML Binding) API. indicates the root element of an XML document
 public class Question {
     private int id;
     private String questionname;
@@ -42,3 +42,13 @@ public class Question {
         this.answer = answer;
     }
 }
+
+/*
+<employee id="101">
+    <name>Alice</name>
+    <age>30</age>
+</employee>
+
+id -> XmlAttribute
+name and age -> XmlElement
+ */

@@ -17,22 +17,21 @@ class RottenOranges {
         int rows = grid.length;
         int cols = grid[0].length;
         Queue<int[]> queue = new LinkedList<>();
-        int freshTomatos = 0;
+        int freshOranges = 0;
 
-        //Put the position of all rotten oranges in queue
         for(int i = 0 ; i < rows ; i++) {
             for(int j = 0 ; j < cols ; j++) {
                 if(grid[i][j] == 2) {
-                    queue.offer(new int[]{i , j});
+                    queue.offer(new int[]{i , j}); //Put the positions of all rotten oranges in queue
                 }
                 if(grid[i][j] == 1) {
-                    freshTomatos++; //count the number of fresh oranges
+                    freshOranges++; //count the number of fresh oranges
                 }
             }
         }
 
-        if(freshTomatos == 0)
-            return 0;
+        if(freshOranges == 0) return 0;
+
         int countMinutes = 0;
         int[][] directions = {{-1, 0}, {1,0}, {0,-1}, {0,1}};
 
@@ -46,23 +45,25 @@ class RottenOranges {
                     int x = current[0] + dir[0];
                     int y = current[1] + dir[1];
 
-                    if(x < 0 || y < 0 || x >= rows || y >= cols || grid[x][y] == 0 || grid[x][y] == 2)
-                        continue; //visited
-
-                    grid[x][y] = 2;
-                    freshTomatos--;
-                    queue.offer(new int[]{x , y});
+                    if(x >= 0 && y >= 0 && x < rows && y < cols && grid[x][y] == 1) {
+                        grid[x][y] = 2; //mark fresh as rotten to avoid revisiting
+                        freshOranges--;
+                        queue.offer(new int[]{x, y});
+                    }
                 }
             }
-            if(queue.size() != 0) {  //!queue.isEmpty()
+            if(!queue.isEmpty()) {
                 countMinutes++;
             }
         }
-        return freshTomatos == 0 ? countMinutes : -1; //if all fresh tomatoes are not rotten return -1
+
+        return freshOranges == 0 ? countMinutes : -1; //if all fresh tomatoes are not rotten return -1
     }
 
     public static void main(String args[]) {
-        int arr[][]={ {2,1,1} , {1,1,0} , {0,1,1} };
+        int arr[][]={{2, 1, 1},
+                     {1, 1, 0},
+                     {0, 1, 0}};
         int rotting = orangesRotting(arr);
         System.out.println("Minimum Number of Minutes Required " + rotting);
     }

@@ -35,6 +35,6 @@ public class MobilePhone {
 
     @Override
     public String toString() {
-        return "\"MobilePhone [Brand = "+ brand + ", Name = " + name + ", RAM = " + ram + ", ROM = " + rom + "]";
+        return "MobilePhone: [Brand = "+ brand + ", Name = " + name + ", RAM = " + ram + ", ROM = " + rom + "]";
     }
 }

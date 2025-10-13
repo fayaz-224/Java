@@ -7,7 +7,7 @@ import java.util.Set;
 public class HashMapCol {
     public static void main(String[] args) {
 
-        HashMap<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
 
         map.put("India", 120);
         map.put("US", 30);

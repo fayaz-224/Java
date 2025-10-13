@@ -8,7 +8,9 @@ abstract class Shape {
 // Inheritance & Polymorphism
 class Circle1 extends Shape {
     private double radius;
-    public Circle1(double radius) {this.radius = radius;}
+    public Circle1(double radius) {
+        this.radius = radius;
+    }
     @Override
     double area() {     //Overriding
         return Math.PI * radius * radius;

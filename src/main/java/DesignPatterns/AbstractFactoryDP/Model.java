@@ -1,6 +1,6 @@
 package DesignPatterns.AbstractFactoryDP;
 
-// Abstract Product Interface for Cars
+// Abstract Product Interface for Car models
 public interface Model {
     String getModel();
 }

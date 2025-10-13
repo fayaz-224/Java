@@ -16,8 +16,8 @@ public class Permutations { //permutations = n! but not always
 
         for (int i = 0; i < str.length(); i++) {
             char currChar = str.charAt(i);
-            String newStr = str.substring(0, i) + str.substring(i + 1); //In str.substring(0, i), i is exclusive ie; remove the used char from string
-            printPermutationForString(newStr, perm + currChar);
+            String remainingStr = str.substring(0, i) + str.substring(i + 1); //In str.substring(0, i), i is exclusive ie; remove the used char from string
+            printPermutationForString(remainingStr, perm + currChar);
         }
     }
 

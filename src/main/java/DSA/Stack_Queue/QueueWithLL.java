@@ -1,7 +1,7 @@
 package DSA.Stack_Queue;
 
 public class QueueWithLL {
-    static class Node {
+    private static class Node {
         int data;
         Node next;
 
@@ -11,38 +11,41 @@ public class QueueWithLL {
         }
     }
 
-    static Node head = null;
-    static Node tail = null;
+    private Node head = null;  //front
+    private Node tail = null;  //rear
+    private int size = 0;
 
-    public static boolean isEmpty() {
+    boolean isEmpty() {
         return head == null && tail == null;
     }
 
-    public static void add(int data) { //enQueue
+    void add(int data) { //enQueue
         Node newNode = new Node(data);
         if (isEmpty()) {
             tail = head = newNode;
         } else {
-            tail.next = newNode;
+            tail.next = newNode;  //FIFO, so new Nodes will be added to right ie; rear
             tail = newNode;
         }
+        size++;
     }
 
-    public static int remove() { //deQueue
+    int remove() { //deQueue
         if (isEmpty()) {
             System.out.println("empty queue");
             return -1;
         }
         int front = head.data;
-        //single node
-        if (head == tail) {
+        head = head.next;
+        if (head == null) { //single node - queue becomes empty
             tail = null;
         }
-        head = head.next;
+
+        size--;
         return front;
     }
 
-    public static int peek() {
+    int peek() {
         if (isEmpty()) {
             System.out.println("empty queue");
             return -1;
@@ -50,7 +53,11 @@ public class QueueWithLL {
         return head.data;
     }
 
-    public void printList() {
+    public int size() {
+        return size;
+    }
+
+    void printList() {
         Node currNode = head;
 
         while (currNode != null) {
@@ -61,16 +68,17 @@ public class QueueWithLL {
     }
 
     public static void main(String[] args) {
-        QueueWithLL q = new QueueWithLL();  //no need for size
-        add(1);
-        add(2);
-        add(3);
-        add(4);
-        add(5);
+        QueueWithLL q = new QueueWithLL();
+        System.out.println(q.isEmpty());
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
         q.printList();
 
-        remove();
-        peek();
+        q.remove();
+        q.peek();
         q.printList();
+        System.out.println("size: "+q.size());
     }
 }

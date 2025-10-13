@@ -6,13 +6,13 @@ import java.util.ArrayList;
 //Make all properties as private final.
 //Do not declare setters, Only getters.
 //Declare all args constructor.
-//If there are custom nested/ref objects in the class as properties, implement clone.
+//If there are custom ref objects in the class as properties, implement clone.
 //If there are other types of nested objects as properties, perform a deep copy.
 
 final class ImmutableClass {
     private final String empName; //normal field
     //private final Address address; //custom ref obj
-    private final ArrayList<String> phoneNumbers;  //other nested or ref obj
+    private final ArrayList<String> phoneNumbers;  //other nested or ref obj (mutable objects)
 
     public ImmutableClass(String name, ArrayList<String> phoneNumbers) {
         this.empName = name;

@@ -113,10 +113,11 @@ class LFUCache {
         cache.put(1, 1);
         cache.put(2, 2);
         cache.put(3, 3);
-        System.out.println(cache.get(1));
-        cache.put(4, 4);
+        System.out.println(cache.get(1)); //-1 -> LFU, cleaned as size is only 2
+
         System.out.println(cache.get(2));
-        System.out.println(cache.get(3));
+        cache.put(4, 4);
+        System.out.println(cache.get(2));  //still present as its not least freq used one
     }
 
     //Double LL Impl

@@ -32,7 +32,7 @@ public class Prime {	//prime no's up to n
 boolean isPrime(int n){
 	if(n<=1)
 		return false;
-	for(int i=2; i <= Math.sqrt(i); i++) {  // If n has any factor other than 1 and n, one of them must be ≤ √n.
+	for(int i=2; i <= Math.sqrt(n); i++) {  // If n has any factor other than 1 and n, one of them must be ≤ √n.
 	   if(n%i==0)
 		 return false;
 	}

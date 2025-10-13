@@ -104,7 +104,7 @@ public class LRUCache {
         cache.putIntoCache(3, 3);
         System.out.println(cache.getFromCache(1));
         cache.putIntoCache(4, 4);
-        System.out.println(cache.getFromCache(2));
+        System.out.println(cache.getFromCache(2));  //-1 -> LRU, its cleaned as size is only 3
         System.out.println(cache.getFromCache(3));
     }
 }
