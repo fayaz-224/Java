@@ -2,9 +2,30 @@ package Array.Advance;
 
 import java.util.*;
 
-public class MergeOverlappingSubIntervals {
+//https://leetcode.com/problems/merge-intervals/description/
+public class MergeIntervals {
 
-    public static List<List<Integer>> mergeOverlappingIntervals(int[][] arr) {
+    public static int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        List<int[]> merged = new ArrayList<>();
+
+        int[] prev = intervals[0];
+        for (int i = 1; i < intervals.length; i++) {
+            int[] interval = intervals[i];
+            if (interval[0] <= prev[1]) {
+                prev[1] = Math.max(prev[1], interval[1]);
+            } else {
+                merged.add(prev);
+                prev = interval;
+            }
+        }
+        merged.add(prev);
+
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+    public static List<List<Integer>> mergeIntervals(int[][] arr) {
         int n = arr.length;
         //Sort the arr based on the start value
         Arrays.sort(arr, Comparator.comparingInt(a -> a[0]));  //Arrays.sort(arr, (a, b) -> a[0] - b[0]);
@@ -26,13 +47,13 @@ public class MergeOverlappingSubIntervals {
 
     public static void main(String[] args) {
         int[][] arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
-        List<List<Integer>> ans = mergeOverlappingIntervals(arr);
-        System.out.print("The merged intervals are: " + ans);
+        int[][] ans = merge(arr);
+//        System.out.print("The merged intervals are: " + ans);  //works for list to directly print, but for int[][] we need to traverse
 
-//        for (List<Integer> it : ans) {
-//            System.out.print("[" + it.get(0) + ", " + it.get(1) + "] ");
-//        }
-//        System.out.println();
+        for (int[] it : ans) {
+            System.out.print("[" + it[0] + ", " + it[1] + "] ");
+        }
+        System.out.println();
     }
 }
 

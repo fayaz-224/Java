@@ -1,14 +1,15 @@
 package Array.Advance;
 
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 public class BuySellStock { //one buy - one sell
     public static int maxProfit(int[] prices) {
         int min = Integer.MAX_VALUE;
         int maxProfit = 0;
-        for(int i=0;i<prices.length;i++) {
-            if(prices[i] < min)
-                min = prices[i];
-            else if(prices[i]-min > maxProfit)
-                maxProfit = prices[i]-min;
+        for (int price : prices) {
+            if (price < min)
+                min = price;
+            else if (price - min > maxProfit)
+                maxProfit = price - min;
         }
         return maxProfit;
     }

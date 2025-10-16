@@ -8,7 +8,7 @@ class MtxRotation { 	//without using another matrix
         int n = matrix.length;
         // Step 1: Transpose the matrix
         for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {  //imp: j=i
+            for (int j=0; j<i; j++) {  //or for(int j = i; j < n; j++) {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;

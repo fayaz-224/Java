@@ -20,7 +20,7 @@ public class CorporateFlightBookings {
     //Prefix
     public int[] corpFlightBookings2(int[][] bookings, int n) {
 
-        int[] res = new int[n];
+        int[] res = new int[n];  //prefix array
         for(int[] curr : bookings){
             int start = curr[0]-1;  //Since flight indices are 1-based and array indices in Java are 0-based, use first - 1 for correct indices.
             int end = curr[1];  //exclusive

@@ -208,22 +208,25 @@ public class BSTImpl {
         return leftTree && rightTree;
     }
 
+    //https://leetcode.com/problems/kth-smallest-element-in-a-bst/
     static int count = 0;
+    static int result = -1;
     static int kthSmallest(Node root, int k) { //use inorder traversal
-        if (root == null) {
-            return -1;
-        }
+        kthInorder(root, k);
+        return result;
+    }
+    static void kthInorder(Node root, int k) {
+        if (root == null) return;
 
-        int left = kthSmallest(root.left, k);
-        if (left != -1) {
-            return left;
-        }
+        kthInorder(root.left, k);
 
         count++;
-        if(count == k) {
-            return root.data;
+        if (count == k) {
+            result = root.data;
+            return;
         }
-        return kthSmallest(root.right, k);
+
+        kthInorder(root.right, k);
     }
 
     public static void main(String[] args) {

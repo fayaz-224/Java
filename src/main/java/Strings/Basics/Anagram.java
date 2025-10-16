@@ -3,24 +3,27 @@ package Strings.Basics;
 //two strings are anagrams if they contain the same characters but in a different order.
 public class Anagram {
 
-//    public static boolean checkAnagram(String s1, String s2) {
-//        s1 = s1.replaceAll("\\s", ""); // Remove all the white space
-//        s2 = s2.replaceAll("\\s", "");
-//      
-//        if(s1.length() != s2.length())
-//            return false;
+/*
+    public static boolean checkAnagram(String s1, String s2) {
+        s1 = s1.replaceAll("\\s", ""); // Remove all the white space
+        s2 = s2.replaceAll("\\s", "");
 
-//        char[] arr1 = s1.toLowerCase().toCharArray();
-//        char[] arr2 = s2.toLowerCase().toCharArray();
-//
-//       Arrays.sort(arr1); // Sort both Character Array
-//       Arrays.sort(arr2);
-//       for (int i = 0; i < arr1.length; i++)
-//           if (arr1[i] != arr2[i])
-//               return false;
-//       return true;
-//       //--or-- return (Arrays.equals(arr1, arr2));
-//    }
+        if(s1.length() != s2.length())
+            return false;
+
+        char[] arr1 = s1.toLowerCase().toCharArray();
+        char[] arr2 = s2.toLowerCase().toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        for (int i = 0; i < arr1.length; i++) {
+           if (arr1[i] != arr2[i])
+               return false;
+        }
+        return true;
+        //or use return (Arrays.equals(arr1, arr2)); instead of for loop
+    }
+    */
 	
     public static void main(String[] args) {
         String s1 = "shaik";

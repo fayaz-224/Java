@@ -2,8 +2,9 @@ package Array.Advance;
 
 import java.util.HashMap;
 
-//find length of Longest SubArray Of Given Sum
-public class LongestSubArrayOfGivenSum {
+//find length of Longest SubArray Of Given target
+//https://leetcode.com/problems/subarray-sum-equals-k/description/
+public class LengthOfLongestSubArrayOfSizeK {
 
     static int solve(int[] a, int targetSum) { //Brute Force Approach O(N^2)
         int  max = 0;

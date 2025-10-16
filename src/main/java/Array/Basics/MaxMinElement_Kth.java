@@ -1,4 +1,4 @@
-package Array.Advance;
+package Array.Basics;
 
 import java.util.PriorityQueue;
 

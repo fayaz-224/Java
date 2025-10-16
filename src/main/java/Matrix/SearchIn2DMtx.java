@@ -9,15 +9,15 @@ public class SearchIn2DMtx {
     static boolean searchMatrix(int[][] matrix, int target) {
         int rows = matrix.length;
         int cols = matrix[0].length;
-        int left = 0, right = cols-1;
+        int rowLeft = 0, rowRight = cols-1;
 
-        while(left < rows && right >= 0){
-            if(matrix[left][right]== target)
+        while(rowLeft < rows && rowRight >= 0){
+            if(matrix[rowLeft][rowRight]== target)
                 return true;
-            if(matrix[left][right] > target)
-                right--;
+            if(matrix[rowLeft][rowRight] > target)
+                rowRight--;
             else
-                left++;
+                rowLeft++;
         }
         return false;
     }

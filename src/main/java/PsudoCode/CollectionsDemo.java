@@ -1,4 +1,4 @@
-package Collections;
+package PsudoCode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -29,10 +29,10 @@ import java.util.*;
 public class Sum2 {
     public static void main(String[] args) {
         int[] arr = {0, 14, 0, 4, 7, 8, 3, 5, 7};
-        findPairsWithSum(arr, 11);
+        System.out.println(findPairsWithSum(arr, 11));
     }
 
-    public static void findPairsWithSum(int[] arr, int targetSum) {
+    public static Set<List<Integer>> findPairsWithSum(int[] arr, int targetSum) {
         Set<List<Integer>> res = new HashSet<>();
         Set<Integer> set = new HashSet<>();
 
@@ -46,7 +46,7 @@ public class Sum2 {
                 set.add(num);
         }
 
-        System.out.println(res);
+        return res;
     }
 }
 

@@ -1,14 +1,15 @@
-package Array.Advance;
+package DSA.SlidingWindow;
 
-//Find the largest SUM in continuous sub-array of length k.
-public class SlidingMaximum2 {
+//Find the Maximum SUM in continuous sub-array of length k.
+public class SlidingMaximumOfWindowSum {
 
     static int bruteForceMaxSum(int[] arr, int k) {  //O(n*k)
         int maxSum = Integer.MIN_VALUE;
+        int n = arr.length;
 
-        for (int i = 0; i <= arr.length - k; i++) {
+        for (int i = 0; i <= n - k; i++) {
             int sum = 0;
-            for (int j = i; j < i + k; j++) {
+            for (int j = i; j < i+k; j++) {
                 sum += arr[j];
             }
             maxSum = Math.max(maxSum, sum);  //max sum among all windows

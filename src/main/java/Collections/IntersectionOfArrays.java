@@ -2,6 +2,7 @@ package Collections;
 
 import java.util.*;
 
+//https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 public class IntersectionOfArrays {
     public static int[] intersect(int[] nums1, int[] nums2) {
         // Use a HashMap to store the counts of each element in nums1
@@ -19,12 +20,14 @@ public class IntersectionOfArrays {
             }
         }
 
-        // Convert the list to an array and return
-        int[] result = new int[intersection.size()];
-        for (int i = 0; i < intersection.size(); i++) {
-            result[i] = intersection.get(i);
-        }
-        return result;
+        return intersection.stream().mapToInt(Integer::intValue).toArray();
+        //--or-- return intersection.toArray(new Integer[0]);  //we have to change return type from int to Integer
+// --or-- Convert the list to an array as below
+//        int[] result = new int[intersection.size()];
+//        for (int i = 0; i < intersection.size(); i++) {
+//            result[i] = intersection.get(i);
+//        }
+//        return result;
     }
 
     public static void main(String[] args) {
@@ -40,21 +43,28 @@ public class IntersectionOfArrays {
     }
 }
 
+
 /*
-class Solution {
-    public int[] intersection(int[] nums1, int[] nums2) {
-        boolean[] s = new boolean[1001];
-        for (int x : nums1) {
-            s[x] = true;
-        }
-        List<Integer> ans = new ArrayList<>();
-        for (int x : nums2) {
-            if (s[x]) {
-                ans.add(x);
-                s[x] = false;
+public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int n = nums1.length, m = nums2.length;
+        int i = 0, j = 0;
+        List<Integer> list = new ArrayList<>();
+        while(i < n && j < m){
+            int a = nums1[i], b= nums2[j];
+            if(a == b){
+                list.add(a);
+                i++;
+                j++;
+            }else if(a < b){
+                i++;
+            }else{
+                j++;
             }
         }
-        return ans.stream().mapToInt(Integer::intValue).toArray();
+        int[] ret = new int[list.size()];
+        for(int k = 0; k < list.size();k++) ret[k] = list.get(k);
+        return ret;
     }
-}
  */
