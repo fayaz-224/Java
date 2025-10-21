@@ -1,9 +1,10 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
 //The N-Queens problem is a classic problem in which you have to place N queens on an NxN chessboard in such a way that no two queens threaten each other.
 // Queens can move horizontally, vertically, and diagonally.
+//https://leetcode.com/problems/n-queens/description/
 public class NQueens {  //O(N! * N).
 
     //It initializes an empty chessboard and calls the solveNQueensHelper method to find all valid solutions.

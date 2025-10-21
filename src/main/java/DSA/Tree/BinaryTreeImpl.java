@@ -1,6 +1,8 @@
 package DSA.Tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 //In BinaryTree nodes are not ordered (left and right child can have any value), and each node has at most two children.
@@ -88,31 +90,33 @@ class BinaryTreeImpl {
     }
 
     //LevelOrder traversal -> gives order of elements based on their levels
-     static void levelOrder(Node root) { //Approach 1
+    static List<List<Integer>> levelOrder(Node root) {
+        List<List<Integer>> result = new ArrayList<>(); //to store end result of all levels
+
         if (root == null) {
-            return;
+            return result;
         }
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-        q.add(null); // to indicate end of a level
-        while (!q.isEmpty()) {
-            Node curr = q.poll();
-            if (curr == null) {  //null means end of a level
-                System.out.println();
-                if (q.isEmpty())
-                    break;
-                else
-                    q.add(null);
-            } else {
-                System.out.print(curr.data + " ");
-                if (curr.left != null) {
-                    q.add(curr.left);
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root); //use offer or add
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            List<Integer> currentLevel = new ArrayList<>(); //to store level result
+            for (int i=0; i < levelSize; i++) {
+                Node currentNode = queue.poll();
+                currentLevel.add(currentNode.data);
+
+                if (currentNode.left != null) {
+                    queue.offer(currentNode.left);
                 }
-                if (curr.right != null) {
-                    q.add(curr.right);
+                if (currentNode.right != null) {
+                    queue.offer(currentNode.right);
                 }
             }
+            result.add(currentLevel);
         }
+        return result;
     }
 
     //Height of Tree
@@ -306,7 +310,7 @@ class BinaryTreeImpl {
 
         System.out.println();
         System.out.println("levelOrder:");
-        levelOrder(root);
+         System.out.println(levelOrder(root));
 
         System.out.println("Count of Nodes: " + countOfNodes(root));
         System.out.println("Height: " + height(root));

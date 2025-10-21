@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 class Sudoku {
 

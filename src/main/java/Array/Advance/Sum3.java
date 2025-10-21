@@ -4,6 +4,7 @@ import java.util.*;
 
 //Brute Force Approach - O(N^3)
 public class Sum3 {
+    /*
     public static List<List<Integer>> triplet(int[] arr, int n) {
         Set<List<Integer>> set = new HashSet<>();
 
@@ -20,19 +21,10 @@ public class Sum3 {
         }
        // convert back to list
        return  new ArrayList<>(set);
-    }
+    }*/
 
-    public static void main(String[] args) {
-        int[] arr = { -1, 0, 1, 2, -1, -4};
-        int n = arr.length;
-        System.out.println(triplet(arr, n));
-    }
-}
-
-
-/*
-//Better Approach - O(N^2)
-public static List<List<Integer>> triplet(int n, int[] arr) {  //target = 0
+    //Better Approach - O(N^2)
+    public static List<List<Integer>> triplet(int[] arr, int n) {  //target = 0
         Set<List<Integer>> st = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
@@ -54,4 +46,11 @@ public static List<List<Integer>> triplet(int n, int[] arr) {  //target = 0
         // store the set elements in the answer:
         return new ArrayList<>(st);
     }
- */
+
+    public static void main(String[] args) {
+        int[] arr = { -1, 0, 1, 2, -1, -4};
+        int n = arr.length;
+        System.out.println(triplet(arr, n));
+    }
+}
+

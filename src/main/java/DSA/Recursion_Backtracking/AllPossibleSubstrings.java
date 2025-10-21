@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 //Time Complexity: O(2^n)
 //Space Complexity: O(n), recursion stack.

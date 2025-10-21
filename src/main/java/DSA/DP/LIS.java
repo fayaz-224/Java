@@ -3,6 +3,7 @@ package DSA.DP;
 import java.util.Arrays;
 
 //Longest Increasing Subsequence (not necessarily contiguous) - Dynamic programming
+//https://leetcode.com/problems/longest-increasing-subsequence/description/
 public class LIS {
 
     public int lengthOfLIS(int[] nums) {  //Bottom-Up DP

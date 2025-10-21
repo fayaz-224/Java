@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 public class Basics {
 
@@ -16,10 +16,11 @@ public class Basics {
 
     //gives count of possible paths in a given nXm grid (were we can only move RIGHT or DOWN in mtx)
     //TC: O(2^max(m,n))
+    //https://leetcode.com/problems/unique-paths/description/
     private static int path(int m, int n) {
         if(m==1 || n==1) return 1;
         return path(m-1, n) + path(m, n-1);   // Recursively count paths by considering moving right and down
-    }
+    } //Better use DP logic
 
     public static void main(String[] args){
         System.out.println("-----POW-----");

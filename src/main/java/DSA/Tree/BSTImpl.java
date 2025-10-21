@@ -28,7 +28,7 @@ public class BSTImpl {
         inorder(root.right);
     }
 
-    static List<List<Integer>> levelOrder(Node root) { //Approach 2
+    static List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> result = new ArrayList<>(); //to store end result of all levels
 
         if (root == null) {
@@ -144,6 +144,7 @@ public class BSTImpl {
         return root;
     }
 
+    //https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
     static int height(Node root) {
         if (root == null) {
             return -1; // or return 0 if you prefer height in terms of nodes
@@ -191,21 +192,20 @@ public class BSTImpl {
         path.remove(path.size() - 1); //need to remove it as we already calculated path of this node
     }
 
-    static boolean isValidBST(Node node, Integer low, Integer high) { //initially pass nulls for low, high
-        if (node == null) {
-            return true;
-        }
-        if (low != null && node.data <= low) {
+    //https://leetcode.com/problems/validate-binary-search-tree/description/
+    static boolean isValidBST(Node node, Integer min, Integer max) { //initially pass nulls for min, max
+        if (node == null) return true;
+
+        //checks if the current node's value is within the valid range (minimum < node.val < maximum)
+        if (min != null && node.data <= min) {
             return false;
         }
-        if(high != null && node.data >= high) {
+        if(max != null && node.data >= max) {
             return false;
         }
 
-        boolean leftTree = isValidBST(node.left, low, node.data);
-        boolean rightTree = isValidBST(node.right, node.data, high);
-
-        return leftTree && rightTree;
+        return isValidBST(node.left, min, node.data) && //It ensures that all nodes in the left subtree are less than the current node's value
+                isValidBST(node.right, node.data, max); //It ensures all nodes in the right subtree are greater than the current node's value
     }
 
     //https://leetcode.com/problems/kth-smallest-element-in-a-bst/

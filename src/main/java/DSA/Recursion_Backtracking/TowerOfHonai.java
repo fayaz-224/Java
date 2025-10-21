@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 public class TowerOfHonai {
     public static void towerOfHanoi(int n, String src, String helper, String dest) {

@@ -1,6 +1,7 @@
 package DSA.BFS_DFS;
 
 //In a given grid, 1=land & 0=water. count no. of islands covered by water
+//https://leetcode.com/problems/number-of-islands/description/
 public class NumberOfIslands {
 
     public int numIslands(char[][] grid) {  //DFS

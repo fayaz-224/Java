@@ -1,16 +1,18 @@
-package DSA.Recursion;
+package DSA.Recursion_Backtracking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //Backtracking
-public class Permutations { //permutations = n! but not always
+//https://leetcode.com/problems/permutations/description/
+public class Permutations {
 
-    static int count = 0;
+    //for String
+    static List<String> permutation = new ArrayList<>();
     public static void printPermutationForString(String str, String perm) {
         if (str.isEmpty()) {
-            System.out.println(perm); //this will print the permutations or add to List as below example
-            count++;
+            permutation.add(perm);
             return;
         }
 
@@ -21,32 +23,36 @@ public class Permutations { //permutations = n! but not always
         }
     }
 
-    static List<String> permutation = new ArrayList<>();
-    public static void printPermutationForInt(int[] nums, StringBuilder perm) {
-        if (perm.length() == nums.length) {
-            permutation.add(perm.toString());
+    //for int[]
+    public static List<List<Integer>> printPermutationForInt(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
+        backtrack(nums, list, new ArrayList<>());
+        return list;
+    }
+    private static void backtrack(int [] nums, List<List<Integer>> result, List<Integer> currList) {
+        if (currList.size() == nums.length) {
+            result.add(new ArrayList<>(currList));
             return;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (perm.indexOf(String.valueOf(nums[i])) != -1) {  //Don’t use indexOf if the input string may contain duplicate characters. use visited[] array logic
-                continue; // Skip if the digit is already in permutation
-            }
-            perm.append(nums[i]);
-            printPermutationForInt(nums, perm);
-            perm.deleteCharAt(perm.length()-1); // After the recursive call returns, we backtrack by removing the last digit (i) from the permutation (perm = "").
+            if (currList.contains(nums[i])) continue; // element already exists, skip
+            currList.add(nums[i]);
+            backtrack(nums, result, currList);
+            currList.remove(currList.size() - 1);
         }
     }
 
     public static void main(String[] args) {
         String str = "ABC";
         printPermutationForString(str, "");
-        System.out.println("Total permutations of string:" + count);
+        System.out.println("Total permutations of string:" + permutation.size());
+        System.out.println(Arrays.toString(permutation.toArray()));
 
         int[] nums = {1, 2, 3};
-        printPermutationForInt(nums, new StringBuilder());
-        System.out.println("Total permutations of int[]: " + permutation.size());
-        for (String permutation : permutation) {
+        List<List<Integer>> res = printPermutationForInt(nums);
+        System.out.println("Total permutations of int[]: " + res.size());
+        for (List<Integer> permutation : res) {
             System.out.println(permutation);
         }
     }
