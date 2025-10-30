@@ -23,11 +23,11 @@ public class Subsets {
 
         subset.add(nums[index]);  //take
         createSubset(nums, index + 1, res, subset);
-        subset.remove(subset.size() - 1); //no take
+        subset.remove(subset.size() - 1); //backtrack
         //while (index + 1 < nums.length && nums[index] == nums[index + 1]) {  //to Skip duplicates
         //    index++;
         //}
-        createSubset(nums, index + 1, res, subset);
+        createSubset(nums, index + 1, res, subset); //no take
     }
 
     //Approach-2 (Backtracking with for loop)

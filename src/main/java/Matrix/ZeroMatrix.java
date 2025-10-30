@@ -9,7 +9,7 @@ package Matrix;
  */
 public class ZeroMatrix {
 
-    public static void setZeroes(int[][] matrix) {
+    public static void setZeroes(int[][] matrix) { //SC: O(m+n)
         int rows = matrix.length;
         int cols = matrix[0].length;
 
@@ -54,7 +54,7 @@ public class ZeroMatrix {
 }
 
 /*
-//without extra space
+//without extra space - SC: O(1)
 public static void setZeroes(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
@@ -62,7 +62,7 @@ public static void setZeroes(int[][] matrix) {
         boolean firstRowZero = false;
         boolean firstColZero = false;
 
-        // Step 1: Check if first row and column need to be zeroed
+        // Step 1: Check if first row and first column has any zeros - we need these later as markers
         for (int i = 0; i < rows; i++) {
             if (matrix[i][0] == 0) {
                 firstColZero = true;
@@ -95,7 +95,7 @@ public static void setZeroes(int[][] matrix) {
             }
         }
 
-        // Step 4: Zero first row and column if needed
+        // Step 4: Handle first row and column if needed
         if(firstRowZero) {
             for (int j = 0; j < cols; j++) {
                 matrix[0][j] = 0;

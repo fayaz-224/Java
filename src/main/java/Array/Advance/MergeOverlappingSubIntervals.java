@@ -3,7 +3,7 @@ package Array.Advance;
 import java.util.*;
 
 //https://leetcode.com/problems/merge-intervals/description/
-public class MergeIntervals {
+public class MergeOverlappingSubIntervals {
 
     public static int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
@@ -12,12 +12,12 @@ public class MergeIntervals {
 
         int[] prev = intervals[0];
         for (int i = 1; i < intervals.length; i++) {
-            int[] interval = intervals[i];
-            if (interval[0] <= prev[1]) {
-                prev[1] = Math.max(prev[1], interval[1]);
+            int[] curr = intervals[i];
+            if (curr[0] <= prev[1]) {
+                prev[1] = Math.max(prev[1], curr[1]);
             } else {
                 merged.add(prev);
-                prev = interval;
+                prev = curr;
             }
         }
         merged.add(prev);

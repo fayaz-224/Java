@@ -62,7 +62,7 @@ public class NextPermutation {
 Walkthrough
 For nums = [1, 2, 3]:
 Step 1: Find i = 1 (2 < 3)
-Step 2: Find j = 2 (3 > 2), swap -> [1, 3, 2]
+Step 2: Find i = 2 (3 > 2), swap -> [1, 3, 2]
 Step 3: Reverse from i+1 = 2 to end (no effect in this example, see 5 digit example for ref) → [1, 3, 2]
 
 For nums = [3, 2, 1]:

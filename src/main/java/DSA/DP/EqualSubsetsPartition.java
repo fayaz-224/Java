@@ -5,55 +5,26 @@ public class EqualSubsetsPartition { //TC: O(n * target) where target = total / 
 
     public static void main(String[] args) {
         int[] nums = {1, 5, 11, 5};
-        System.out.println("Can partition? " + canPartition(nums));
+        System.out.println("Can partition? " + canPartition2(nums));
     }
 
-    public static boolean canPartition(int[] nums) {
-        int total = 0;
-        for (int num : nums) {
-            total += num;
-        }
-
-        // If total is odd, it cannot be partitioned into two equal subsets
-        if (total % 2 != 0) {
-            return false;
-        }
-
-        //Early pruning: If any single element > target, return false early. (optional enhancements)
-
-        int target = total / 2;
-        boolean[] dp = new boolean[target + 1]; //1D DP array dp[target + 1] where dp[i] means "Is there a subset with sum i?
-        dp[0] = true;  //because the empty subset always sums to 0.
-        for (int num : nums) {
-            for (int j = target; j >= num; j--) { // Iterate in reverse to ensure each number is used only once
-                dp[j] = dp[j] || dp[j - num]; // Either we already could make sum j, or now we can because we can add num to a previous subset sum (j - num).
-            }
-        }
-        return dp[target];
-    }
-}
-
-/*
-//Approach - 2
-public class PartitionEqualSubsetSumRecursive { //Using Recursion and DP
-    public boolean canPartition(int[] nums) {
-        if (nums == null || nums.length == 0) return false;
+    public boolean canPartition1(int[] nums) {  //Memoization
+        int n = nums.length;
+        if (n == 0) return false;
 
         int sum = 0;
         for (int num : nums) {
             sum += num;
         }
-
         // Cannot partition if sum is odd
-        if ((sum & 1) == 1) {
+        if ((sum & 1) == 1) {  //or sum % 2 != 0
             return false;
         }
 
         sum /= 2;
-        Boolean[][] memo = new Boolean[nums.length][sum + 1];
-        return canPartitionRecursive(nums, 0, sum, memo);
+        Boolean[][] memo = new Boolean[n+1][sum+1];
+        return canPartitionRecursive(nums, 0, sum, memo);  //we can go ascending order by using 0, or descending order by using n in method call
     }
-
     private boolean canPartitionRecursive(int[] nums, int index, int target, Boolean[][] memo) {
         if (target == 0) return true;
         if (target < 0 || index >= nums.length) return false;
@@ -65,16 +36,31 @@ public class PartitionEqualSubsetSumRecursive { //Using Recursion and DP
 
         // Include the current element in the subset or don't include it
         return memo[index][target] = canPartitionRecursive(nums, index + 1, target - nums[index], memo)
-                      || canPartitionRecursive(nums, index + 1, target, memo);
+                || canPartitionRecursive(nums, index + 1, target, memo);
     }
 
-    public static void main(String[] args) {
-        PartitionEqualSubsetSumRecursive solver = new PartitionEqualSubsetSumRecursive();
-        int[] nums = {1, 5, 11, 5};
-        System.out.println("Can partition: " + solver.canPartition(nums));
+    public static boolean canPartition2(int[] nums) {  //Tabulation
+        int total = 0;
+        for (int num : nums) {
+            total += num;
+        }
+        // If total is odd, it cannot be partitioned into two equal subsets
+        if (total % 2 != 0) {
+            return false;
+        }
+
+        int target = total / 2;
+        boolean[] dp = new boolean[target + 1]; //1D DP array dp[target + 1] where dp[i] means "Is there a subset with sum i?
+        dp[0] = true;  //because the empty subset always sums to 0.
+
+        for (int num : nums) {
+            for (int j = target; j >= num; j--) { // Iterate in reverse to ensure each number is used only once
+                dp[j] = dp[j] || dp[j - num]; // Either we already could make sum j, or now we can because we can add num to a previous subset sum (j - num).
+            }
+        }
+        return dp[target];
     }
 }
- */
 
 /*
 DRY RUN:
