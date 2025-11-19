@@ -2,6 +2,7 @@ package Array.Advance;
 
 import java.util.Arrays;
 
+//Even to right, Odd to left
 public class SegregateEvenOdd {
     public static void segregate(int[] nums) {
         int left = 0;
@@ -27,7 +28,7 @@ public class SegregateEvenOdd {
                 right--;
             }
 
-            // Sort even and odd segments separately
+            // Sort even and odd segments separately for easy understanding in output
             Arrays.sort(nums, 0, left); // Even segment
             Arrays.sort(nums, left, nums.length); // Odd segment
         }

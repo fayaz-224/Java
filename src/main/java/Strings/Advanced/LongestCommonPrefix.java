@@ -1,5 +1,7 @@
 package Strings.Advanced;
 
+import java.util.Arrays;
+
 //https://leetcode.com/problems/longest-common-prefix/description/
 public class LongestCommonPrefix {
     public static void main(String[] args) {
@@ -7,41 +9,31 @@ public class LongestCommonPrefix {
         System.out.println("Longest Common Prefix: " + longestCommonPrefix(strs));
     }
 
-    //Approach: 1 - Binary Search - O(n × m × log m) - Use for very large inputs/strings
-    public static String longestCommonPrefix(String[] strs) {
+    //O(n log n)
+    //After sort all strings that share a common prefix will be grouped together. The first and last strings in the sorted order will have the maximum possible difference.
+    static String longestCommonPrefix(String[] st) {
+        StringBuilder ans = new StringBuilder();
 
-        if (strs == null || strs.length == 0) return "";
+        Arrays.sort(st);
+        String first = st[0];
+        String last = st[st.length - 1];
 
-        // Find the minimum length among all strings
-        int minLen = Integer.MAX_VALUE;
-        for (String s : strs) {
-            minLen = Math.min(minLen, s.length());
-        }
-
-        int low = 1, high = minLen;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (isCommonPrefix(strs, mid)) {
-                low = mid + 1; // try for a longer prefix
-            } else {
-                high = mid - 1; // try shorter prefix
+        // Compare characters of the first and last strings
+        for (int i = 0; i < Math.min(first.length(), last.length()); i++) {
+            if (first.charAt(i) != last.charAt(i)) { // Stop if characters are different
+                return ans.toString();
             }
+
+            ans.append(first.charAt(i));
         }
-        return strs[0].substring(0, (low + high) / 2);
-    }
-    private static boolean isCommonPrefix(String[] strs, int len) {
-        String prefix = strs[0].substring(0, len);
-        for (int i = 1; i < strs.length; i++) {
-            if (!strs[i].startsWith(prefix)) return false;
-        }
-        return true;
+        return ans.toString();
     }
 
-    //Approach: 2 - Horizontal Scanning - O(n × m) - Use for short strings/input
+    //Horizontal Scanning - O(n × m) - faster than O(n logn)
     public static String longestCommonPrefix2(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
-        // Start with the first string as prefix
+        // Start with the first string as prefix & compare with remaining
         String prefix = strs[0];
 
         for (int i = 1; i < strs.length; i++) {

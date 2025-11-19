@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 //Declare class as final.
 //Make all properties as private final.
-//Do not declare setters, Only getters.
 //Declare all args constructor.
-//If there are custom ref objects in the class as properties, implement clone.
+//Do not declare setters, Only getters.
+//If there are custom ref objects in the class as properties, implement clone (Defensive copy).
 //If there are other types of nested objects as properties, perform a deep copy.
 
 final class ImmutableClass {
@@ -16,20 +16,21 @@ final class ImmutableClass {
 
     public ImmutableClass(String name, ArrayList<String> phoneNumbers) {
         this.empName = name;
-        //this.address = address;
-        this.phoneNumbers = phoneNumbers;
+        //this.address = (Address) address.clone(); // Defensive copy
+        this.phoneNumbers = new ArrayList<>(phoneNumbers); // Defensive copy
+
     }
 
     public String getEmpName() { return empName;}
 
-    // clone the address object – impl clone() inside address class
+    // impl clone() inside address class
 //    public Address getAddress() throws CloneNotSupportedException {
-//        return (Address) address.clone();
+//        return (Address) address.clone(); // Defensive copy
 //    }
 
     // deep copy the list of phone numbers - It will always return initialized objects
     public ArrayList<String> getPhoneNumbers() {
-        return new ArrayList<>(phoneNumbers);
+        return new ArrayList<>(phoneNumbers); // Defensive copy
     }
 }
 

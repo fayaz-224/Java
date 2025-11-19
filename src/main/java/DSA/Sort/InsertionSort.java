@@ -17,12 +17,12 @@ public class InsertionSort {
             int key = arr[i];
             int j = i - 1;
 
-            // Move elements greater than key to one position ahead
+            // Move elements that are greater than key to one position ahead
             while (j >= 0 && arr[j] > key) {
                 arr[j + 1] = arr[j];    // Shift element to right
                 j--;
             }
-            arr[j + 1] = key; // Place key in its correct position
+            arr[j + 1] = key; // Place key in its correct position, to avoid overriding
         }
     }
 

@@ -2,6 +2,7 @@ package Array.Basics;
 
 import java.util.HashSet;
 
+//use streams for easy approach
 public class FirstRepeatingElement {
     static void printFirstRepeatingElement(int arr[]) {
         int min = -1;

@@ -18,21 +18,7 @@ public class SelectionSort {
                }
            }
        }
-/*
-//classic selection sort logic, where we do one swap at the end. In above logic we swap multiple times within the inner loop, which is less efficient, but produces correct output.
-for (i = 0; i < n - 1; i++) {
-    int minIdx = i;
-    for (j = i + 1; j < n; j++) {
-        if (arr[minIdx] > arr[j]) {
-            minIdx = j;
-        }
-    }
-    // Swap only once
-    int temp = arr[i];
-    arr[i] = arr[minIdx];
-    arr[minIdx] = temp;
-}
- */
+
        System.out.print("Array after Selection sort is :\n");
        System.out.println(Arrays.toString(arr));
    }

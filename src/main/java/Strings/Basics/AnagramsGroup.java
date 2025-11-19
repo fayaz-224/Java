@@ -24,7 +24,7 @@ public class AnagramsGroup {  //TC: O(n · k log k)
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
             }
-            map.get(key).add(word);
+            map.get(key).add(word);  //it should execute everytime not with else block
         }
 
         return new ArrayList<>(map.values());

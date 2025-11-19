@@ -1,20 +1,18 @@
 package Matrix;
 
 //https://leetcode.com/problems/search-a-2d-matrix-ii/
-
-//Brute force: O(N X M) - using two for loops to find target
-//Binary search: O(log(m * n)) - use if matrix is sorted in ascending order from left to right.
-//Staircase Search: (O(m + n)) - use If the matrix has rows and columns sorted independently (below)
+//Brute force: O(N X M) - use if mtx is un-sorted by using two for loops to find target
 public class SearchIn2DMtx {
+    //Staircase Search: (O(m + n)) - use if the matrix has rows and columns sorted independently
     static boolean searchMatrix(int[][] matrix, int target) {
         int rows = matrix.length;
         int cols = matrix[0].length;
-        int rowLeft = 0, rowRight = cols-1;
+        int rowLeft = 0, rowRight = cols - 1;
 
-        while(rowLeft < rows && rowRight >= 0){
-            if(matrix[rowLeft][rowRight]== target)
+        while (rowLeft < rows && rowRight >= 0) {
+            if (matrix[rowLeft][rowRight] == target)
                 return true;
-            if(matrix[rowLeft][rowRight] > target)
+            if (matrix[rowLeft][rowRight] > target)
                 rowRight--;
             else
                 rowLeft++;
@@ -22,18 +20,8 @@ public class SearchIn2DMtx {
         return false;
     }
 
-    public static void main(String[] args) {
-        int[][] matrix = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
-
-        boolean result = searchMatrix(matrix, 5);
-        System.out.println(result);
-    }
-}
-
-/*
-public class MatrixSearch {  //binary search approach
-
-    public static boolean searchMatrix(int[][] matrix, int target) {
+    //Binary search: O(log(m * n)) - use if the matrix is fully sorted from left to right.
+    public static boolean searchMatrix2(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return false;
 
@@ -45,7 +33,7 @@ public class MatrixSearch {  //binary search approach
 
         while (left <= right) {
             int mid = (left + right) / 2;
-            int midValue = matrix[mid / cols][mid % cols];  // convert 1D index to 2D
+            int midValue = matrix[mid / cols][mid % cols];  // In a binary search on a 2D matrix, we often treat the matrix as if it were a 1D array. This line converts that 1D index to 2D coordinates, so we can access the element in the matrix.
 
             if (midValue == target) {
                 return true;
@@ -60,13 +48,16 @@ public class MatrixSearch {  //binary search approach
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 3, 5, 7},
-            {10, 11, 16, 20},
-            {23, 30, 34, 60}
-        };
-        int target = 3;
-        System.out.println(searchMatrix(matrix, target));  // Output: true
+        int[][] matrix = {{1, 4, 7, 11},
+                {2, 5, 8, 12},
+                {3, 6, 9, 16},
+                {10, 13, 14, 17}};
+
+        System.out.println(searchMatrix(matrix, 5));  //true
+
+        int[][] m2 = {{1, 3, 5, 7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 60}};
+        System.out.println(searchMatrix2(m2, 3));  // true
     }
 }
- */

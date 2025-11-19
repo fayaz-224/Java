@@ -2,7 +2,7 @@ package Array.Basics;
 
 import java.util.*;
 
-//sort first half in increasing order and second half in decreasing
+//sort first half in increasing order and second half in decreasing order
 public class Sort_AscDes {
     static void sort1(Integer[] arr) {  //Approach-1
         int n = arr.length;

@@ -13,15 +13,14 @@ class MinInMaxDistributions {  //zemoso interview question
 
         Arrays.sort(arr);
         int result = Integer.MAX_VALUE;
-        // Since the array is sorted, you can directly pick
         for (int i = 1; i < n - 1; i++) {
             //Above indexes are to ensure all three groups are non-empty
-            //if i = 0 -> Group 1 = arr[0 ... -1] → empty group → invalid
+            //if i = 0 -> Group 1 = arr[0 ... i-1] → empty group → invalid
             //if i = n-1 -> Group 2 = arr[n-1 ... j-1] -> maybe empty, Group 3 = arr[j ... n-1] -> definitely empty since j > i
             for (int j = i + 1; j < n; j++) {
-                int d1 = arr[i - 1] - arr[0];   // Max - Min of Group 1 (0 to i-1)
-                int d2 = arr[j - 1] - arr[i];   // Max - Min of Group 2 (i to j-1)
-                int d3 = arr[n - 1] - arr[j];   // Max - Min of Group 3 (j to n-1)
+                int d1 = arr[i - 1] - arr[0];   // d1 = Max - Min of Group 1 (0 to i-1)
+                int d2 = arr[j - 1] - arr[i];   // d2 = Max - Min of Group 2 (i to j-1)
+                int d3 = arr[n - 1] - arr[j];   // d3 = Max - Min of Group 3 (j to n-1)
 
                 int maxDiff = Math.max(d1, Math.max(d2, d3));
                 result = Math.min(result, maxDiff);  //lowest possible Maximum Difference

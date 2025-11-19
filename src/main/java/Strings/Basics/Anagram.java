@@ -21,9 +21,10 @@ public class Anagram {
                return false;
         }
         return true;
+
         //or use return (Arrays.equals(arr1, arr2)); instead of for loop
     }
-    */
+*/
 	
     public static void main(String[] args) {
         String s1 = "shaik";

@@ -42,7 +42,7 @@ public class HtmlTagValidator {
 
     public static void main(String[] args) {
         String[] tests = {
-                "<a><b></b><c></c></a>",   //Valid
+                "<a><b>hahah</b><c></c></a>",   //Valid
                 "<a><b></a></b>",          //Invalid
                 "<tag1><tag2></tag2></tag1>", //Valid
                 "<tag><inner></tag></inner>", //Invalid

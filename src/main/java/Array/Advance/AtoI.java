@@ -11,9 +11,7 @@ public class AtoI {
         boolean isNegative = false;
 
         // skip white spaces
-        while (index < str.length() && str.charAt(index) == ' '){  //or str = str.trim();
-            ++index;
-        }
+        str = str.trim();
         if (str.isEmpty()) {  //str.length() == 0
             return 0;
         }
@@ -30,7 +28,7 @@ public class AtoI {
                 break;  // Not a digit
             }
 
-            // check for overflow
+            // to avoid overflow in the next step (-digit, /10 are becoz we do opposite of these calculations in next step)
             if (result > (Integer.MAX_VALUE - digit) / 10) {
                 return isNegative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }

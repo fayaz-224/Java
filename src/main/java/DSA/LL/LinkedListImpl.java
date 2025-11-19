@@ -176,10 +176,10 @@ public class LinkedListImpl {   //singly linked-list
         Node curr = head;
 
         while (curr != null) {
-            Node next = curr.next;  // Store next nodes
+            Node nextNodes = curr.next;  // Store next nodes
             curr.next = prev;  // Reverse link
             prev = curr;   // Move prev forward
-            curr = next;   // Move current forward
+            curr = nextNodes;   // Move current forward
         }
         head = prev;  // Update head to new front
     }

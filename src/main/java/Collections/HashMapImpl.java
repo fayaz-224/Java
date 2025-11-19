@@ -1,6 +1,7 @@
 package Collections;
 
 import java.util.*;
+
 //Apna college
 @SuppressWarnings("unchecked")  //this is generally the preferred way to suppress warnings.
 public class HashMapImpl<K, V> {  //K stands for Key, V stands for Value
@@ -18,8 +19,8 @@ public class HashMapImpl<K, V> {  //K stands for Key, V stands for Value
 
     private final int N; //buckets size
     private LinkedList<Node>[] buckets;  //array of nodes
-    public HashMapImpl() {
-        this.N = 4;
+    public HashMapImpl(int n) {
+        this.N = n;
         this.buckets = new LinkedList[N];  //array of nodes initialization
         for (int i = 0; i < N; i++) {
             this.buckets[i] = new LinkedList<>();
@@ -125,7 +126,7 @@ public class HashMapImpl<K, V> {  //K stands for Key, V stands for Value
     }
 
     public static void main(String[] args) {
-        HashMapImpl<String, Integer> map = new HashMapImpl<String, Integer>();
+        HashMapImpl<String, Integer> map = new HashMapImpl<String, Integer>(4);
         map.put("India", 190);
         map.put("China", 200);
         map.put("US", 50);

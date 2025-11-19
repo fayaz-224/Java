@@ -4,11 +4,40 @@ package DSA.BinarySearch;
 public class SearchInRotatedArray {
     public static void main(String[] args) {
         int[] arr = {3, 4, 5, 6, 7, 0, 1, 2};
-        System.out.println(search2(arr, 5));
+        System.out.println(search1(arr, 5));
     }
 
     //Approach - 1
-    static int search(int[] nums, int target) {
+    static int search1(int[] nums, int target) {  //TC: O(logn)
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            }
+            else if (nums[left] <= nums[mid]) { //Left half
+                if (nums[left] <= target && target < nums[mid]) {  //check if target is in this sorted left half
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+            else {   // Right half
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
+
+    //Approach - 2
+    static int search2(int[] nums, int target) { //O(log n)
         int pivot = findPivot(nums); //to find max element in Rotated Sorted Array
         System.out.println(pivot);
         // if you did not find a pivot, it means the array is not rotated
@@ -57,36 +86,6 @@ public class SearchInRotatedArray {
                 end = mid - 1;
             } else {
                 start = mid + 1;
-            }
-        }
-        return -1;
-    }
-
-
-    //Approach - 2
-    static int search2(int[] nums, int target) {  //TC: O(logn)
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (nums[mid] == target) {
-                return mid;
-            }
-            else if (nums[left] <= nums[mid]) { //Left half
-                if (nums[left] <= target && target < nums[mid]) {  //check if target is in this sorted left half
-                    right = mid - 1;
-                } else {
-                    left = mid + 1;
-                }
-            }
-            else {   // Right half
-                if (nums[mid] < target && target <= nums[right]) {
-                    left = mid + 1;
-                } else {
-                    right = mid - 1;
-                }
             }
         }
         return -1;

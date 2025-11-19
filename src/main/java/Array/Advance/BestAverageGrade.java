@@ -50,3 +50,14 @@ public class BestAverageGrade {
         System.out.println(bestAverageGrade(input));  // Output: 87
     }
 }
+
+/*
+//Using streams:
+        Map<String, Double> avgScores = Arrays.stream(input)
+                .collect(Collectors.groupingBy(
+                        arr -> arr[0],  // key = name
+                        Collectors.averagingInt(arr -> Integer.parseInt(arr[1])) // avg of scores
+                ));
+
+        System.out.println("Average Scores: " + avgScores);
+ */

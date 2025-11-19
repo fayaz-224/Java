@@ -7,24 +7,23 @@ import java.util.stream.Stream;
 
 public class StreamApiBasics {
     public static void main(String args[]) {
+        //Input
         Employee[] arrayOfEmps = {
                 new Employee("Alice", 23, "Computer Science", 50000),
                 new Employee("Bob", 21, "Mechanical Engineering", 60000),
                 new Employee("Charlie", 43, "Mechanical Engineering", 45000),
                 new Employee("Jack", 44, "Computer Science", 75000)
         };
-
-        // List<Employee> empList = Stream.of(arrayOfEmps).collect((Collectors.toList()));
         List<Employee> empList = Arrays.stream(arrayOfEmps).collect((Collectors.toList()));
         List<Integer> numbers = Arrays.asList(2, 3, 4, 5, 1, 3);
         List<String> names = Arrays.asList("Cat", "Cow", "Snake", "BuilderDP");
-        IntStream intstrm = IntStream.range(10, 20);  //which creates IntStream of numbers 10 to 19.
-
 
         //create stream
-        Stream<Integer> si = Stream.of(1,2,3,4);
+        Stream<Integer> s1 = Stream.of(1,2,3,4);
+        Stream<String> s2 = Arrays.stream(new String[] {"aa", "bb"});
         Stream<String> streamEmpty = Stream.empty(); //empty stream
-        System.out.println(streamEmpty.collect(Collectors.toList()) +" - "+ si.collect(Collectors.toList()));
+        IntStream intstream = IntStream.range(10, 20);  //which creates IntStream of numbers 10 to 19.
+        System.out.println(streamEmpty.collect(Collectors.toList()) +" - "+ s1.collect(Collectors.toList()) +" - "+ intstream);
 
         //findFirst & distinct method
         int num = numbers.stream().distinct().findFirst().get();
@@ -78,7 +77,8 @@ public class StreamApiBasics {
         System.out.println(squareSet);
 
         // forEach method
-        numbers.stream().map(x -> x + x).forEach(System.out::println);  //y -> System.out.println(y)
+        numbers.stream().map(x -> x + x).
+                forEach(System.out::println);  //y -> System.out.println(y)
 
         // reduce method - Used to combine all elements into a single result
         // syntax: T result = stream.reduce(identity, (a, b) -> someOperation);
@@ -132,7 +132,7 @@ public class StreamApiBasics {
                 .map(Employee::getName)
                 .reduce((a, b) -> a + ", " + b)
                 .orElse("");
-        System.out.println(empNames2);
+        System.out.println("Reduced names: "+empNames2);
 
         //allMatch, anyMatch, and noneMatch
         boolean allEven = numbers.stream().allMatch(i -> i % 2 == 0);  //checks if the predicate is true for all the elements in the stream

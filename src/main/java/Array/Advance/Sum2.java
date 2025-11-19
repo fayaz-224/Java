@@ -42,8 +42,8 @@ public class Sum2 {
                 List<Integer> temp = Arrays.asList(num, complement);
                 Collections.sort(temp); //temp.sort(null);
                 res.add(temp);
-            } else
-                set.add(num);
+            }
+            set.add(num);  //else block not needed as set removes duplicates anyway
         }
 
         return res;

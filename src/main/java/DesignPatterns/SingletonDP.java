@@ -14,7 +14,7 @@ public class SingletonDP {
     public static SingletonDP getSingletonObj() {
         if (obj == null) {
             synchronized (SingletonDP.class) {
-                if (obj == null) {  //check again, because another thread might have created it between line 15 and 16.
+                if (obj == null) {  //check again, because another thread might have created it when this thread is in between line 15 and 16.
                     obj = new SingletonDP();
                 }
             }

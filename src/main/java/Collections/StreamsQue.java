@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 public class StreamsQue {
     public static void main(String[] args) {
+        //inputs
         String str = "geeksforgeeks";
         List<Employee> employees = List.of(
                 new Employee("Alice", 23, "Computer Science",50000),
@@ -17,7 +18,7 @@ public class StreamsQue {
 
         //count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code becoz, Java doesn't have a CharStream So characters are treated as ints]
         int count = (int) str.chars()
-                .filter(ch -> ch == 'e')  //checks IntStream Values anf filters
+                .filter(ch -> ch == 'e')  //checks IntStream Values for filters
                 .count();
         System.out.println("occurrence of given char: " + count);
 
@@ -41,7 +42,7 @@ public class StreamsQue {
                 .findFirst();
         System.out.println("FirstNonRepeatingChar: " + ch.get());
 
-        //firstRepeatingChar
+        //firstRepeatingChar - or we can use similar logic as above with .filter(e -> e.getValue() > 1)
         HashSet<Character> set = new HashSet<>();
         Character ch1 = str.chars()
                 .mapToObj(c -> (char) c)
@@ -101,19 +102,27 @@ public class StreamsQue {
         else
             System.out.println(inputString+" is not a palindrome");
 
+        //Pangram
+        long uniqueCount = str.toLowerCase()
+                        .chars()                            // stream of int (Unicode code points)
+                        .filter(Character::isLetter)         // keep only letters
+                        .filter(cr -> cr >= 'a' && cr <= 'z')// only a–z
+                        .distinct()                          // unique letters only
+                        .count();                            // count how many unique letters
+        System.out.println(uniqueCount == 26);
+
         //Sort characters in a string using java 8 features
         String s = "aaabfdifdihofrefjferfergrgergerggerg";
         String sortedString = s.chars()             // Convert the String into an IntStream
                             .mapToObj(c -> String.valueOf((char)c))  // Convert each int to a String -> .sorted() and .collect(Collectors.joining()) require a Stream<String>, not a Stream<Character>.
                             .sorted()
                             .collect(Collectors.joining());  // Collect the stream elements into a single String
-
         System.out.println("Sorted string: "+sortedString);
 
         //Top K Frequent Elements
         //https://leetcode.com/problems/top-k-frequent-elements/description/
         int[] nums = {1,1,1,2,2,3}; int k = 2;
-        int[] arr =  Arrays.stream(nums)
+        List<Integer> arr =  Arrays.stream(nums)
                 .boxed() // convert int -> Integer, we can also use mapToObj(i -> i)
                 .collect(Collectors.groupingBy(i -> i, Collectors.counting())) // Collectors.counting() return Long
                 .entrySet()
@@ -121,23 +130,16 @@ public class StreamsQue {
                 .sorted((a, b) -> Long.compare(b.getValue(), a.getValue())) // sort by frequency desc.. use compareTo also
                 .limit(k)
                 .map(Map.Entry::getKey) //convert boxed Integer to primitive int.
-                .mapToInt(Integer::intValue) // IntStream
-                .toArray();
+                .collect(Collectors.toList());
         System.out.println("Top K Frequent Elements: " + arr);
 
 
-        // Sort employees based on their salaries in descending order
+        // Sort employees based on their salaries in descending order & fetch top 2 employees only
         List<Employee> sortedEmployees = employees.stream()
-                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())   //use .sorted(Comparator.reverseOrder() for non-objects
-                .collect(Collectors.toList());
-        sortedEmployees.forEach(System.out::println);
-
-        //fetch top 2 employees only based on salary in desc order
-        List<Employee> sortedEmployees1 = employees.stream()
                 .sorted(Comparator.comparingInt(Employee::getSalary).reversed())   //use .sorted(Comparator.reverseOrder() for non-objects
                 .limit(2)
                 .collect(Collectors.toList());
-        sortedEmployees1.forEach(System.out::println);
+        sortedEmployees.forEach(System.out::println);
 
         //fetch all employees having salary less than 2nd highest salary
         List<Employee> sortedEmployees2 = employees.stream()
@@ -151,7 +153,7 @@ public class StreamsQue {
                 .collect(Collectors.groupingBy(Employee::getDept))
                 .forEach((dept, studentsInDept) -> {
                     System.out.println("Department: " + dept);
-                    studentsInDept.forEach(student -> System.out.println("  " + student));
+                    studentsInDept.forEach(student -> System.out.println("  -" + student));
                 });
 
         //collect salary greater than 55000

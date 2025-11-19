@@ -1,7 +1,5 @@
 package Strings.Basics;
 
-import java.util.Scanner;
-
 // check given string is a palindrome or not - String should be same in any direction
 public class Palindrome {
 
@@ -32,24 +30,4 @@ public class Palindrome {
 		else
 			System.out.println("not a Palindrome");
 	}  
-} 
-
-
-/*
-public class Palindrome{
-public static void main(String args[]){
-    String a, b = "";
-    Scanner s = new Scanner(System.in);
-    System.out.print("Enter the string you want to check:");
-    a = s.nextLine();
-    int n = a.length();
-    for(int i = n-1; i >= 0; i--){
-        b = b + a.charAt(i);
-    }
-    if(a.equalsIgnoreCase(b))
-        System.out.println("The string is palindrome.");
-    else
-        System.out.println("The string is not palindrome.");
 }
-}
-*/

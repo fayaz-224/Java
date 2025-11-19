@@ -19,7 +19,7 @@ public class Butterfly {
                 System.out.print("*");
             }
             for(int j=i;j<n;j++) {
-                System.out.print("  ");  // 2 spaces to maintain symmetry or use below code
+                System.out.print("  ");  // 2 spaces to maintain symmetry
             }
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
@@ -33,7 +33,7 @@ public class Butterfly {
                 System.out.print("*");
             }
             for(int j=i;j<n;j++) {
-                System.out.print("  ");  // 2 spaces to maintain symmetry or use below code
+                System.out.print("  ");  // 2 spaces to maintain symmetry
             }
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");

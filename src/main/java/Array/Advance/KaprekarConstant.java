@@ -20,11 +20,11 @@ public class KaprekarConstant {
             Arrays.sort(digits);
             int asc = ascending(digits);
             int desc = descending(digits);
-            num = desc - asc;  //Math.abs(asc - desc);
+            num = Math.abs(asc - desc);
             steps++;
 
             //or
-            //String s = String.format("%04d", num);  //using formatter as we only need 4 digit num
+            //String s = String.valueOf(num).trim();
             //char[] digits = s.toCharArray();
             //Arrays.sort(digits);
             //int asc = Integer.parseInt(new String(digits));

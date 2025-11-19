@@ -10,7 +10,7 @@ public class LCS {
     public static void main(String[] args) {
         String text1 = "abcde";
         String text2 = "ace";
-        System.out.println(getLCS(text1, text2, 0, 0));
+        System.out.println(getLCS(text1, text2, 0, 0)); //3
 
         int[][] dp = new int[text1.length()][text2.length()];
         for (int[] row : dp) Arrays.fill(row, -1);
