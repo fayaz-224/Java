@@ -1,13 +1,14 @@
 package Matrix;
+
+import java.util.Scanner;
+
 /*
- check given matrix is identity or not
+ verify that the given mtx is Identity mtx or not
  	1	0	0
  	0	1	0
  	0	0	1
 */
-
-import java.util.Scanner;
-public class IdentityMtx {  //verify the given mtx is Identity mtx or not
+public class IdentityMtx {
     public static void main(String args[]) {
     	 boolean flag=true;
     	 

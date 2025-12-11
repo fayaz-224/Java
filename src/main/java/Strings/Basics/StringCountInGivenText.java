@@ -10,7 +10,7 @@ public class StringCountInGivenText { //matches non-absolute strings - partial o
         Map<Character, Integer> targetMap = new HashMap<>();
 
         // Count frequency of characters in the target word
-        for (char ch : target.toCharArray()) {
+        for (char ch : target.toLowerCase().toCharArray()) {
             targetMap.put(ch, targetMap.getOrDefault(ch, 0) + 1);
         }
 
@@ -30,26 +30,6 @@ public class StringCountInGivenText { //matches non-absolute strings - partial o
             minCount = Math.min(minCount, available / needed);
         }
         return minCount;
-    }
-
-    static int countOfString2(String text) {
-        char[] ch = text.toCharArray();
-        int i,j,count=0;
-        // we had to take infinite loop, as we need to check string until end of given text whose length is unknown.
-        while(true) {
-            for(i=0;i<target.length();i++) {
-                for(j=0;j<ch.length;j++) {
-                    if(target.charAt(i)==ch[j]) {
-                        ch[j]=0;  //to avoid visited ones
-                        break;
-                    }
-                }
-
-                if(j==ch.length)
-                    return count;
-            }
-            count++;
-        }
     }
 
     public static void main(String args[]) {

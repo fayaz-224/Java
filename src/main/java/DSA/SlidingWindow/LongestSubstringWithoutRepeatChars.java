@@ -26,7 +26,7 @@ public class LongestSubstringWithoutRepeatChars {
 
         for (int right = 0; right < s.length(); right++) {
             char c = s.charAt(right);
-            if (map.containsKey(c)  && map.get(c) >= left) {  // If this character is seen before, then move left to the right of that previous occurrence.
+            if (map.containsKey(c) && map.get(c) >= left) {  // If this character is seen before, then move left to the right of that previous occurrence.
                 left = map.get(c) + 1;
             }
             map.put(c, right);  // Update the last occurrence of the current character

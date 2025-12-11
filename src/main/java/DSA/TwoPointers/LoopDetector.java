@@ -34,7 +34,6 @@ public class LoopDetector {
     }
 
     public static void main(String[] args) {
-        // Test cases
         int[] array1 = {1, 2, 3, 4, 2}; // Loop exists starting from index 2
         System.out.println(findLoopLength(array1, 0)); // Output: 3 (Loop length is 3)
 

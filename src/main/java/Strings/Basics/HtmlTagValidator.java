@@ -26,8 +26,8 @@ public class HtmlTagValidator {
                 // Closing tag
                 if (tag.startsWith("/")) {
                     String tagName = tag.substring(1);
-                    if (stack.isEmpty() || !stack.peek().equals(tagName)) return false;
-                    stack.pop();
+                    if (stack.isEmpty() || !stack.pop().equals(tagName))
+                        return false;
                 } else {  // Opening tag
                     stack.push(tag);
                 }

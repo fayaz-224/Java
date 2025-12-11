@@ -28,13 +28,11 @@ class PhoneNumREGEX {
 }
 
 /*
-^ and $: Start and end of the string.
+^ → start of string
 
-\+91: Matches +91 literally.
+[6-9] → first digit must be 6, 7, 8, or 9
 
-[\-\s]?: Optional - or space.
+\d{9} → followed by exactly 9 more digits
 
-[6-9]: First digit between 6 and 9 (valid for Indian numbers).
-
-\d{9}: Next 9 digits.
+$ → end of string
 */

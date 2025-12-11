@@ -5,7 +5,10 @@ import java.util.Arrays;
 public class BiggestPossibleNum {
     public static void main(String[] args) {
         String s = "4891";
-        String[] arr = new String[s.length()];  //or String[] result = s.split("");
+
+        // String[] arr = s.split("");
+        //or
+        String[] arr = new String[s.length()];
         for (int i = 0; i < s.length(); i++) {
             arr[i] = String.valueOf(s.charAt(i));
         }

@@ -28,10 +28,11 @@ public class StudentGrades {
 
         int maxAverage = Integer.MIN_VALUE;
         for (int[] values : scoreRecords.values()) {
-            int average = values[0] / values[1]; //one is sum, other is count
-            if (average > maxAverage) {
-                maxAverage = average;
-            }
+            maxAverage = Math.max(maxAverage, values[0] / values[1]); //i.e, sum/count
+//            int average = values[0] / values[1];
+//            if (average > maxAverage) {
+//                maxAverage = average;
+//            }
         }
 
         return maxAverage;

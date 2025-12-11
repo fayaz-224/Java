@@ -1,9 +1,9 @@
 package Array.Advance;
 
 //Return YES if there exist two numbers such that their sum is equal to the target. Otherwise, return NO.
-//Brute Force Approach
 /*
-public class Sum2 { //O(n^2)
+//Brute Force Approach - O(n^2)
+public class Sum2 {
     public static int[] twoSum(int[] nums, int target) {
         for(int i=0; i<nums.length; i++){
             for(int j=i+1; j<nums.length; j++){
@@ -55,6 +55,7 @@ public class Sum2 {
 public class FindPairsTwoPointers { //2 pointers approach TC: O(n logn), SC: O(1)
     public static void findPairsWithSum(int[] arr, int k) {
         Arrays.sort(arr); // Sort the array first
+        ArrayList<List> pairs = new ArrayList<>();
 
         int left = 0;
         int right = arr.length - 1;
@@ -63,7 +64,8 @@ public class FindPairsTwoPointers { //2 pointers approach TC: O(n logn), SC: O(1
             int sum = arr[left] + arr[right];
 
             if (sum == k) {
-                System.out.println(arr[left] + ", " + arr[right]);
+                List pair = Arrays.asList(arr[left], arr[right]);
+                pairs.add(pair);
                 left++;
                 right--;
             } else if (sum < k) {
@@ -72,6 +74,7 @@ public class FindPairsTwoPointers { //2 pointers approach TC: O(n logn), SC: O(1
                 right--;
             }
         }
+        System.out.println(pairs);
     }
 
     public static void main(String[] args) {

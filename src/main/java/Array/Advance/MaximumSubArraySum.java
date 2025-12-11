@@ -21,7 +21,7 @@ public class MaximumSubArraySum {
         return maxSum;
     }
 
-    public static long maxSubarraySumArray(int[] arr) {
+    public static long maxSubarraySum2(int[] arr) {
         long maxi = Long.MIN_VALUE; // stores the maximum sum
         long sum = 0;               // current subarray sum
 
@@ -62,7 +62,7 @@ public class MaximumSubArraySum {
         int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println("max sum: " + maxSubArraySum(arr)); //6
 
-        System.out.println("max sum: " + maxSubarraySumArray(arr)); //6
+        System.out.println("max sum: " + maxSubarraySum2(arr)); //6
     }
 }
 

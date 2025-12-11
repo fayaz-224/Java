@@ -13,7 +13,7 @@ public class GrasshopperJump {
 
         for (int jump : jumps) {
             current += jump;
-            if (current < minReached) {
+            if (current < minReached) {  //if all +ve values minReached wil be 0 only
                 minReached = current;
             }
         }

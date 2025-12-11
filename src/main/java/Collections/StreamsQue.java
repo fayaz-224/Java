@@ -32,7 +32,7 @@ public class StreamsQue {
                 .orElse('\0');
         System.out.println("max occurring char: "+maxChar);
 
-        //FirstNonRepeatingChar
+        //FirstNonRepeatingChar or Unique character
         Optional<Character> ch = str.toLowerCase().chars()           // IntStream
                 .mapToObj(i -> (char) i)  // convert to Character object Stream
                 .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting())) // store in a LinkedHashMap with the count
@@ -40,6 +40,7 @@ public class StreamsQue {
                 .filter(entry -> entry.getValue() == 1)   // extracts characters with a count of 1
                 .map(entry -> entry.getKey())              // get the keys of EntrySet
                 .findFirst();
+                //use .map(s -> str.indexOf(s)).get() -> to get index of unique character before findFirst();
         System.out.println("FirstNonRepeatingChar: " + ch.get());
 
         //firstRepeatingChar - or we can use similar logic as above with .filter(e -> e.getValue() > 1)
@@ -121,13 +122,13 @@ public class StreamsQue {
 
         //Top K Frequent Elements
         //https://leetcode.com/problems/top-k-frequent-elements/description/
-        int[] nums = {1,1,1,2,2,3}; int k = 2;
+        int[] nums = {1,1,1,2,2,3,4}; int k = 2;
         List<Integer> arr =  Arrays.stream(nums)
                 .boxed() // convert int -> Integer, we can also use mapToObj(i -> i)
                 .collect(Collectors.groupingBy(i -> i, Collectors.counting())) // Collectors.counting() return Long
                 .entrySet()
                 .stream()
-                .sorted((a, b) -> Long.compare(b.getValue(), a.getValue())) // sort by frequency desc.. use compareTo also
+                .sorted((a, b) -> b.getValue().compareTo(a.getValue())) // sort by frequency desc.. use compareTo also
                 .limit(k)
                 .map(Map.Entry::getKey) //convert boxed Integer to primitive int.
                 .collect(Collectors.toList());
@@ -156,9 +157,18 @@ public class StreamsQue {
                     studentsInDept.forEach(student -> System.out.println("  -" + student));
                 });
 
-        //collect salary greater than 55000
+        //Max salary of employees in each department
         employees.stream()
-                .filter(e -> e.getSalary() > 55000)
-                .forEach(rel -> System.out.println("filtered: "+rel));
+                .collect(Collectors.groupingBy(Employee::getDept))
+                .forEach((dept, emps) -> {
+                    System.out.println("Department: " + dept);
+
+                    Employee maxEmp = emps.stream()
+                            .max(Comparator.comparing(Employee::getSalary))
+                            .orElse(null);
+
+                    System.out.println("  Highest Paid: " + maxEmp);
+                });
+
     }
 }

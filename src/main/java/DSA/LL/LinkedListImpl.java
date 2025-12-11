@@ -5,29 +5,19 @@ package DSA.LL;
 // It has addresses and pointers that are used to link the elements, and each element in the linked list consists of two parts, namely the data part and the address part.
 // The data part is the value of the element, and the address part consists of the pointers and addresses that are used to link the elements.
 // Each element in the list is called a node.
-
 public class LinkedListImpl {   //singly linked-list
-    private class Node {
-        String data;
-        Node next;
-
-        Node(String data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     Node head = null;
     private int size = 0;  //count of nodes
 
-    public void addFirst(String data) {
+    public void addFirst(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
         size++;
     }
 
-    public void addLast(String data) {  //main insert
+    public void addLast(int data) {  //main insert
         Node newNode = new Node(data);
         size++;
         if (head == null) {
@@ -42,7 +32,7 @@ public class LinkedListImpl {   //singly linked-list
         lastNode.next = newNode;
     }
 
-    public void addAtGivenIndex(int index, String data) {
+    public void insertAtGivenIndex(int index, int data) {
         if (index > size || index < 0) {
             System.out.println("Invalid Index Value");
             return;
@@ -64,14 +54,14 @@ public class LinkedListImpl {   //singly linked-list
         currNode.next = newNode;
     }
 
-    String getFirst() {
+    int getFirst() {
         if (head == null) {
             throw new RuntimeException("List is empty");
         }
         return head.data;
     }
 
-    String getLast() {
+    int getLast() {
         if (head == null) {
             throw new RuntimeException("List is empty");
         }
@@ -84,7 +74,7 @@ public class LinkedListImpl {   //singly linked-list
         return temp.data;
     }
 
-    public String getMiddle(Node head) {  //2 pointer Technique
+    public int getMiddle(Node head) {  //2 pointer Technique
         Node slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
@@ -156,7 +146,7 @@ public class LinkedListImpl {   //singly linked-list
         return head;
     }
 
-    boolean search(String data) {
+    boolean search(int data) {
         Node current = head;
         while (current != null) {
             if (current.data == data)
@@ -199,10 +189,10 @@ public class LinkedListImpl {   //singly linked-list
 
     public static void main(String[] args) {
         LinkedListImpl list = new LinkedListImpl();
-        list.addLast("is");
-        list.addLast("a");
-        list.addLast("list");
-        list.addFirst("this");
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addFirst(4);
         list.printList();
 
         System.out.println("Size of LL: " + list.getSize());
@@ -213,8 +203,10 @@ public class LinkedListImpl {   //singly linked-list
         list.removeLast();
         list.printList();
 
-        list.addAtGivenIndex(1, "only");
+        list.insertAtGivenIndex(1, 5);
         list.printList();
+
+        System.out.println("4 exists: "+list.search(4));
 
         list.reverseList();
         System.out.println("Reversing LL: ");

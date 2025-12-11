@@ -1,18 +1,18 @@
 package Array.Basics;
  
 class ZerosToEnd {
+
     static void pushZerosToEnd(int arr[], int n) {
-        int count = 0;  // Count of non-zero elements
+        int idx = 0;
  
-        // if element encountered is non-zero,
-        // then replace the element at index 'count' with this element
+        // if element encountered is non-zero, then replace the element at index 'idx' with this element
         for (int i = 0; i < n; i++)
             if (arr[i] != 0)
-                arr[count++] = arr[i];
+                arr[idx++] = arr[i];
 
-        // Make remaining elements 0 from count to end.
-        while (count < n)
-            arr[count++] = 0;
+        // Make remaining elements 0 from idx to end.
+        while (idx < n)
+            arr[idx++] = 0;
     }
 
     public static void moveZeros(int[] arr) {  //2 pointer approach

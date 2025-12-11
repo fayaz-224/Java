@@ -6,8 +6,7 @@ import java.util.List;
 public class PalindromePartitioning {
 
     List<List<String>> result = new ArrayList<>();
-
-    private void partitionHelper(String s, int start, List<String> currentList) {
+    private void partitionHelper(String s, int start, ArrayList<String> currentList) {
         if (start == s.length()) {
             result.add(new ArrayList<>(currentList));
             return;
@@ -17,7 +16,7 @@ public class PalindromePartitioning {
             if (isPalindrome(s, start, i)) {
                 currentList.add(s.substring(start, i + 1));
                 partitionHelper(s, i + 1, currentList);
-                currentList.remove(currentList.size() - 1); // Backtrack, remove previously added element in line 18
+                currentList.remove(currentList.size() - 1); // Backtrack, remove previously added element in line 17
             }
         }
     }

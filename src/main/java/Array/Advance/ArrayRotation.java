@@ -3,21 +3,31 @@ package Array.Advance;
 import java.util.Arrays;
 
 class ArrayRotation {
+
     //Left Rotation
-    public static void leftRotate(int arr[], int n, int d) {  //Approach - 1
-        for (int i = 0; i < d; i++) {            // Rotate array 1 by 1 upto d times.
+    public static void leftRotate(int arr[], int n, int d) {  //Approach - 1 O(n*d)
+        for (int i = 0; i < d; i++) {  // Rotate array 1 by 1 upto d times.
             int temp = arr[0];
-            for (int j = 0; j < n - 1; j++) //n-1 becoz, in array index starts from 0. but, we are ignoring last digit which will get replaced by arr[0]
-                arr[j] = arr[j + 1];
+            for (int j = 1; j < n; j++)
+                arr[j-1] = arr[j];  //j-1 since we need to store from 0-index
             arr[n - 1] = temp;
         }
     }
-    public static void leftRotate2(int[] arr, int n, int d) {  //Approach - 2
+    public static void leftRotate2(int[] arr, int n, int d) {  //Approach - 2 O(n)
         d = d % n; // In case d > n
 
-        reverse(arr, 0, d - 1);       // Reverse first d elements
-        reverse(arr, d, n - 1);       // Reverse remaining elements
-        reverse(arr, 0, n - 1);       // Reverse the whole array
+        // Store first k elements
+        int[] temp = Arrays.copyOfRange(arr, 0, d);
+
+        // Shift remaining elements to the left
+        for (int i = d; i < n; i++) {
+            arr[i - d] = arr[i];
+        }
+
+        // Copy stored elements to the end
+        for (int i = 0; i < d; i++) {
+            arr[n - d + i] = temp[i];
+        }
     }
 
 
@@ -25,24 +35,25 @@ class ArrayRotation {
     public static void rightRotate(int arr[], int n, int d) {  //Approach - 1
         for (int i = 0; i < d; i++) {
             int temp = arr[n-1];
-            for (int j = n-1; j > 0; j--)
-                arr[j] = arr[j - 1];
+            for (int j = n-2; j >= 0; j--)
+                arr[j+1] = arr[j];
             arr[0] = temp;
         }
     }
     public static void rightRotate2(int[] arr, int n, int d) {  //Approach - 2
         d = d % n; // Handle cases where d > n
 
-        reverse(arr, 0, n - 1);        // Step 1: Reverse whole array
-        reverse(arr, 0, d - 1);        // Step 2: Reverse first d elements
-        reverse(arr, d, n - 1);        // Step 3: Reverse remaining elements
-    }
+        // Store last k elements
+        int[] temp = Arrays.copyOfRange(arr, n - d, n);
 
-    private static void reverse(int[] arr, int start, int end) {
-        while (start < end) {
-            int temp = arr[start];
-            arr[start++] = arr[end];
-            arr[end--] = temp;
+        // Shift the remaining elements to the right
+        for (int i = n-d-1; i >= 0; i--) {
+            arr[i + d] = arr[i];
+        }
+
+        // Copy the stored elements to the front
+        for (int i = 0; i < d; i++) {
+            arr[i] = temp[i];
         }
     }
     

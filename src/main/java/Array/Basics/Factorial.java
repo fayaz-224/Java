@@ -1,19 +1,25 @@
 package Array.Basics;
 
-/*
+//the product of all the positive numbers less than or equal to a number
 public class Factorial{
 	public static void main(String args[]) {
 	int n=5, fact=1;
 	 
-    for(int i=n;i>=2;i--) {   //or for(int i=2;i<=n;i++) - we are only going till 2 because multiplying with 1 doesn't change anything.
-        fact=fact*i;
+    while (n > 0) {
+        fact *= n;
+        n--;
     }
+
+//    for(int i=n;i>=1;i--) {   //or for(int i=1;i<=n;i++)
+//        fact = fact*i;
+//    }
+
 	System.out.println("factorial is "+fact);
 	}
 }
-*/
 
-class Factorial { //the product of all the positive numbers less than or equal to a number
+/*
+class Factorial {
    
     static int factorial(int n) {
         if (n <= 1)
@@ -26,3 +32,4 @@ class Factorial { //the product of all the positive numbers less than or equal t
         System.out.println("Fact of " +num + " is " + factorial(num));
     }
 }
+*/

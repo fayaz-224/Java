@@ -32,8 +32,8 @@ public class StringCompression2 {
     }
 
     public static void main(String[] args) {
-        String input = "a3c9b2c1";
+        String input = "a13c9b2c1";
         String output = compressString(input);
-        System.out.println(output);  // Outputs: a3b2c10
+        System.out.println(output);  // Outputs: a13b2c10
     }
 }

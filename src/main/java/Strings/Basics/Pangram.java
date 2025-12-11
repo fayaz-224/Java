@@ -6,8 +6,9 @@ class Pangram {
 	public static boolean checkPangram(String str) { //A=65 to Z=90; a=97 to z=122
 		if (str == null) return false;
 
-		boolean[] alphabets = new boolean[26];
+		boolean[] alphabets = new boolean[26]; //freq array
 		int count = 0; //if not count use for loop as below
+
 		for (char c : str.toLowerCase().toCharArray()) {  //for (int i = 0; i < str.length(); i++)
 			if (c >= 'a' && c <= 'z') {  //if (Character.isLetter(c))
 				// for lowercase character, subtract 'a' to get index of that character.

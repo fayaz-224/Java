@@ -7,8 +7,8 @@ public class MissingNumber {
     public static int findMissing1(int[] nums) { // If starting from 0 or 1
         int n = nums.length;
         int expectedSum = n * (n + 1) / 2;
-        int actualSum = 0;
 
+        int actualSum = 0;
         for (int num : nums) {
             actualSum += num;
         }

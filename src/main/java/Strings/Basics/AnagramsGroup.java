@@ -16,7 +16,7 @@ public class AnagramsGroup {  //TC: O(n · k log k)
 
         for (String word : strs) {
             char[] chars = word.toCharArray();
-            Arrays.sort(chars);  //if not sorting, use Character frequency array
+            Arrays.sort(chars);
             String key = new String(chars);
 
             //map.computeIfAbsent(key, k -> new ArrayList<>()).add(word);
@@ -24,7 +24,7 @@ public class AnagramsGroup {  //TC: O(n · k log k)
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
             }
-            map.get(key).add(word);  //it should execute everytime not with else block
+            map.get(key).add(word);  //it should execute everytime, so just use without else block without adding this line 2 times inside if and else blocks
         }
 
         return new ArrayList<>(map.values());
