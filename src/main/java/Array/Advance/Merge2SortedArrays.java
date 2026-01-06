@@ -6,8 +6,7 @@ public class Merge2SortedArrays { //without using extra space
         int j = n - 1; // Index of last element in arr2
         int k = m + n - 1; // Index of last element in merged array
 
-        // Merge elements from arr1 and arr2, starting from the end
-        //to avoid overwriting unmerged elements in arr1
+        // Merge elements from arrays from the end to avoid overwriting unmerged elements in arr1
         while (i >= 0 && j >= 0) {
             if (arr1[i] > arr2[j]) {
                 arr1[k] = arr1[i];
@@ -21,6 +20,7 @@ public class Merge2SortedArrays { //without using extra space
         }
 
         // If there are remaining elements in arr2, copy them to arr1
+        // Remaining arr1 elements are already in correct position
         while (j >= 0) {
             arr1[k--] = arr2[j--];
         }

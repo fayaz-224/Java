@@ -134,6 +134,19 @@ public class StreamsQue {
                 .collect(Collectors.toList());
         System.out.println("Top K Frequent Elements: " + arr);
 
+        //calculate the percentage of each letter in a string
+        int totalLength = str.length();  //(int) str.chars().filter(Character::isLetter).count();
+        Map<Character, Double> percentages = str.toLowerCase().chars()
+                                            .filter(Character::isLetter)
+                                            .mapToObj(c -> (char) c)
+                                            .collect(Collectors.groupingBy(
+                                                    Function.identity(),
+                                                    Collectors.collectingAndThen(
+                                                            Collectors.counting(),
+                                                            count1 -> (count1 / totalLength) * 100.0
+                                                    )
+                                            ));
+        percentages.forEach((q, v) -> System.out.printf("%c -> %.2f%%%n", q, v));
 
         // Sort employees based on their salaries in descending order & fetch top 2 employees only
         List<Employee> sortedEmployees = employees.stream()

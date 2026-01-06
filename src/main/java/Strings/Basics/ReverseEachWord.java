@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ReverseEachWord {
+
     static void reverseEachWordOfString(String inputString) {
         String[] words = inputString.split("\\s+"); // + means continuous spaces
+
          //using Streams
         List<String> res = Arrays.stream(words).map(word -> new StringBuilder(word).reverse().toString()).collect(Collectors.toList());
         System.out.println("Stream op: "+res);
@@ -20,19 +22,14 @@ public class ReverseEachWord {
             for (int j = word.length()-1; j >= 0; j--) {   //reverse them
                 reverseWord += word.charAt(j);
             }
-             
             reverseString += reverseWord + " ";
         }
 
         System.out.println(reverseString.trim()); //strip() can also be used
-         
-        System.out.println("-------------------------");
     }
      
     public static void main(String[] args) {
         reverseEachWordOfString("Java Concept Of The Day");
-        reverseEachWordOfString("Java J2EE JSP Servlets Hibernate Struts");
-        reverseEachWordOfString("I am string not reversed");
         reverseEachWordOfString("Reverse Me");
     }
 }

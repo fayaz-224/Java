@@ -1,7 +1,6 @@
-package Array.Basics;
+package Strings.Advanced;
 
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class RomanToNum {
     public static int romanToInt(String s) {
@@ -28,6 +27,21 @@ public class RomanToNum {
 
         return total;
 
+//--or--
+//        int result = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            int curr = map.get(s.charAt(i));
+//            int next = (i + 1 < s.length()) ? map.get(s.charAt(i + 1)) : 0;
+//
+//            if (curr < next) {
+//                result -= curr;   // subtraction case (IV, IX, XL)
+//            } else {
+//                result += curr;
+//            }
+//        }
+//        return result;
+
+//--or--
 //        int returnNumber = romanMap.get(s.charAt(s.length() - 1));  //from back to front
 //        for (int i = 0; i < s.length() - 1; i++) {  //imp: i < len-1 as we are taking i+1 below
 //            if (romanMap.get(s.charAt(i)) >= romanMap.get(s.charAt(i + 1))) {

@@ -3,13 +3,17 @@ package Array.Advance;
 import java.util.*;
 
 //Find all elements in an array that appear more than N/2 and N/3 times.
-//Boyer–Moore Voting algorithm
 public class MajorityElement {
 
+    //Approach - 1 : Use Hashmap and find freq of each element. Then find the element count > N/2
+
+    //Approach - 2: Boyer–Moore Voting algorithm
     public static int majorityElementNby2(int[] nums) {
+        int n = nums.length;
         int candidate = 0;
         int count = 0;
 
+        //Step 1: Candidate Selection (Boyer–Moore Voting)
         for (int num : nums) {
             if (num == candidate) {
                 count++;
@@ -19,13 +23,26 @@ public class MajorityElement {
             } else
                 count--;
         }
-        return candidate;
+
+        //Step 2: Verification - We need this to validate our candidate, As above code might give an invalid candidate when no majority element exist.
+        int cnt1 = 0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == candidate) {
+                cnt1++;
+            }
+        }
+        if (cnt1 > (n / 2)) {
+            return candidate;
+        }
+
+        return -1;
     }
 
+    //At most, there can be 2 such elements that appear more than N/3 times. Because 3 × (N/3) > N, so having 3 such elements would exceed the array length
     public static List<Integer> majorityElementNby3(int[] nums) {
         int n = nums.length;
-        int candidate1 = 0, candidate2 = 0; //At most, there can be 2 such elements that appear more than N/3 times. Because 3 × (N/3) > N, so having 3 such elements would exceed the array length.
-        int count1 = 0, count2 = 0;
+        int candidate1 = 0, candidate2 = 0;
+        int count1 = 0, count2 = 0;  //counts are NOT the real frequencies of the candidates, They are only relative vote balances
 
         // Step 1: Find potential candidates
         for (int num : nums) {
@@ -53,7 +70,6 @@ public class MajorityElement {
             else if (num == candidate2) count2++;
         }
 
-        // Step 3: Collect valid results
         List<Integer> result = new ArrayList<>();
         if (count1 > n / 3) result.add(candidate1);
         if (count2 > n / 3) result.add(candidate2);

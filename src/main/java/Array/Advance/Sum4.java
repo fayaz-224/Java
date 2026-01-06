@@ -2,12 +2,11 @@ package Array.Advance;
 
 import java.util.*;
 
-//Better Approach
-//Time Complexity: O(N3*log(M)), where N = size of the array, M = no. of elements in the set.
-//Space Complexity: O(2 * no. of the quadruplets)+O(N)
+//TC: O(N3*log(M)), where N = size of the array, M = no. of elements in the set.
+//SC: O(2 * no. of the quadruplets)+O(N)
 public class Sum4 {
 
-    public static List<List<Integer>> fourSum(int[] nums, int target) {
+    public static List<List<Integer>> fourSum(int[] nums, int target) { //Better Approach
         int n = nums.length;
         Set<List<Integer>> st = new HashSet<>();
 
@@ -20,13 +19,12 @@ public class Sum4 {
                     long sum = nums[i] + nums[j];
                     sum += nums[k];
                     long fourth = target - sum;
+
                     if (hashset.contains(fourth)) {
                         List<Integer> temp = Arrays.asList(nums[i], nums[j], nums[k], (int)fourth);
                         Collections.sort(temp);
-                        //temp.sort(Integer::compareTo);
                         st.add(temp);
                     }
-                    // put the kth element into the hashset: to use in if()
                     hashset.add((long) nums[k]);
                 }
             }

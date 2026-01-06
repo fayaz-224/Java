@@ -19,15 +19,15 @@ public class IsomorphicStrings {
             return false;
         }
 
-        Map<Character, Character> map1 = new HashMap<>();
+        Map<Character, Character> map = new HashMap<>();
         for (int i = 0; i < str1.length(); i++) {
-            if(map1.containsKey(str1.charAt(i))) {
-                if(map1.get(str1.charAt(i)) != str2.charAt(i))
+            if(map.containsKey(str1.charAt(i))) {
+                if(map.get(str1.charAt(i)) != str2.charAt(i))
                     return false;
-            } else if(map1.containsValue(str2.charAt(i))) {
+            } else if(map.containsValue(str2.charAt(i))) {
                 return false;
             } else {
-                map1.put(str1.charAt(i), str2.charAt(i));
+                map.put(str1.charAt(i), str2.charAt(i));
             }
         }
         return true;

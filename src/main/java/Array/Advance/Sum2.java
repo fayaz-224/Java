@@ -1,10 +1,12 @@
 package Array.Advance;
 
+import java.util.*;
+
 //Return YES if there exist two numbers such that their sum is equal to the target. Otherwise, return NO.
 /*
-//Brute Force Approach - O(n^2)
 public class Sum2 {
-    public static int[] twoSum(int[] nums, int target) {
+
+    public static int[] twoSum(int[] nums, int target) { //Brute Force Approach - O(n^2)
         for(int i=0; i<nums.length; i++){
             for(int j=i+1; j<nums.length; j++){
                 if(nums[i] + nums[j] == target)
@@ -22,8 +24,6 @@ public class Sum2 {
 }
 */
 
-
-import java.util.*;
 
 //Set approach TC:O(n) SC: O(n)
 public class Sum2 {

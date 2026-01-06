@@ -25,6 +25,7 @@ public class CountInversions {
 
             count += mergeSortAndCount(arr, low, mid);  //left half
             count += mergeSortAndCount(arr, mid + 1, high);  //right half
+
             count += mergeAndCount(arr, low, mid, high);  //merge sorted halves
         }
         return count;
@@ -74,3 +75,12 @@ public class CountInversions {
         System.out.println("Number of inversions: " + mergeSortAndCount(arr, 0, arr.length-1));
     }
 }
+
+/*
+Input Format: N = 5, array[] = {5,4,3,2,1}
+Result: 10
+
+Explanation:
+we have a reverse sorted array and we will get the maximum inversions as for i < j we will always find a pair such that A[j] < A[i].
+Example: 5 has index 0 and 3 has index 2 now (5,3) pair is inversion as 0 < 2 and 5 > 3 which will satisfy out conditions and for reverse sorted array we will get maximum inversions and that is (n)*(n-1) / 2.For above given array there is 4 + 3 + 2 + 1 = 10 inversions.
+ */

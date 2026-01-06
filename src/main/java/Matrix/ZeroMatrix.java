@@ -59,6 +59,7 @@ public static void setZeroes(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
 
+        // Flag to track if first row and first column should be zeroed
         boolean firstRowZero = false;
         boolean firstColZero = false;
 
@@ -95,7 +96,7 @@ public static void setZeroes(int[][] matrix) {
             }
         }
 
-        // Step 4: Handle first row and column if needed
+        // Step 4: Zero the first row and fist column if needed
         if(firstRowZero) {
             for (int j = 0; j < cols; j++) {
                 matrix[0][j] = 0;

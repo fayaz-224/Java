@@ -20,4 +20,19 @@ public class StringRotation {
         String concatenated = str1 + str1;
         return concatenated.contains(str2); // Check if str2 is a substring of the concatenated string
     }
+
+    public boolean rotateString(String s, String goal) {  //Bruteforce
+        if (s.length() != goal.length()) {
+            return false;
+        }
+
+        // Try all possible rotations of s
+        for (int i = 0; i < s.length(); i++) {
+            String rotated = s.substring(i) + s.substring(0, i);
+            if (rotated.equals(goal)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

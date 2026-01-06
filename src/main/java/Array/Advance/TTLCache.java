@@ -25,6 +25,54 @@ public class TTLCache {
         return result;
     }
 
+    //Optimal
+    public static int[] getCacheSize(int[][] data, int[] queries) {
+        int n = data.length;
+        int q = queries.length;
+
+        long[] starts = new long[n];
+        long[] ends = new long[n];
+
+        for (int i = 0; i < n; i++) {
+            starts[i] = data[i][0];
+            ends[i] = (long) data[i][0] + data[i][1];
+        }
+
+        Arrays.sort(starts);
+        Arrays.sort(ends);
+
+        int[] result = new int[q];
+
+        for (int i = 0; i < q; i++) {
+            long t = queries[i];
+
+            int started = upperBound(starts, t); // starts ≤ t
+            int ended = lowerBound(ends, t);     // ends < t
+
+            result[i] = started - ended;
+        }
+
+        return result;
+    }
+    private static int upperBound(long[] arr, long target) { // returns First index where value > target
+        int left = 0, right = arr.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] <= target) left = mid + 1;
+            else right = mid;
+        }
+        return left;
+    }
+    private static int lowerBound(long[] arr, long target) { // returns First index where value >= target
+        int left = 0, right = arr.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] < target) left = mid + 1;
+            else right = mid;
+        }
+        return left;
+    }
+
     public static void main(String[] args) {
         int[][] data = {
                 {105231, 183},
@@ -33,7 +81,7 @@ public class TTLCache {
         };
         int[] queries = {105338, 105410};
 
-        System.out.println(Arrays.toString(cacheItems(data, queries))); // Output: [3, 2]
+        System.out.println(Arrays.toString(getCacheSize(data, queries))); // Output: [3, 2]
     }
 }
 

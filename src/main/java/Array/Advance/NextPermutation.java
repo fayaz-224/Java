@@ -8,7 +8,7 @@ public class NextPermutation {
         int n = nums.length;
         int idx = -1;
 
-        // Step 1: Find the first index 'i' from the end where nums[i] < nums[i+1]
+        // Step 1: Find the first decreasing element index 'i' from the end where nums[i] < nums[i+1]
         for (int i = n - 2; i >= 0; i--) {  //i = n-2 is to avoid ArrayIndexOutOfBounds in next line
             if (nums[i] < nums[i + 1]) {
                 idx = i;
@@ -26,16 +26,14 @@ public class NextPermutation {
             }
         }
 
-        // Step 3: Reverse the subarray from i+1 to end(n-1) to get next smallest sequence
+        // Step 3: Reverse the subarray from idx+1 to end(n-1) to get next smallest sequence
         reverse(nums, idx+1);
     }
-
     private static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
-
     private static void reverse(int[] nums, int start) {
         int end = nums.length - 1;
         while (start < end) {

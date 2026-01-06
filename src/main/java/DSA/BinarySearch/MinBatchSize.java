@@ -8,9 +8,12 @@ public class MinBatchSize {
 
     public static int minBatchSize(int[] dataSamples, int maxBatches) {
         int left = 1;  // smallest possible batch size
-        int right = getMax(dataSamples); // largest possible (process one user in one batch)
-        int result = right;
+        int right = 0; // largest possible (process one user in one batch)
+        for (int x : dataSamples) {
+            right = Math.max(right, x);
+        }
 
+        int result = right;
         while (left <= right) {
             int mid = left + (right - left) / 2;
 
@@ -26,18 +29,12 @@ public class MinBatchSize {
 
     private static boolean canProcess(int[] dataSamples, int maxBatches, int batchSize) {
         int total = 0;
-        for (int samples : dataSamples) {
-            total += Math.ceil((double) samples / batchSize);
+        for (int x : dataSamples) {
+            total += (int) Math.ceil((double) x / batchSize);
             if (total > maxBatches)
                 return false; // early exit
         }
         return true; //return total <= maxBatches;
-    }
-
-    private static int getMax(int[] arr) {
-        int max = arr[0];
-        for (int n : arr) if (n > max) max = n;
-        return max;
     }
 
     public static void main(String[] args) {

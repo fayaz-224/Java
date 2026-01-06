@@ -2,10 +2,9 @@ package Array.Advance;
 
 import java.util.*;
 
-//Brute Force Approach - O(N^3)
 public class Sum3 {
-    /*
-    public static List<List<Integer>> triplet(int[] arr, int n) {
+    //Brute Force Approach - O(N^3)
+    public static List<List<Integer>> triplet1(int[] arr, int n) {
         Set<List<Integer>> set = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
@@ -21,10 +20,10 @@ public class Sum3 {
         }
        // convert back to list
        return  new ArrayList<>(set);
-    }*/
+    }
 
     //Better Approach - O(N^2)
-    public static List<List<Integer>> triplet(int[] arr, int n) {  //target = 0
+    public static List<List<Integer>> triplet2(int[] arr, int n) {  //target = 0
         Set<List<Integer>> st = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
@@ -50,7 +49,7 @@ public class Sum3 {
     public static void main(String[] args) {
         int[] arr = { -1, 0, 1, 2, -1, -4};
         int n = arr.length;
-        System.out.println(triplet(arr, n));
+        System.out.println(triplet2(arr, n));
     }
 }
 

@@ -4,11 +4,36 @@ package Array.Advance;
 //https://leetcode.com/problems/maximum-subarray/description/
 public class MaximumSubArraySum {
 
-    public static int maxSubArraySum(int[] nums) {  //For arrays with at least one positive number
+    static int maxSubarraySumBrute(int[] arr) {  // Bruteforce - O(N^2)
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            int currSum = 0;
+            for (int j = i; j < arr.length; j++) {
+                currSum += arr[j];
+                maxSum = Math.max(maxSum, currSum);
+            }
+        }
+        return maxSum;
+    }
+
+    //true Kadane, works for any numbers (+ve, -ve) - O(N)
+    public static int maxSubArraySum1(int[] nums) {
+        int maxSum = nums[0];
+        int sum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            sum = Math.max(nums[i], sum + nums[i]);
+            maxSum = Math.max(maxSum, sum);
+        }
+        return maxSum;
+    }
+    //restricted Kadane, works only if we have at least one +ve number - O(N)
+    public static int maxSubArraySum2(int[] nums) {
         int maxSum = Integer.MIN_VALUE;
         int sum = 0;
 
-        for(int i =0;i < nums.length;i++){
+        for (int i =0;i < nums.length;i++) {
             sum += nums[i];
             if(sum > maxSum) {
                 maxSum = sum;
@@ -21,9 +46,10 @@ public class MaximumSubArraySum {
         return maxSum;
     }
 
-    public static long maxSubarraySum2(int[] arr) {
-        long maxi = Long.MIN_VALUE; // stores the maximum sum
-        long sum = 0;               // current subarray sum
+    //To find the indexes of max sub array - O(N)
+    public static long maxSubarraySumIndexes(int[] arr) {
+        long maxi = Long.MIN_VALUE;
+        long sum = 0;
 
         int start = 0;  // temporary start index
         int ansStart = 0; // final start index
@@ -59,10 +85,10 @@ public class MaximumSubArraySum {
     }
 
     public static void main(String args[]){
-        int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println("max sum: " + maxSubArraySum(arr)); //6
+        int[] arr = {-4, -2, -7};
+        System.out.println("max sum: " + maxSubArraySum1(arr)); //6
 
-        System.out.println("max sum: " + maxSubarraySum2(arr)); //6
+        System.out.println("max sum: " + maxSubarraySumIndexes(arr)); //6
     }
 }
 

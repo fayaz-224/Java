@@ -27,8 +27,11 @@ public class LongestSubstringWithKDistinct {
                 left++;
             }
 
-            // Update max window size
+            // To find the longest substring with k distinct
             maxLen = Math.max(maxLen, right - left + 1);
+
+            // To find the count of substrings with k distinct
+            //res += (right - left + 1);
         }
 
         return maxLen;

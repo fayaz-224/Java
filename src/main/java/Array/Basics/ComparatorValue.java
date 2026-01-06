@@ -18,7 +18,7 @@ public class ComparatorValue {
                 }
             }
 
-            if (!hasClose) {
+            if (!hasClose) {  //not true -> count
                 count++;
             }
         }
@@ -34,7 +34,7 @@ public class ComparatorValue {
             int pos = Arrays.binarySearch(b, x); // If element not found, Arrays.binarySearch returns -(insertionPoint) - 1
 
             if (pos < 0) {
-                pos = -(pos + 1); //This reverses the negative result to get the insertion index,
+                pos = -(pos + 1); //This reverses the negative result to get the insertion index
             }
 
             boolean hasClose = false;
