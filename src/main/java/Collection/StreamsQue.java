@@ -1,4 +1,4 @@
-package Collections;
+package Collection;
 
 import java.util.*;
 import java.util.function.Function;
@@ -22,11 +22,12 @@ public class StreamsQue {
                 .count();
         System.out.println("occurrence of given char: " + count);
 
-        //find max occurring/ Most Frequently Occurring char
+        //find max repeating or Most Frequently Occurring char
         char maxChar = str.chars()
                 .mapToObj(c -> (char) c)  //we need to convert to Character object Stream as these methods will only work with objects
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))  //default grouping - uses HashMap, Collectors.counting() return Long type
-                .entrySet().stream()
+                .entrySet()
+                .stream()
                 .max(Map.Entry.comparingByValue())  //or .max(Comparator.comparing(entry -> entry.getValue()));
                 .map(Map.Entry::getKey)
                 .orElse('\0');
@@ -36,9 +37,10 @@ public class StreamsQue {
         Optional<Character> ch = str.toLowerCase().chars()           // IntStream
                 .mapToObj(i -> (char) i)  // convert to Character object Stream
                 .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting())) // store in a LinkedHashMap with the count
-                .entrySet().stream()                       // EntrySet stream
+                .entrySet()
+                .stream()
                 .filter(entry -> entry.getValue() == 1)   // extracts characters with a count of 1
-                .map(entry -> entry.getKey())              // get the keys of EntrySet
+                .map(entry -> entry.getKey())
                 .findFirst();
                 //use .map(s -> str.indexOf(s)).get() -> to get index of unique character before findFirst();
         System.out.println("FirstNonRepeatingChar: " + ch.get());
@@ -55,11 +57,17 @@ public class StreamsQue {
         //count words and print only duplicates
         String strSentence = " HI EPAM bYe EPAM goodbye EPAM welcome ePAM Hi There epAM BYE bye EPaM";
         String[] words = strSentence.toLowerCase().split("\\s+");
-        Arrays.stream(words)
-                .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
-                .entrySet().stream()
-                .filter(entry -> entry.getValue() > 1)
-                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+        Map<String, Long> ans = Arrays.stream(words)
+                        .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+                        .entrySet()
+                        .stream()
+                        .filter(e -> e.getValue() > 1)
+                        .collect(Collectors.toMap(
+                                Map.Entry::getKey,
+                                Map.Entry::getValue
+                        ));
+                        //.forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+        System.out.println(ans);
 
         //sum of 2 arrays
         int arr1[] = {9, 8, 9};
@@ -79,7 +87,8 @@ public class StreamsQue {
         List<String> ls = Arrays.asList("apple", "banana", "orange", "apple", "kiwi", "banana", "kiwi", "kiwi");
         ls.stream()
             .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
-            .entrySet().stream()
+            .entrySet()
+            .stream()
             .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())) // Sort by value descending
             .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
 
@@ -148,6 +157,7 @@ public class StreamsQue {
                                             ));
         percentages.forEach((q, v) -> System.out.printf("%c -> %.2f%%%n", q, v));
 
+
         // Sort employees based on their salaries in descending order & fetch top 2 employees only
         List<Employee> sortedEmployees = employees.stream()
                 .sorted(Comparator.comparingInt(Employee::getSalary).reversed())   //use .sorted(Comparator.reverseOrder() for non-objects
@@ -171,17 +181,19 @@ public class StreamsQue {
                 });
 
         //Max salary of employees in each department
-        employees.stream()
-                .collect(Collectors.groupingBy(Employee::getDept))
-                .forEach((dept, emps) -> {
-                    System.out.println("Department: " + dept);
+        Map<String, Integer> highestPaidByDept = employees.stream()
+                                        .collect(Collectors.groupingBy(
+                                                Employee::getDept,
+                                                Collectors.collectingAndThen(
+                                                        Collectors.maxBy(Comparator.comparing(Employee::getSalary)),
+                                                        opt -> opt.map(Employee::getSalary).orElse(0)
+                                                        //or Optional::get  //for full employee object instead of only salary
+                                                )
+                                        ));
+        highestPaidByDept.forEach((dept, sal) ->
+                System.out.println("Department: " + dept + ", Highest Paid: " + sal)
+        );
 
-                    Employee maxEmp = emps.stream()
-                            .max(Comparator.comparing(Employee::getSalary))
-                            .orElse(null);
-
-                    System.out.println("  Highest Paid: " + maxEmp);
-                });
 
     }
 }

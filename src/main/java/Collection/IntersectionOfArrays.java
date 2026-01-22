@@ -1,4 +1,4 @@
-package Collections;
+package Collection;
 
 import java.util.*;
 
@@ -12,22 +12,21 @@ public class IntersectionOfArrays {
         }
 
         // List to store the intersection elements
-        List<Integer> intersection = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         for (int num : nums2) {
             if (map.containsKey(num) && map.get(num) > 0) {
-                intersection.add(num);
+                result.add(num);
                 map.put(num, map.get(num) - 1);
             }
         }
 
-        return intersection.stream().mapToInt(Integer::intValue).toArray();
-        //--or-- return intersection.toArray(new Integer[0]);  //we have to change return type from int to Integer
+        return result.stream().mapToInt(Integer::intValue).toArray(); //we have to change return type from int to Integer
 // --or-- Convert the list to an array as below
-//        int[] result = new int[intersection.size()];
-//        for (int i = 0; i < intersection.size(); i++) {
-//            result[i] = intersection.get(i);
+//        int[] ans = new int[result.size()];
+//        for (int i = 0; i < result.size(); i++) {
+//            ans[i] = result.get(i);
 //        }
-//        return result;
+//        return ans;
     }
 
     public static void main(String[] args) {
@@ -50,6 +49,7 @@ public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums2);
         int n = nums1.length, m = nums2.length;
         int i = 0, j = 0;
+
         List<Integer> list = new ArrayList<>();
         while(i < n && j < m){
             int a = nums1[i], b= nums2[j];
@@ -63,8 +63,10 @@ public int[] intersect(int[] nums1, int[] nums2) {
                 j++;
             }
         }
-        int[] ret = new int[list.size()];
-        for(int k = 0; k < list.size();k++) ret[k] = list.get(k);
-        return ret;
+
+        int[] res = new int[list.size()];
+        for(int k = 0; k < list.size();k++)
+            res[k] = list.get(k);
+        return res;
     }
  */

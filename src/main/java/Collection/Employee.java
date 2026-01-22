@@ -1,4 +1,4 @@
-package Collections;
+package Collection;
 
 import java.util.Objects;
 
@@ -43,7 +43,8 @@ class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, dept);
+        return Objects.hash(name, age, dept); //Use this when hashing depends on multiple fields.
+        //return name.hashCode(); //Use this when hashing a single non-null object.
     }
 
     @Override

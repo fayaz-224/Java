@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 //static methods in interfaces cannot be overridden in Java.
 class Base {

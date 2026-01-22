@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 //In java only call by value exists
 //In Java, all arguments are passed by value. This means that when you pass a variable to a method,
 // a copy of the value of the variable is passed, not the variable itself.

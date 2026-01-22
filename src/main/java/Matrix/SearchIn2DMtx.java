@@ -1,15 +1,13 @@
 package Matrix;
 
 //https://leetcode.com/problems/search-a-2d-matrix-ii/
-//Brute force: O(N X M) - use if mtx is un-sorted by using two for loops to find target
+//Brute force: O(N X M) - use if mtx is un-sorted by using 2 for loops to find target
 public class SearchIn2DMtx {
     //Staircase Search: (O(m + n)) - use if the matrix has rows and columns sorted independently
     static boolean searchMatrix(int[][] matrix, int target) {
-        int rows = matrix.length;
-        int cols = matrix[0].length;
-        int rowLeft = 0, rowRight = cols - 1;
+        int rowLeft = 0, rowRight = matrix[0].length - 1;
 
-        while (rowLeft < rows && rowRight >= 0) {
+        while (rowLeft < matrix.length && rowRight >= 0) {
             if (matrix[rowLeft][rowRight] == target)
                 return true;
             if (matrix[rowLeft][rowRight] > target)

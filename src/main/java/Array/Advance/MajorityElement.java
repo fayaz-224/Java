@@ -7,7 +7,7 @@ public class MajorityElement {
 
     //Approach - 1 : Use Hashmap and find freq of each element. Then find the element count > N/2
 
-    //Approach - 2: Boyer–Moore Voting algorithm
+    //Approach - 2: Boyer–Moore Voting algorithm - Only one majority element can exist ie, > n/2 + > n/2 = > n
     public static int majorityElementNby2(int[] nums) {
         int n = nums.length;
         int candidate = 0;
@@ -15,13 +15,14 @@ public class MajorityElement {
 
         //Step 1: Candidate Selection (Boyer–Moore Voting)
         for (int num : nums) {
-            if (num == candidate) {
-                count++;
-            } else if (count == 0) {
+            if (count == 0) {
                 candidate = num;
-                count = 1; //count=1 as it has one supporter so far (itself). But if the new candidate starts with count=0, the next non-matching number becomes the new candidate
-            } else
+                count = 1;
+            } else if (num == candidate) {
+                count++;
+            } else {
                 count--;
+            }
         }
 
         //Step 2: Verification - We need this to validate our candidate, As above code might give an invalid candidate when no majority element exist.

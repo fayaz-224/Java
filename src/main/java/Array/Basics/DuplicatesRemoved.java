@@ -2,6 +2,7 @@ package Array.Basics;
 
 //Remove Duplicates
 public class DuplicatesRemoved {
+
     static int removeDuplicates(int[] arr) {
         //Arrays.sort(arr);  // array should be sorted, if not sort it
         int i = 0;  //imaginary index - 2 pointer

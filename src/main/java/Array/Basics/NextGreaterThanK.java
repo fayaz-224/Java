@@ -16,7 +16,7 @@ public class NextGreaterThanK {
     }
 
     public static void main(String[] args) {
-        int[] arr = {7, 3, 9, 1, 6};
+        int[] arr = {7, 3, 9, 1, 6, 2};
         int k = 5;
 
         System.out.println(findSmallestGreaterThanK(arr, k));  // Output: 6

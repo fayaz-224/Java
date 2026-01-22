@@ -17,7 +17,7 @@ public class MaximumSubArraySum {
         return maxSum;
     }
 
-    //true Kadane, works for any numbers (+ve, -ve) - O(N)
+    //Modern / Safer / Preferred - O(N)
     public static int maxSubArraySum1(int[] nums) {
         int maxSum = nums[0];
         int sum = nums[0];
@@ -28,7 +28,8 @@ public class MaximumSubArraySum {
         }
         return maxSum;
     }
-    //restricted Kadane, works only if we have at least one +ve number - O(N)
+
+    //Classic / Older Style - O(N)
     public static int maxSubArraySum2(int[] nums) {
         int maxSum = Integer.MIN_VALUE;
         int sum = 0;
@@ -73,7 +74,7 @@ public class MaximumSubArraySum {
         }
 
         int length = ansEnd - ansStart + 1;
-        System.out.println("\nLength = "+ length);
+        System.out.println("\nmax subarray length = "+ length);
 
         System.out.print("Subarray: ");
         for (int i = ansStart; i <= ansEnd; i++) {
@@ -86,9 +87,9 @@ public class MaximumSubArraySum {
 
     public static void main(String args[]){
         int[] arr = {-4, -2, -7};
-        System.out.println("max sum: " + maxSubArraySum1(arr)); //6
+        System.out.println("max sum: " + maxSubArraySum2(arr)); //-2
 
-        System.out.println("max sum: " + maxSubarraySumIndexes(arr)); //6
+        maxSubarraySumIndexes(arr); //-2
     }
 }
 

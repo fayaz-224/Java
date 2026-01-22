@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 public class StringCompare {
     public static void main(String[] args) {

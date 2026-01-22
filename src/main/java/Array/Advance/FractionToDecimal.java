@@ -7,12 +7,10 @@ import java.util.Map;
 public class FractionToDecimal {
 
     public static String fractionToDecimal(int numerator, int denominator) {
-        // Handle edge case where denominator is 0
+        // Handle edge case where numerator & denominator is 0
         if (denominator == 0) {
             throw new ArithmeticException("Denominator cannot be zero");
         }
-
-        // Handle case where numerator is 0
         if (numerator == 0) {
             return "0";
         }

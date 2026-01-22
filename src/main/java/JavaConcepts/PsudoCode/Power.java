@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 //import java.lang.Math;
   
 class Power {

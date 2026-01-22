@@ -99,18 +99,25 @@ public class StarPatterns {
 	//   ***
 	//    *
 	private static void decreasingPyramid(int n) {
+		int stars = 9;
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j < i; j++) {  //j<i for no space in the beginning of pyramid
 				System.out.print(" ");
 			}
-			for (int j = i; j < n; j++) {
-				System.out.print("*");
-			}
-			for (int j = i; j <= n; j++) {
-				System.out.print("*");
-			}
+//			for (int j = i; j < n; j++) {
+//				System.out.print("*");
+//			}
+//			for (int j = i; j <= n; j++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
 
+			for (int j = 0; j < stars; j++) {
+				System.out.print("*");
+			}
 			System.out.println();
+
+			stars -= 2;
 		}
 	}
 
@@ -130,6 +137,7 @@ public class StarPatterns {
 			}
 			System.out.println();
 		}
+
 		for(int i=1;i<=n;i++) {
 			for(int j=i;j<=n;j++) {
 				System.out.print("* ");

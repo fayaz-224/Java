@@ -30,10 +30,10 @@ class NumPatterns {
 			for (int j = i; j < n; j++) {
 				System.out.print(" ");
 			}
-			for (int j = i; j >= 1; j--) {  //imp - Print descending numbers
+			for (int j = i; j >= 1; j--) {  //Print descending numbers
 				System.out.print(j);
 			}
-			for (int j = 2; j <= i; j++) {  //Print ascending numbers
+			for (int j = 2; j <= i; j++) {  //Print increasing numbers
 				System.out.print(j);
 			}
 			System.out.println();

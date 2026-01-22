@@ -3,9 +3,10 @@ package Array.Basics;
 import java.util.List;
 import java.util.ArrayList;
 
+//Maintain the order of numbers
 public class AlternatePos_Neg {
 
-    static int[] rearrangeBySign1(int[] A, int n) {  //O(N) - works for unequal no. of positive and negative elements.
+    static int[] rearrangeBySign(int[] A, int n) {  //O(N) - works for unequal no. of positive and negative elements.
         List<Integer> pos = new ArrayList<>();
         List<Integer> neg = new ArrayList<>();
 
@@ -28,28 +29,11 @@ public class AlternatePos_Neg {
         return res;
     }
 
-    static int[] rearrangeBySign2(int[] A, int n) {  //works only for equal no. of pos and neg elements in array, otherwise it throws indexOutOfBounds inside when we increment index by +2 in for loop
-        int[] ans = new int[n];
-        int posIndex = 0, negIndex = 1;
-
-        for (int i = 0; i < n; i++) {
-            if (A[i] < 0) {
-                ans[negIndex] = A[i];
-                negIndex += 2;
-            } else {
-                ans[posIndex] = A[i];
-                posIndex += 2;
-            }
-        }
-
-        return ans;
-    }
-
     public static void main(String[] args) {
         int[] A = {2, 3, 6, 7, -4, -5};
         int n = A.length;
 
-        int[] result = rearrangeBySign1(A, n);
+        int[] result = rearrangeBySign(A, n);
         for (int num : result) {
             System.out.print(num + " ");
         }

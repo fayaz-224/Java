@@ -20,8 +20,10 @@ public class GCD {
 }
 */
 
-//It is the highest common number that completely divides given numbers. It is also known as the Greatest Common Factor (GCF) and the Highest Common Factor (HCF).
- class GCD {
+
+class GCD {
+
+     // Recursion
     static int gcd(int a, int b) {
       if (b == 0)
         return a;

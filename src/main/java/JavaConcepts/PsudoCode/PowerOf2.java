@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 //check if given no. is power of 2 ex: n=16 => 2^4 => true
 public class PowerOf2 {

@@ -23,7 +23,7 @@ class HappyNumber {
         return false;
     }
 
-    static int getNextNumber(int n){
+    static int getNextNumber(int n) {
         int sum = 0;
         while(n != 0) {
             int k = n%10;

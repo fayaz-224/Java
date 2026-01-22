@@ -2,7 +2,7 @@ package Array.Basics;
 
 //Approach-1: we can follow DuplicateElements code as well by using Map.
 
-//Approach-2:
+//Approach-2
 public class Frequency {
     //find the frequency of each element in the array
     public static void main(String[] args) {

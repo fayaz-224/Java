@@ -21,7 +21,7 @@ public class BuilderDP {
         this.color = builder.color;
     }
 
-    // setters are exposed not to clients
+    // setters are not exposed to clients
     public String getName() {
         return name;
     }

@@ -13,9 +13,10 @@ public class GrasshopperJump {
 
         for (int jump : jumps) {
             current += jump;
-            if (current < minReached) {  //if all +ve values minReached wil be 0 only
-                minReached = current;
-            }
+            minReached = Math.min(minReached, current); //if all +ve values minReached wil be 0 only
+//            if (current < minReached) {
+//                minReached = current;
+//            }
         }
 
         // Minimum starting stair so that the lowest position stays ≥ 1

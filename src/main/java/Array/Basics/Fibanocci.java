@@ -1,10 +1,20 @@
 package Array.Basics;
 
 //It's a series of numbers in which, each number is the sum of the two preceding numbers
+public class Fibanocci {
 
-public class Fibanocci {  //nth fibonacci no. using recursion
+    static void fib1(int n) { //Iterative - Optimal
+        int a = 0, b = 1;
 
-    public static int nthFibNumber(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+
+    public static int nthFibNumber(int n) { //recursion - not optimal
         if (n <= 1)
             return n;
         return nthFibNumber(n - 1) + nthFibNumber(n - 2);
@@ -14,9 +24,12 @@ public class Fibanocci {  //nth fibonacci no. using recursion
 		int n=5;
         System.out.println(n + "th fibonacci no. is : " + nthFibNumber(n));
 
-        System.out.println("Fib series upto n:");
+        System.out.println("Fib series up to n:");
         for (int i = 0; i <= n; i++)    //i<=n becoz we need upto n as zero is also needed
             System.out.print(nthFibNumber(i)+" ");
+
+        System.out.println("\nFib series of n:");
+        fib1(n);
     }
  }
 
@@ -42,24 +55,4 @@ public class FibonacciDP {   //DP
         }
     }
 }
-  */
-
-
-/*
-class Fibonacci {	//Fibonacci series up to a given number
-public static void main(String[] args) {
-   if (n <= 1) return n;
-
-  int n = 100, firstTerm = 0, secondTerm = 1;
-  System.out.println("Fibonacci Series Upto " + n + ": ");
-
-  while (secondTerm <= n) {
-    System.out.print(firstTerm + ", ");
-
-    int nextTerm = firstTerm + secondTerm;
-    firstTerm = secondTerm;
-    secondTerm = nextTerm;
-   }
- }
-}
- */
+*/

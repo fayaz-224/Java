@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 public class Autoboxing {
     //due to a mechanism called "autoboxing," which automatically converts primitive types to their corresponding wrapper classes (such as int to Integer)

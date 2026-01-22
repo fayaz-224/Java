@@ -1,6 +1,6 @@
 package DesignPatterns;
 
-//Adapter Design Pattern is a structural pattern acts as a bridge two incompatible interfaces, allowing them to work together.
+//Adapter Design Pattern is a structural pattern acts as a bridge btwn two incompatible interfaces, allowing them to work together.
 //It is commonly used when you want to integrate a legacy system or third-party library with your application without modifying their code
 
 // Target Interface - The interface that the client code expects.

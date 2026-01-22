@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 import java.util.HashMap;
 import java.util.Map;

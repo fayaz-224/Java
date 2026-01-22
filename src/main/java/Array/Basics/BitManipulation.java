@@ -17,7 +17,6 @@ public class BitManipulation {
 
         int newNumber = bitMask | n;
         System.out.println(newNumber);
-
     }
 
     static void clearBit(int n, int pos) {  //left shift then Negate + AND
@@ -51,6 +50,5 @@ public class BitManipulation {
         setBit(n, pos); //5 (0101)
         clearBit(n, pos); //1 (0001)
         updateBit(n, pos, 1); //5 (0101)
-
     }
 }

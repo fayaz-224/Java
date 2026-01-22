@@ -1,4 +1,4 @@
-package Collections;
+package Collection;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,6 @@ import java.util.NoSuchElementException;
 
 /*
 Design a data structure with following features:
-
 1. push an element at the end of the data structure (O(1) time complexity)
 2. Pop the element from the beginning of the data structure (pop the earliest element added, O(1) TC)
 3. Seek an element at index i at any given state of the data structure. (O(1) TC)

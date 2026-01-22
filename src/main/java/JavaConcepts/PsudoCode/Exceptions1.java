@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 public class Exceptions1 {
     public static void main(String args[]) {

@@ -26,8 +26,8 @@ public class CountOfSubArraysSumOfSizeK {
     static int subArraySum(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);  //imp
-        int sum = 0, count = 0;
 
+        int sum = 0, count = 0;
         for (int n : nums) {
             sum += n;
 

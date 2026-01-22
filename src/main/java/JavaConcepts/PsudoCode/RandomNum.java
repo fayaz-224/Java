@@ -1,4 +1,4 @@
-package PsudoCode;
+package JavaConcepts.PsudoCode;
 
 import java.util.ArrayList;
 import java.util.Random;

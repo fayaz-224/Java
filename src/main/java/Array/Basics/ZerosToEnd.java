@@ -6,9 +6,10 @@ class ZerosToEnd {
         int idx = 0;
  
         // if element encountered is non-zero, then replace the element at index 'idx' with this element
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             if (arr[i] != 0)
                 arr[idx++] = arr[i];
+        }
 
         // Make remaining elements 0 from idx to end.
         while (idx < n)
