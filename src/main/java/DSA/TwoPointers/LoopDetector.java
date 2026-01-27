@@ -24,11 +24,11 @@ public class LoopDetector {
                 // Loop detected, calculate the length of the loop
                 int loopLength = 0;
                 do {
-                    slow = arr[slow];  //moving slow till it reaches its position, to calculate cycle
+                    slow = arr[slow];
                     loopLength++;
                 } while (slow != fast);
 
-                return loopLength;
+                return loopLength;  //we stop only when slow comes back to fast again, where we get loop length
             }
         }
     }

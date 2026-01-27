@@ -5,15 +5,15 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class StreamsQue {
+public class StreamsAdvanced {
     public static void main(String[] args) {
         //inputs
         String str = "geeksforgeeks";
         List<Employee> employees = List.of(
-                new Employee("Alice", 23, "Computer Science",50000),
-                new Employee("Bob", 21, "Mechanical Engineering", 60000),
-                new Employee("Charlie", 43, "Mechanical Engineering", 45000),
-                new Employee("Jack", 44, "Computer Science", 75000)
+                new Employee("Alice", 23, "CSE",50000),
+                new Employee("Bob", 21, "MEC", 60000),
+                new Employee("Charlie", 43, "MEC", 45000),
+                new Employee("Jack", 44, "CSE", 75000)
         );
 
         //count the occurrence of given char [.chars() -> convert a String into an IntStream of Unicode code becoz, Java doesn't have a CharStream So characters are treated as ints]
@@ -194,6 +194,26 @@ public class StreamsQue {
                 System.out.println("Department: " + dept + ", Highest Paid: " + sal)
         );
 
+        //get top 5 emp salary in each dept where department name consist of _ and space. Treat such department name as one
+        Map<String, List<Employee>> top5ByDept =
+                employees.stream()
+                        .collect(Collectors.groupingBy(
+                                e -> e.getDept()
+                                        .replace("_", "")
+                                        .replace(" ", "")
+                                        .toUpperCase()
+                        ))
+                        .entrySet()
+                        .stream()
+                        .collect(Collectors.toMap(
+                                Map.Entry::getKey,
+                                e -> e.getValue()
+                                        .stream()
+                                        .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                                        .limit(5)
+                                        .collect(Collectors.toList())
+                        ));
+        System.out.println(top5ByDept);
 
     }
 }

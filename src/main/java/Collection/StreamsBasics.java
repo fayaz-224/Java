@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StreamApiBasics {
+public class StreamsBasics {
     public static void main(String args[]) {
         //Input
         Employee[] arrayOfEmps = {
@@ -45,9 +45,10 @@ public class StreamApiBasics {
                                                         Arrays.asList(4, 5),
                                                         Arrays.asList(6, 7, 8));
         System.out.println("List<Lists> :"+listOfLists);
-        List<Integer> flattenedList = listOfLists.stream()
-                .flatMap(Collection::stream)    //list -> list.stream()
-                .collect(Collectors.toList());
+        List<Integer> flattenedList = listOfLists
+                        .stream()
+                        .flatMap(Collection::stream)    //list -> list.stream()
+                        .collect(Collectors.toList());
         System.out.println("flatMapped: " + flattenedList);
 
         // filter
